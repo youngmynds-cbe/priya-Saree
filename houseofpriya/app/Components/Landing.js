@@ -101,15 +101,15 @@ const Landing = () => {
   const [hoveredCard, setHoveredCard] = useState(null);
 
   const [formData, setFormData] = useState({
-    name: '',
-    email: ''
+    name: "",
+    email: "",
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
 
   const handleChange = (e) => {
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     });
   };
 
@@ -118,7 +118,7 @@ const Landing = () => {
       setIsSubmitted(true);
       setTimeout(() => {
         setIsSubmitted(false);
-        setFormData({ name: '', email: '' });
+        setFormData({ name: "", email: "" });
       }, 3000);
     }
   };
@@ -190,36 +190,59 @@ const Landing = () => {
     <>
       <section>
         <div className="min-h-screen relative overflow-hidden ">
-          {/* Background Image */}
           <div
             className="absolute inset-0 bg-cover bg-center bg-no-repeat  "
             style={{
               backgroundImage: `url('/images/bg.png')`,
             }}
           >
-            {/* Overlay for better text readability if needed */}
             <div className="absolute inset-0 "></div>
           </div>
+         <div className="absolute inset-0 pointer-events-none ">
+          <div className="absolute top-20 left-8 right-8 bottom-8 border-2 border-white opacity-40 rounded-sm"></div>
+        </div>
 
-          {/* Navigation */}
-          <nav className="relative z-20 flex items-center justify-between px-8 py-6">
-            <div className="flex items-center">
-              <div className="w-50 h-30 rounded-xl   flex items-center justify-end lg:ml-10 -mt-5">
+          <nav className="relative z-20 flex items-center justify-between px-8 py-6 " >
+            {/* <div className="flex items-center">
+              <div className="w-50 h-30 rounded-xl   flex items-center justify-center lg:ml-10 z-50 relative">
+                <div className="bg-[#b3a1ce] w-40 h-40 absolute z-0"></div>
+
+                 <div className="bg-[#B2A0CD] w-40 h-40 absolute z-0"></div>
+
                 <img
                   src="/images/logo.png"
                   alt="House of Priya Logo"
-                  className="w-34 h-34 object-contain"
+                  className="w-34 h-34 object-contain z-10 "
                 />
               </div>
-            </div>
+            </div> */}
+
+            <div className="flex items-center">
+  <div className="w-50 h-30 rounded-xl flex items-center justify-center lg:ml-10 z-50 relative">
+
+    {/* Background Image */}
+    <div
+      className="w-40 h-40 absolute z-0 bg-[url('/images/bg.png')] 
+                  rounded-xl"
+    ></div>
+
+    {/* Logo */}
+    <img
+      src="/images/logo.png"
+      alt="House of Priya Logo"
+      className="w-34 h-34 object-contain z-10"
+    />
+  </div>
+</div>
+
 
             <div
-              className="flex gap-15 text-[#6C6C6C] lg:-mt-25 
+              className="flex gap-15 text-[#6C6C6C]  
                 font-[var(--font-readex-pro)] 
                 font-bold 
                 text-[20px] 
                 leading-[0.81] 
-                tracking-normal"
+                tracking-normal -mt-22"
             >
               <a href="/" className="hover:text-purple-700 transition">
                 Home
@@ -232,7 +255,7 @@ const Landing = () => {
               </a>
             </div>
 
-            <button className="bg-purple-700 hover:bg-purple-800 text-white px-6 py-2 rounded-md font-medium transition shadow-lg -mt-25">
+            <button className="bg-purple-700 hover:bg-purple-800 text-white px-6 py-2 rounded-md font-medium transition shadow-lg -mt-22">
               Enquire on WhatsApp
             </button>
           </nav>
@@ -548,69 +571,69 @@ const Landing = () => {
           </div>
         </div>
       </section>
-    <section className=" bg-white">
-      <div className="max-w-7xl mx-auto">
-        
-        {/* Top Section - Colorful Joy */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[600px]">
-          
-          {/* Left - Text Content */}
-          <div className="flex flex-col justify-start p-12 lg:p-16">
-            <h2 className="text-5xl lg:text-6xl font-serif text-purple-600 mb-32">
-              Farewell Collection
-            </h2>
-            
-            <div className="mx-auto lg:ml-40">
-              <h3 className="text-3xl font-serif text-purple-600 mb-4">
-                Colorful Joy
-              </h3>
-              <p className="text-gray-600 text-base leading-relaxed max-w-md">
-                Perfect for women who love subtle elegance with a modern twist. Each saree flows effortlessly from day wear to evening occasions.
-              </p>
+      <section className=" bg-white">
+        <div className="max-w-7xl mx-auto">
+          {/* Top Section - Colorful Joy */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[600px]">
+            {/* Left - Text Content */}
+            <div className="flex flex-col justify-start p-12 lg:p-16">
+              <h2 className="text-5xl lg:text-6xl font-serif text-purple-600 mb-32">
+                Farewell Collection
+              </h2>
+
+              <div className="mx-auto lg:ml-40">
+                <h3 className="text-3xl font-serif text-purple-600 mb-4">
+                  Colorful Joy
+                </h3>
+                <p className="text-gray-600 text-base leading-relaxed max-w-md">
+                  Perfect for women who love subtle elegance with a modern
+                  twist. Each saree flows effortlessly from day wear to evening
+                  occasions.
+                </p>
+              </div>
+            </div>
+
+            {/* Right - Image */}
+            <div className="relative bg-gray-100 flex items-center justify-center p-8">
+              <img
+                src="../images/Rectangle 21 (1).png"
+                alt="Colorful Joy Saree"
+                className="w-full h-full max-h-[500px] object-contain"
+              />
+              {/* Plant decoration */}
+              <div className="absolute bottom-8 left-8 w-24 h-32 bg-green-600/20 rounded-full blur-2xl" />
             </div>
           </div>
 
-          {/* Right - Image */}
-          <div className="relative bg-gray-100 flex items-center justify-center p-8">
-            <img
-              src="../images/Rectangle 21 (1).png"
-              alt="Colorful Joy Saree"
-              className="w-full h-full max-h-[500px] object-contain"
-            />
-            {/* Plant decoration */}
-            <div className="absolute bottom-8 left-8 w-24 h-32 bg-green-600/20 rounded-full blur-2xl" />
-          </div>
-        </div>
+          {/* Bottom Section - Dual Joy */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[600px]">
+            {/* Left - Image with Orange Background */}
+            <div className="relative bg-[#E2AC52] flex items-center justify-center p-8 order-2 lg:order-1">
+              <img
+                src="../images/Rectangle 22 (3).png"
+                alt="Dual Joy Saree"
+                className="w-full h-full max-h-[500px] object-contain"
+              />
+              {/* Plant decoration */}
+              <div className="absolute bottom-12 left-12 w-24 h-32 bg-green-700/30 rounded-full blur-2xl" />
+            </div>
 
-        {/* Bottom Section - Dual Joy */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[600px]">
-          
-          {/* Left - Image with Orange Background */}
-          <div className="relative bg-[#E2AC52] flex items-center justify-center p-8 order-2 lg:order-1">
-            <img
-              src="../images/Rectangle 22 (3).png"
-              alt="Dual Joy Saree"
-              className="w-full h-full max-h-[500px] object-contain"
-            />
-            {/* Plant decoration */}
-            <div className="absolute bottom-12 left-12 w-24 h-32 bg-green-700/30 rounded-full blur-2xl" />
-          </div>
-
-          {/* Right - Text Content with Orange Background */}
-          <div className="bg-[#E2AC52] flex items-center justify-start p-12 lg:p-16 order-1 lg:order-2">
-            <div>
-              <h3 className="text-3xl font-serif text-purple-600 mb-4">
-                Dual Joy
-              </h3>
-              <p className="text-gray-800 text-base leading-relaxed max-w-md">
-                Experience the beauty of contrast with our Dual Joy sarees — thoughtfully designed to blend two harmonious shades into one graceful drape.
-              </p>
+            {/* Right - Text Content with Orange Background */}
+            <div className="bg-[#E2AC52] flex items-center justify-start p-12 lg:p-16 order-1 lg:order-2">
+              <div>
+                <h3 className="text-3xl font-serif text-purple-600 mb-4">
+                  Dual Joy
+                </h3>
+                <p className="text-gray-800 text-base leading-relaxed max-w-md">
+                  Experience the beauty of contrast with our Dual Joy sarees —
+                  thoughtfully designed to blend two harmonious shades into one
+                  graceful drape.
+                </p>
+              </div>
             </div>
           </div>
         </div>
-
-      </div>
-    </section>
+      </section>
       <section className=" bg-white py-20 px-4">
         <div className="max-w-[1800px] mx-auto">
           <h1 className="text-6xl md:text-7xl font-serif text-center mb-24 text-purple-600">
@@ -792,81 +815,80 @@ const Landing = () => {
           </div>
         </div>
       </section>
-  <section className="relative min-h-screen overflow-hidden">
-      {/* Background Image for entire section */}
-      <div 
-        className="absolute inset-0 w-full h-full"
-        style={{
-          backgroundImage: 'url("../images/Rectangle 115.png")',
-          backgroundSize: 'cover',
-         
-          backgroundRepeat: 'no-repeat'
-        }}
-      />
-      
-      <div className="relative z-10 min-h-screen flex items-center px-8 lg:px-24">
-        
-        {/* Form Card - Exact Figma dimensions */}
-        <div 
-          className="bg-white shadow-2xl"
+      <section className="relative min-h-screen overflow-hidden">
+        {/* Background Image for entire section */}
+        <div
+          className="absolute inset-0 w-full h-full"
           style={{
-            width: '617px',
-            maxWidth: '90vw',
-            borderRadius: '12px',
-            opacity: 0.67,
-            padding: '48px'
+            backgroundImage: 'url("../images/Rectangle 115.png")',
+            backgroundSize: "cover",
+
+            backgroundRepeat: "no-repeat",
           }}
-        >
-          <h1 className="text-5xl font-serif text-purple-600 mb-6 leading-tight">
-            House of Priya is Coming to RS Puram
-          </h1>
-          
-          <p className="text-gray-600 text-base mb-8 leading-relaxed">
-            Step into a space where elegance, craftsmanship, and modern sarees come together.
-          </p>
+        />
 
-          {isSubmitted ? (
-            <div className="bg-green-50 border-2 border-green-500 rounded-xl p-6 text-center">
-              <p className="text-green-700 font-semibold text-lg">
-                Thank you! We'll notify you soon! 🎉
-              </p>
-            </div>
-          ) : (
-            <div className="space-y-4">
-              <div>
-                <input
-                  type="text"
-                  name="name"
-                  placeholder="Enter Your Name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-purple-500 transition-all text-gray-700 text-base placeholder:text-gray-400"
-                />
+        <div className="relative z-10 min-h-screen flex items-center px-8 lg:px-24">
+          {/* Form Card - Exact Figma dimensions */}
+          <div
+            className="bg-white shadow-2xl"
+            style={{
+              width: "617px",
+              maxWidth: "90vw",
+              borderRadius: "12px",
+              opacity: 0.67,
+              padding: "48px",
+            }}
+          >
+            <h1 className="text-5xl font-serif text-purple-600 mb-6 leading-tight">
+              House of Priya is Coming to RS Puram
+            </h1>
+
+            <p className="text-gray-600 text-base mb-8 leading-relaxed">
+              Step into a space where elegance, craftsmanship, and modern sarees
+              come together.
+            </p>
+
+            {isSubmitted ? (
+              <div className="bg-green-50 border-2 border-green-500 rounded-xl p-6 text-center">
+                <p className="text-green-700 font-semibold text-lg">
+                  Thank you! We'll notify you soon! 🎉
+                </p>
               </div>
+            ) : (
+              <div className="space-y-4">
+                <div>
+                  <input
+                    type="text"
+                    name="name"
+                    placeholder="Enter Your Name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-purple-500 transition-all text-gray-700 text-base placeholder:text-gray-400"
+                  />
+                </div>
 
-              <div>
-                <input
-                  type="email"
-                  name="email"
-                  placeholder="Enter Your Email ID"
-                  value={formData.email}
-                  onChange={handleChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-purple-500 transition-all text-gray-700 text-base placeholder:text-gray-400"
-                />
+                <div>
+                  <input
+                    type="email"
+                    name="email"
+                    placeholder="Enter Your Email ID"
+                    value={formData.email}
+                    onChange={handleChange}
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-purple-500 transition-all text-gray-700 text-base placeholder:text-gray-400"
+                  />
+                </div>
+
+                <button
+                  onClick={handleSubmit}
+                  className="bg-purple-600 hover:bg-purple-700 text-white font-semibold px-8 py-3 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl text-base mt-2"
+                >
+                  Notify Me
+                </button>
               </div>
-
-              <button
-                onClick={handleSubmit}
-                className="bg-purple-600 hover:bg-purple-700 text-white font-semibold px-8 py-3 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl text-base mt-2"
-              >
-                Notify Me
-              </button>
-            </div>
-          )}
+            )}
+          </div>
         </div>
-
-      </div>
-    </section>
+      </section>
 
       <Footer />
     </>

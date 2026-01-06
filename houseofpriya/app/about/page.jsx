@@ -6,38 +6,41 @@ import Footer from "../Components/Footer";
 const Landing = () => {
   return (
     <>
-      <section>
+   <section>
         <div className="min-h-screen relative overflow-hidden ">
-          {/* Background Image */}
           <div
             className="absolute inset-0 bg-cover bg-center bg-no-repeat  "
             style={{
               backgroundImage: `url('/images/bg.png')`,
             }}
           >
-            {/* Overlay for better text readability if needed */}
             <div className="absolute inset-0 "></div>
           </div>
+         <div className="absolute inset-0 pointer-events-none ">
+          <div className="absolute top-20 left-8 right-8 bottom-8 border-2 border-white opacity-40 rounded-sm"></div>
+        </div>
 
-          {/* Navigation */}
-          <nav className="relative z-20 flex items-center justify-between px-8 py-6">
+          <nav className="relative z-20 flex items-center justify-between px-8 py-6 " >
             <div className="flex items-center">
-              <div className="w-50 h-30 rounded-xl   flex items-center justify-end lg:ml-10 -mt-5">
+              <div className="w-50 h-30 rounded-xl   flex items-center justify-center lg:ml-10 z-50 relative">
+                <div className="bg-[#b3a1ce] w-40 h-40 absolute z-0"></div>
+
+
                 <img
                   src="/images/logo.png"
                   alt="House of Priya Logo"
-                  className="w-34 h-34 object-contain"
+                  className="w-34 h-34 object-contain z-10 "
                 />
               </div>
             </div>
 
             <div
-              className="flex gap-15 text-[#6C6C6C] lg:-mt-25 
+              className="flex gap-15 text-[#6C6C6C]  
                 font-[var(--font-readex-pro)] 
                 font-bold 
                 text-[20px] 
                 leading-[0.81] 
-                tracking-normal"
+                tracking-normal -mt-22"
             >
               <a href="/" className="hover:text-purple-700 transition">
                 Home
@@ -50,7 +53,7 @@ const Landing = () => {
               </a>
             </div>
 
-            <button className="bg-purple-700 hover:bg-purple-800 text-white px-6 py-2 rounded-md font-medium transition shadow-lg -mt-25">
+            <button className="bg-purple-700 hover:bg-purple-800 text-white px-6 py-2 rounded-md font-medium transition shadow-lg -mt-22">
               Enquire on WhatsApp
             </button>
           </nav>
@@ -78,7 +81,7 @@ const Landing = () => {
               {/* Woman Image Section */}
               <div className="relative z-10 w-full max-w-md">
                 <div className="  px-8 w-[549px] h-[600px] ">
-                  <img src="../images/DSC02638 (1) 1.png" />
+                  <img src="../images/womensaree.png" />
                 </div>
               </div>
             </div>
