@@ -138,8 +138,9 @@ const Landing = () => {
           <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center px-8 lg:px-16 py-12 max-w-7xl mx-auto -mt-20  ">
             {/* Left Content */}
             <div className="space-y-6">
-              <h1 className="text-6xl lg:text-7xl font-serif text-white leading-tight">
-                Grace Woven in Every Thread
+              <h1 className="font-['Cormorant_Garamond']  text-[74px] leading-[90px] tracking-[-0.5px] text-white">
+               Stories Woven in
+Tradition & Style
               </h1>
               <p className="text-lg text-white font-light">
                 Discover timeless sarees crafted with passion.
@@ -157,7 +158,7 @@ const Landing = () => {
               {/* Woman Image Section */}
               <div className="relative z-10 w-full max-w-md">
                 <div className="  px-8 w-[549px] h-[600px] ">
-                  <img src="../images/womensaree.png" />
+                  <img src="../images/DSC02599 1.png" className="h-[650px]" />
                 </div>
               </div>
             </div>
@@ -170,10 +171,10 @@ const Landing = () => {
       <section className="bg-white py-20">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-5xl font-serif text-purple-800 mb-4">
+            <h2 className="text-[66px] font-[gabriola] text-purple-800 mb-4">
               Stories Woven in Tradition & Style
             </h2>
-            <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+            <p className="text-gray-600 font-[Readex_Pro] text-lg max-w-2xl mx-auto">
               Insights, inspiration, and timeless elegance from House of Priya.
             </p>
           </div>

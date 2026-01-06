@@ -198,11 +198,11 @@ const Landing = () => {
           >
             <div className="absolute inset-0 "></div>
           </div>
-         <div className="absolute inset-0 pointer-events-none ">
-          <div className="absolute top-20 left-8 right-8 bottom-8 border-2 border-white opacity-40 rounded-sm"></div>
-        </div>
+          <div className="absolute inset-0 pointer-events-none ">
+            <div className="absolute top-20 left-8 right-8 bottom-8 border-2 border-white opacity-40 rounded-sm"></div>
+          </div>
 
-          <nav className="relative z-20 flex items-center justify-between px-8 py-6 " >
+          <nav className="relative z-20 flex items-center justify-between px-8 py-6 ">
             {/* <div className="flex items-center">
               <div className="w-50 h-30 rounded-xl   flex items-center justify-center lg:ml-10 z-50 relative">
                 <div className="bg-[#b3a1ce] w-40 h-40 absolute z-0"></div>
@@ -218,23 +218,21 @@ const Landing = () => {
             </div> */}
 
             <div className="flex items-center">
-  <div className="w-50 h-30 rounded-xl flex items-center justify-center lg:ml-10 z-50 relative">
-
-    {/* Background Image */}
-    <div
-      className="w-40 h-40 absolute z-0 bg-[url('/images/bg.png')] 
+              <div className="w-50 h-30 rounded-xl flex items-center justify-center lg:ml-10 z-50 relative">
+                {/* Background Image */}
+                <div
+                  className="w-40 h-40 absolute z-0 bg-[url('/images/bg.png')] 
                   rounded-xl"
-    ></div>
+                ></div>
 
-    {/* Logo */}
-    <img
-      src="/images/logo.png"
-      alt="House of Priya Logo"
-      className="w-34 h-34 object-contain z-10"
-    />
-  </div>
-</div>
-
+                {/* Logo */}
+                <img
+                  src="/images/logo.png"
+                  alt="House of Priya Logo"
+                  className="w-34 h-34 object-contain z-10"
+                />
+              </div>
+            </div>
 
             <div
               className="flex gap-15 text-[#6C6C6C]  
@@ -261,13 +259,14 @@ const Landing = () => {
           </nav>
 
           {/* Main Content */}
-          <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center px-8 lg:px-16 py-12 max-w-7xl mx-auto -mt-20  ">
+          <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center px-8 lg:px-16 py-12 max-w-7xl mx-auto -mt-26  ">
             {/* Left Content */}
             <div className="space-y-6">
-              <h1 className="text-6xl lg:text-7xl font-serif text-white leading-tight">
+              <h1 className="font-['Cormorant_Garamond']  text-[74px] leading-[90px] tracking-[-0.5px] text-white">
                 Grace Woven in Every Thread
               </h1>
-              <p className="text-lg text-white font-light">
+
+              <p className="font-[readexPro] text-[20px] text-white font-light tracking-[-0.5px]">
                 Discover timeless sarees crafted with passion.
               </p>
               <button className="bg-purple-700 hover:bg-purple-800 text-white px-8 py-3 rounded-md font-medium transition shadow-lg inline-block mt-4">
@@ -301,12 +300,12 @@ const Landing = () => {
               <img
                 src="../images/ellipse.png"
                 alt="Woman in purple sari"
-                className="w-[492px] h-[699px]  -mt-60"
+                className="w-[492px] h-[699px]  -mt-50"
               />
             </div>
 
             {/* CENTER CONTENT */}
-            <div className="space-y-6  lg:text-left">
+            <div className="space-y-10  lg:text-left">
               <h2
                 className="
     font-[Gabriola]
@@ -314,7 +313,7 @@ const Landing = () => {
     text-[66px]
     leading-10
     tracking-[-0.5px]
-    text-purple-700
+    text-purple-700 
   "
               >
                 Our Signature Weave
@@ -322,8 +321,8 @@ const Landing = () => {
 
               <p
                 className="
-    font-[var(--font-readex-pro)]
-  
+    font-readex
+    font-normal
     text-[18px]
     leading-[30px]
     tracking-[-0.5px]
@@ -370,7 +369,7 @@ const Landing = () => {
                   Enquire on WhatsApp
                 </button>
               </div>
-              <div className="flex justify-end -mt-30">
+              <div className="flex justify-end -mt-50">
                 <img
                   src="../images/saree2.png"
                   alt="Woman in patterned sari"
@@ -402,7 +401,7 @@ const Landing = () => {
           <p
             className="
         mt-4
-        font-[var(--font-readex-pro)]
+        font-[readexPro]
         text-[18px]
         leading-[26px]
         text-[#4B5563]
@@ -429,7 +428,7 @@ const Landing = () => {
               </h3>
               <p
                 className="
-            font-[var(--font-readex-pro)]
+            font-[readexPro]
             text-[16px]
             leading-[22px]
             text-[#4B5563]
@@ -451,7 +450,7 @@ const Landing = () => {
               </h3>
               <p
                 className="
-            font-[var(--font-readex-pro)]
+            font-[readexPro]
             text-[16px]
             leading-[22px]
             text-[#4B5563]
@@ -473,7 +472,7 @@ const Landing = () => {
               </h3>
               <p
                 className="
-            font-[var(--font-readex-pro)]
+               font-[readexPro]
             text-[16px]
             leading-[22px]
             text-[#4B5563]
@@ -495,7 +494,7 @@ const Landing = () => {
               </h3>
               <p
                 className="
-            font-[var(--font-readex-pro)]
+               font-[readexPro]
             text-[16px]
             leading-[22px]
             text-[#4B5563]
@@ -508,50 +507,61 @@ const Landing = () => {
         </div>
       </section>
       <section
-        className="relative w-full h-[520px]"
+        className="relative w-full h-150"
         style={{
           backgroundImage: "url('../images/Rectangle 102.png')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
         }}
       >
-        {/* Overlay for softness */}
-        <div className="absolute inset-0 bg-white/20"></div>
-
-        <div className="relative max-w-7xl mx-auto h-full px-6 flex items-center">
+        <div className="relative max-w-7xl mx-auto h-full px-6 flex items-center ">
           {/* LEFT OVAL CONTENT */}
           <div className="relative z-10">
             <div
               className="
-          bg-white/70
-          backdrop-blur-sm
-          rounded-[300px]
-          px-16 py-20
-          max-w-md
-        "
+    w-100.5
+    h-136
+    bg-white/70
+    backdrop-blur-sm
+    rounded-tl-[200px]
+    rounded-tr-[200px]
+    rounded-bl-none
+    rounded-br-none
+    max-w-md
+    flex
+    flex-col
+    items-center
+    justify-center
+    text-center
+    
+  "
             >
-              <p className="font-serif italic text-gray-800 text-lg mb-2">
-                The New Edit
-              </p>
+              <p className="text-gray-800 text-[40px] font-[Gabriola] mb-2">The New Edit</p>
 
-              <h1
-                className="
-            font-[Gabriola]
-            text-[56px]
-            leading-[48px]
-            text-purple-600
-            mb-4
-          "
-              >
-                House of Priya
-              </h1>
+       <h1
+  className="
+    font-[NanumMyeongjo]
+    font-normal
+    text-[45px]
+    leading-[2.07]
+    tracking-normal
+    text-center
+    text-purple-600
+    mb-4
+  "
+>
+  House of Priya
+</h1>
+
 
               <p
                 className="
-            font-[var(--font-readex-pro)]
-            text-[15px]
-            leading-[24px]
-            text-gray-700
-            max-w-xs
-          "
+      font-[readexPro]
+      text-[15px]
+      leading-[24px]
+      text-gray-700
+      max-w-xs
+    "
               >
                 A refined selection of sarees crafted to celebrate feminine
                 elegance.
@@ -571,72 +581,96 @@ const Landing = () => {
           </div>
         </div>
       </section>
-      <section className=" bg-white">
-        <div className="max-w-7xl mx-auto">
-          {/* Top Section - Colorful Joy */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[600px]">
-            {/* Left - Text Content */}
-            <div className="flex flex-col justify-start p-12 lg:p-16">
-              <h2 className="text-5xl lg:text-6xl font-serif text-purple-600 mb-32">
-                Farewell Collection
-              </h2>
+ <section className="bg-white">
 
-              <div className="mx-auto lg:ml-40">
-                <h3 className="text-3xl font-serif text-purple-600 mb-4">
-                  Colorful Joy
-                </h3>
-                <p className="text-gray-600 text-base leading-relaxed max-w-md">
-                  Perfect for women who love subtle elegance with a modern
-                  twist. Each saree flows effortlessly from day wear to evening
-                  occasions.
-                </p>
-              </div>
-            </div>
+  {/* ===== TOP WHITE SECTION (CONTAINED) ===== */}
+  <div className="max-w-7xl mx-auto">
+    <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[600px]">
+      
+      {/* Left - Text */}
+      <div className="flex flex-col justify-start p-12 lg:p-16">
+        <h2 className="text-[66px] font-[Gabriola] text-purple-600 mb-20">
+          Farewell Collection
+        </h2>
 
-            {/* Right - Image */}
-            <div className="relative bg-gray-100 flex items-center justify-center p-8">
-              <img
-                src="../images/Rectangle 21 (1).png"
-                alt="Colorful Joy Saree"
-                className="w-full h-full max-h-[500px] object-contain"
-              />
-              {/* Plant decoration */}
-              <div className="absolute bottom-8 left-8 w-24 h-32 bg-green-600/20 rounded-full blur-2xl" />
-            </div>
-          </div>
+        <div className="mx-auto lg:ml-50">
+          <h3 className="text-[40px] font-[Gabriola] text-purple-600 mb-4">
+            Colorful Joy
+          </h3>
 
-          {/* Bottom Section - Dual Joy */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[600px]">
-            {/* Left - Image with Orange Background */}
-            <div className="relative bg-[#E2AC52] flex items-center justify-center p-8 order-2 lg:order-1">
-              <img
-                src="../images/Rectangle 22 (3).png"
-                alt="Dual Joy Saree"
-                className="w-full h-full max-h-[500px] object-contain"
-              />
-              {/* Plant decoration */}
-              <div className="absolute bottom-12 left-12 w-24 h-32 bg-green-700/30 rounded-full blur-2xl" />
-            </div>
-
-            {/* Right - Text Content with Orange Background */}
-            <div className="bg-[#E2AC52] flex items-center justify-start p-12 lg:p-16 order-1 lg:order-2">
-              <div>
-                <h3 className="text-3xl font-serif text-purple-600 mb-4">
-                  Dual Joy
-                </h3>
-                <p className="text-gray-800 text-base leading-relaxed max-w-md">
-                  Experience the beauty of contrast with our Dual Joy sarees —
-                  thoughtfully designed to blend two harmonious shades into one
-                  graceful drape.
-                </p>
-              </div>
-            </div>
-          </div>
+          <p className="
+            font-[Readex_Pro]
+            text-[14px]
+            leading-[1.6]
+            text-justify
+            text-[#5E584E]
+            max-w-md
+          ">
+            Perfect for women who love subtle elegance with a modern
+            twist. Each saree flows effortlessly from day wear to evening
+            occasions.
+          </p>
         </div>
-      </section>
+      </div>
+
+      {/* Right - Image */}
+      <div className="relative flex items-center justify-center p-8">
+        <img
+          src="/images/Rectangle 21 (1).png"
+          alt="Colorful Joy Saree"
+          className="w-full h-full max-h-[500px] object-contain"
+        />
+        <div className="absolute bottom-8 left-8 w-24 h-32 bg-green-600/20 rounded-full blur-2xl" />
+      </div>
+
+    </div>
+  </div>
+
+
+  {/* ===== BOTTOM ORANGE SECTION (FULL WIDTH) ===== */}
+  <div className="w-screen bg-[#E2AC52] -mt-20">
+    <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[600px]">
+      
+      {/* Left - Image */}
+      <div className="relative flex items-center justify-center p-8 order-2 lg:order-1">
+        <img
+          src="/images/Rectangle 22 (3).png"
+          alt="Dual Joy Saree"
+          className="w-full h-full max-h-[500px] object-contain -mt-40"
+        />
+        <div className="absolute bottom-12 left-12 w-24 h-32 bg-green-700/30 rounded-full blur-2xl" />
+      </div>
+
+      {/* Right - Text */}
+      <div className="flex items-center justify-start p-12 lg:p-16 order-1 lg:order-2">
+        <div>
+          <h3 className="text-[40px] font-[Gabriola] text-purple-600 mb-4">
+            Dual Joy
+          </h3>
+
+          <p className="
+            font-[Readex_Pro]
+            text-[14px]
+            leading-[1.6]
+            text-justify
+            text-[#5E584E]
+            max-w-md
+          ">
+            Experience the beauty of contrast with our Dual Joy sarees —
+            thoughtfully designed to blend two harmonious shades into one
+            graceful drape.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</section>
+
       <section className=" bg-white py-20 px-4">
         <div className="max-w-[1800px] mx-auto">
-          <h1 className="text-6xl md:text-7xl font-serif text-center mb-24 text-purple-600">
+          <h1 className="text-[64px] md:text-[64px] font-[Gabriola] text-center mb-24 text-purple-600">
             Modern Style Toward Sarees
           </h1>
 
@@ -707,7 +741,7 @@ const Landing = () => {
       </section>
       <section className="min-h-screen bg-gradient-to-br from-purple-50 to-pink-50 py-20 px-4">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-36 items-center">
             {/* Left Side - Images */}
             <div className="relative h-[600px]">
               {/* Purple Saree with Golden Border - Top Left */}
@@ -739,24 +773,24 @@ const Landing = () => {
             </div>
 
             {/* Right Side - Content */}
-            <div className="space-y-6">
-              <h2 className="text-5xl md:text-6xl font-serif text-purple-600 mb-8">
+            <div className="space-y-4">
+              <h2 className="text-[64px] md:text-[64px] font-[Gabriola] text-purple-600 mb-8">
                 Trending Fashion
               </h2>
 
-              <p className="text-gray-700 text-lg leading-relaxed">
+              <p className="text-gray-700 text-[14px]    font-[Readex_Pro] leading-relaxed">
                 At House of Priyá, every saree is thoughtfully curated to
                 reflect modern elegance while staying rooted in timeless Indian
                 tradition.
               </p>
 
-              <p className="text-gray-700 text-lg leading-relaxed">
+              <p className="text-gray-700 text-[14px]    font-[Readex_Pro] leading-relaxed">
                 Our trending collection brings together rich fabrics, refined
                 color palettes, and graceful designs that suit both everyday
                 sophistication and special occasions.
               </p>
 
-              <p className="text-gray-700 text-lg leading-relaxed">
+              <p className="text-gray-700 text-[14px]    font-[Readex_Pro] leading-relaxed">
                 From subtle pastels to bold statement drapes, each piece is
                 crafted to make you feel confident, elegant, and effortlessly
                 stylish. Designed for women who appreciate quality, detail, and
@@ -774,7 +808,7 @@ const Landing = () => {
       <section className="min-h-screen bg-gradient-to-b from-purple-50 to-white py-20 px-4">
         <div className="max-w-7xl mx-auto">
           {/* Header */}
-          <h2 className="text-5xl md:text-6xl font-serif text-center text-purple-600 mb-20">
+          <h2 className="text-[66px] md:text-6xl font-[Gabriola] text-center tracking-[0.5px] text-purple-600 mb-20">
             See Our Sarees Come Alive
           </h2>
 
@@ -839,11 +873,11 @@ const Landing = () => {
               padding: "48px",
             }}
           >
-            <h1 className="text-5xl font-serif text-purple-600 mb-6 leading-tight">
+            <h1 className="text-[40px] font-[Gabriola] text-purple-600 mb-6 leading-tight">
               House of Priya is Coming to RS Puram
             </h1>
 
-            <p className="text-gray-600 text-base mb-8 leading-relaxed">
+            <p className="text-gray-600  font-[Readex_Pro] text-[16px] leading-relaxed tracking-wide">
               Step into a space where elegance, craftsmanship, and modern sarees
               come together.
             </p>

@@ -2,7 +2,7 @@
 
 import React from "react";
 import Footer from "../Components/Footer";
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight } from "lucide-react";
 
 import { ArrowLeft, Calendar, User, Clock } from "lucide-react";
 
@@ -10,8 +10,7 @@ const Landing = () => {
   const popularPosts = [
     {
       id: 1,
-      image:
-        "../images/img (8).png",
+      image: "../images/img (8).png",
       badge: "Saree Styling",
       badgeColor: "bg-purple-600",
       title: "The Art of Draping: 5 Modern Styles for the Classic Saree",
@@ -25,8 +24,7 @@ const Landing = () => {
     },
     {
       id: 2,
-      image:
-        "../images/img (9).png",
+      image: "../images/img (9).png",
       badge: "Heritage",
       badgeColor: "bg-purple-600",
       title: "Weaving Dreams: The Legacy of Banarasi Silk",
@@ -40,8 +38,7 @@ const Landing = () => {
     },
     {
       id: 3,
-      image:
-        "../images/img (10).png",
+      image: "../images/img (10).png",
       badge: "Festive Wear",
       badgeColor: "bg-purple-600",
       title: "Festive Elegance: Choosing Your Perfect Wedding Saree",
@@ -56,7 +53,7 @@ const Landing = () => {
   ];
   return (
     <>
-       <section>
+      <section>
         <div className="min-h-screen relative overflow-hidden ">
           <div
             className="absolute inset-0 bg-cover bg-center bg-no-repeat  "
@@ -66,15 +63,14 @@ const Landing = () => {
           >
             <div className="absolute inset-0 "></div>
           </div>
-         <div className="absolute inset-0 pointer-events-none ">
-          <div className="absolute top-20 left-8 right-8 bottom-8 border-2 border-white opacity-40 rounded-sm"></div>
-        </div>
+          <div className="absolute inset-0 pointer-events-none ">
+            <div className="absolute top-20 left-8 right-8 bottom-8 border-2 border-white opacity-40 rounded-sm"></div>
+          </div>
 
-          <nav className="relative z-20 flex items-center justify-between px-8 py-6 " >
+          <nav className="relative z-20 flex items-center justify-between px-8 py-6 ">
             <div className="flex items-center">
               <div className="w-50 h-30 rounded-xl   flex items-center justify-center lg:ml-10 z-50 relative">
                 <div className="bg-[#b3a1ce] w-40 h-40 absolute z-0"></div>
-
 
                 <img
                   src="/images/logo.png"
@@ -112,8 +108,8 @@ const Landing = () => {
           <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center px-8 lg:px-16 py-12 max-w-7xl mx-auto -mt-20  ">
             {/* Left Content */}
             <div className="space-y-6">
-              <h1 className="text-6xl lg:text-7xl font-serif text-white leading-tight">
-                Grace Woven in Every Thread
+              <h1 className="font-['Cormorant_Garamond']  text-[74px] leading-[90px] tracking-[-0.5px] text-white">
+                Stories Woven in Tradition & Style
               </h1>
               <p className="text-lg text-white font-light">
                 Discover timeless sarees crafted with passion.
@@ -131,7 +127,7 @@ const Landing = () => {
               {/* Woman Image Section */}
               <div className="relative z-10 w-full max-w-md">
                 <div className="  px-8 w-[549px] h-[600px] ">
-                  <img src="../images/womensaree.png" />
+                  <img src="../images/DSC02440 1.png" />
                 </div>
               </div>
             </div>
@@ -155,37 +151,24 @@ const Landing = () => {
           <article className="max-w-6xl mx-auto px-6 py-12">
             {/* Header */}
             <header className="text-center mb-12">
-              <h1 className="text-4xl md:text-5xl font-serif text-purple-800 mb-4 leading-tight">
-                Festive Elegance: Choosing Your Perfect Wedding Saree
+              <h1 className="text-[66px] text-center  md:text-[66px] font-[gabriola] text-purple-800 mb-4 leading-tight">
+                Festive Elegance: Choosing Your
+                <br /> Perfect Wedding Saree
               </h1>
-              <p className="text-gray-600 text-lg mb-8">
+              <p className="text-[#747B84]    font-[readexPro] text-lg mb-6">
                 From vibrant ceremonies to grand celebrations, find the saree
                 that captures your unique style.
               </p>
 
               {/* Meta Information */}
-              <div className="flex items-center justify-center gap-6 text-sm text-gray-500">
-                <div className="flex items-center gap-2">
-                  <User className="w-4 h-4" />
-                  <span>Kavya Reddy</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <Calendar className="w-4 h-4" />
-                  <span>Dec 5, 2025</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <Clock className="w-4 h-4" />
-                  <span>5 min read</span>
-                </div>
-              </div>
             </header>
 
             {/* Featured Image */}
-            <div className="rounded-4xl overflow-hidden mb-12">
+            <div className="rounded-2xl overflow-hidden mb-8">
               <img
                 src="../images/placeholder.png"
                 alt="Golden sarees with intricate patterns"
-                className="w-full h-96 object-cover"
+                className="w-full h-152 object-cover"
               />
             </div>
 
@@ -193,7 +176,7 @@ const Landing = () => {
             <div className="prose prose-lg max-w-none">
               {/* Introduction */}
               <div className="mb-8">
-                <p className="text-gray-700 leading-relaxed mb-4">
+                <p className="text-gray-700 text-[16px] font-[readexPro] leading-relaxed mb-4">
                   Your wedding day is one of life's most memorable occasions,
                   and choosing the perfect saree is a deeply personal journey.
                   As one of the most versatile and timeless garments in the
@@ -204,7 +187,7 @@ const Landing = () => {
                   clothing—it becomes a cherished heirloom that tells your
                   unique story.
                 </p>
-                <p className="text-gray-700 leading-relaxed">
+                <p className="text-gray-700 text-[16px]  font-[readexPro] leading-relaxed">
                   The world of bridal sarees is rich with options—from the
                   opulent silk weaves of Kanchipuram and Banarasi to the
                   delicate artistry of Bandhani and Leheriya. Each region of
@@ -219,41 +202,34 @@ const Landing = () => {
               </div>
 
               {/* Pull Quote */}
-              <div className="my-12 py-8 px-8 bg-gradient-to-r from-purple-50 to-pink-50 border-l-4 border-purple-600 rounded-r-lg">
-                <blockquote className="text-2xl font-serif text-purple-900 italic leading-relaxed">
+              <div className="my-12 py-8 px-8 bg-gradient-to-r from-purple-50 to-pink-50 border-l-4 border-[#F34100] rounded-r-lg">
+                <blockquote className="text-[24px] text-[#666666]  font-[readexPro] leading-relaxed">
                   "Friends worry that computers will get too smart and take over
                   the world, but the real problem is that they're too stupid and
                   they've already taken over the world."
                 </blockquote>
-                <cite className="block mt-4 text-gray-600 not-italic text-sm">
+                <cite className="block mt-4 text-[#333333] font-[readexPro]  text-[16px]">
                   — Pedro Domingos
                 </cite>
               </div>
 
               {/* Paragraph with hyperlink styling */}
               <div className="mb-8">
-                <p className="text-gray-700 leading-relaxed mb-4">
-                  When considering your wedding saree, it's essential to think
-                  about the overall aesthetic of your celebration. A grand
-                  palace wedding might call for the regal magnificence of a{" "}
-                  <a
-                    href="#"
-                    className="text-purple-700 underline hover:text-purple-800"
-                  >
-                    heavy Kanchipuram silk with gold zari work
-                  </a>
-                  , while an intimate garden ceremony could be beautifully
-                  complemented by the soft drape of a{" "}
-                  <a
-                    href="#"
-                    className="text-purple-700 underline hover:text-purple-800"
-                  >
-                    lightweight georgette or chiffon saree with delicate
-                    embroidery
-                  </a>
-                  . The season also plays a crucial role—summer weddings might
-                  benefit from breathable fabrics like cotton silk, while winter
-                  celebrations allow for more elaborate, heavier textiles.
+                <p className="text-[#313131] font-[readexPro] leading-relaxed mb-4">
+                  More than 3 billion people already benefit from AI-powered
+                  features in Google Workspace, whether it’s using Smart Compose
+                  in Gmail or auto-generated summaries in Google Docs. Now,
+                  we’re excited to take the next step and bring a limited set of
+                  trusted testers a new set of features that makes the process
+                  of writing even easier. In Gmail and Google Docs, you can
+                  simply type in a topic you’d like to write about, and a draft
+                  will be instantly generated for you. So if you’re a manager
+                  onboarding a new employee, Workspace saves you the time and
+                  effort involved in writing that first welcome email. From
+                  there, you can elaborate upon or abbreviate the message or
+                  adjust the tone to be more playful or professional — all in
+                  just a few clicks. We’ll be rolling out these new experiences
+                  to testers in the coming weeks.
                 </p>
               </div>
 
@@ -262,87 +238,27 @@ const Landing = () => {
                 <img
                   src="../images/Image (1).png"
                   alt="Elegant saree details"
-                  className="w-full h-80 object-cover"
+                  className="w-full h-78 object-cover rounded-2xl"
                 />
-                <p className="text-sm text-gray-500 text-center mt-3 italic">
-                  Intricate gold threadwork on traditional silk saree
-                </p>
+                
               </div>
 
               {/* More Content */}
               <div className="mb-8">
-                <h2 className="text-2xl font-semibold text-purple-900 mb-4 mt-8">
-                  Understanding Traditional Weaves
-                </h2>
-                <p className="text-gray-700 leading-relaxed mb-4">
-                  When it comes to the grandeur of a wedding, few can match the
-                  elegance of a pure silk saree—from majestic Kanjivarams that
-                  drip with tradition, to lustrous Banarasis that speak of royal
-                  heritage. The artistry woven into these textiles isn't merely
-                  decorative; each motif carries meaning, and every color holds
-                  significance. Understanding these traditional weaves can help
-                  you make a choice that resonates both aesthetically and
-                  emotionally.
+               
+                <p className="text-gray-700 leading-relaxed ">
+                We’re so excited by the potential of generative AI, and the opportunities it will unlock — from helping people express themselves creatively, to helping developers build brand new types of applications, to transforming how businesses and governments engage their customers and constituents. Stay tuned for more to come in the weeks and months ahead.
                 </p>
-                <p className="text-gray-700 leading-relaxed">
-                  Kanchipuram sarees from Tamil Nadu are renowned for their
-                  durability and rich texture, with pure mulberry silk threads
-                  creating a fabric that ages gracefully. The contrasting
-                  borders and intricate pallus featuring temple motifs,
-                  peacocks, and florals make each Kanchipuram piece a work of
-                  art. Similarly, Banarasi sarees from Varanasi showcase
-                  Mughal-inspired designs with elaborate brocade work, perfect
-                  for brides seeking opulent elegance.
-                </p>
+               
               </div>
 
-              <div className="mb-8">
-                <h2 className="text-2xl font-semibold text-purple-900 mb-4 mt-8">
-                  Modern Interpretations
-                </h2>
-                <p className="text-gray-700 leading-relaxed mb-4">
-                  Today's brides are increasingly blending tradition with
-                  contemporary sensibilities. Modern designers are reimagining
-                  classic sarees with innovative draping styles, unconventional
-                  color palettes, and fusion elements that honor heritage while
-                  embracing individual expression. From pre-stitched sarees that
-                  offer convenience without compromising on elegance to sarees
-                  with modern blouse designs featuring off-shoulder cuts or cape
-                  sleeves, the possibilities are endless.
-                </p>
-              </div>
+             
 
-              {/* Closing */}
-              <div className="mt-12 pt-8 border-t border-gray-200">
-                <p className="text-gray-700 leading-relaxed">
-                  Ultimately, your wedding saree should be a reflection of who
-                  you are—a perfect blend of tradition, personal style, and the
-                  joy of celebration. Take your time exploring different
-                  options, try on various styles, and most importantly, trust
-                  your instincts. When you find the right saree, you'll know
-                  it's the one that will make you feel radiant, confident, and
-                  truly yourself on your special day.
-                </p>
-              </div>
+     
             </div>
 
             {/* Tags */}
-            <div className="mt-12 pt-8 border-t border-gray-200">
-              <div className="flex flex-wrap gap-2">
-                <span className="px-4 py-2 bg-purple-100 text-purple-700 rounded-full text-sm font-medium">
-                  Wedding Sarees
-                </span>
-                <span className="px-4 py-2 bg-purple-100 text-purple-700 rounded-full text-sm font-medium">
-                  Bridal Fashion
-                </span>
-                <span className="px-4 py-2 bg-purple-100 text-purple-700 rounded-full text-sm font-medium">
-                  Traditional Wear
-                </span>
-                <span className="px-4 py-2 bg-purple-100 text-purple-700 rounded-full text-sm font-medium">
-                  Silk Sarees
-                </span>
-              </div>
-            </div>
+         
 
             {/* Author Bio */}
           </article>

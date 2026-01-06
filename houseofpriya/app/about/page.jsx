@@ -62,7 +62,7 @@ const Landing = () => {
           <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center px-8 lg:px-16 py-12 max-w-7xl mx-auto -mt-20  ">
             {/* Left Content */}
             <div className="space-y-6">
-              <h1 className="text-6xl lg:text-7xl font-serif text-white leading-tight">
+              <h1 className="font-['Cormorant_Garamond']  text-[74px] leading-[90px] tracking-[-0.5px] text-white">
                 Grace Woven in Every Thread
               </h1>
               <p className="text-lg text-white font-light">
@@ -81,7 +81,7 @@ const Landing = () => {
               {/* Woman Image Section */}
               <div className="relative z-10 w-full max-w-md">
                 <div className="  px-8 w-[549px] h-[600px] ">
-                  <img src="../images/womensaree.png" />
+                  <img src="../images/DSC02638 (1) 1.png" />
                 </div>
               </div>
             </div>
@@ -91,7 +91,7 @@ const Landing = () => {
           <div className="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-tr from-lime-300 to-yellow-200 rounded-full blur-3xl opacity-40 -translate-x-1/2 translate-y-1/2"></div>
         </div>
       </section>
-      <section className="bg-white py-20">
+      <section className="bg-white py-15">
         <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center px-6">
           {/* LEFT CONTENT */}
           <div className="text-left">
@@ -216,7 +216,7 @@ const Landing = () => {
           </div>
         </div>
       </section>
- <section className="relative bg-[#FBF7FF] py-32 overflow-hidden">
+ <section className="relative bg-[#FBF7FF] py-18 overflow-hidden">
   <div className="max-w-6xl mx-auto px-6 text-center">
 
     {/* TITLE */}
@@ -300,7 +300,7 @@ const Landing = () => {
   />
 </section>
 
-<section className="bg-white py-28">
+<section className="bg-white py-14">
   <div className="max-w-6xl mx-auto px-6 text-center">
 
     {/* TITLE */}
@@ -363,15 +363,15 @@ const Landing = () => {
     </div>
   </div>
 </section>
-<section className="bg-[#F9F6FF] py-24">
-  <div className="max-w-7xl  px-6 grid grid-cols-1 lg:grid-cols-2 items-center gap-5">
+<section className="bg-[#F9F6FF] py-14">
+  <div className="max-w-7xl  grid grid-cols-1 lg:grid-cols-2 items-center gap-5">
 
     {/* LEFT IMAGE */}
     <div className="flex justify-center lg:justify-start">
       <img
         src="/images/img (7).png"
         alt="Designed for Today's Woman"
-        className="w-full max-w-[420px] rounded-md object-cover"
+        className="w-full max-w-[568px] rounded-md object-cover"
       />
     </div>
 
@@ -398,7 +398,7 @@ const Landing = () => {
 
   </div>
 </section>
-<section className="bg-white py-32">
+<section className="bg-white py-12">
   <div className="max-w-5xl mx-auto px-6">
 
     {/* PURPLE CONTAINER */}
