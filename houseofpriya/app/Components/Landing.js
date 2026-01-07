@@ -307,7 +307,7 @@ const Landing = () => {
             {/* Logo */}
             <div className="flex items-center">
               <div className="w-28 h-28 sm:w-32 sm:h-32 lg:w-40 lg:h-40 rounded-xl flex items-center justify-center lg:ml-10 z-50 relative ">
-                <div className="w-full h-full absolute z-0 bg-[url('/images/bg.png')] rounded-xl"></div>
+                <div className="w-full h-full absolute z-0 bg-[url('/images/bg.png')] rounded-xl hidden sm:block"></div>
                 <img
                   src="/images/logo.png"
                   alt="House of Priya Logo"
@@ -568,7 +568,7 @@ const Landing = () => {
       {/* Card 1 */}
       <div>
         <img src="../images/collection1.png" alt="Premium Handloom" className="w-full" />
-        <h3 className="font-[Gabriola] text-[28px] sm:text-[32px] lg:text-[38px] text-purple-600 mt-4">
+        <h3 className="font-[Gabriola] text-[20px] sm:text-[32px] lg:text-[38px] text-purple-600 mt-4">
           Premium Handloom
         </h3>
         <p className="font-[readexPro] text-[14px] sm:text-[15px] lg:text-[16px] leading-[22px] text-[#4B5563]">
@@ -579,7 +579,7 @@ const Landing = () => {
       {/* Card 2 */}
       <div className="lg:-mt-20">
         <img src="../images/collection2.png" alt="Party Wear" className="w-full" />
-        <h3 className="font-[Gabriola] text-[28px] sm:text-[32px] lg:text-[38px] text-purple-600 mt-4">
+        <h3 className="font-[Gabriola] text-[20px] sm:text-[32px] lg:text-[38px] text-purple-600 mt-4">
           Party Wear
         </h3>
         <p className="font-[readexPro] text-[14px] sm:text-[15px] lg:text-[16px] leading-[22px] text-[#4B5563]">
@@ -590,7 +590,7 @@ const Landing = () => {
       {/* Card 3 */}
       <div>
         <img src="../images/collection3.png" alt="Everyday Elegance" className="w-full" />
-        <h3 className="font-[Gabriola] text-[28px] sm:text-[32px] lg:text-[38px] text-purple-600 mt-4">
+        <h3 className="font-[Gabriola] text-[20px] sm:text-[32px] lg:text-[38px] text-purple-600 mt-4">
           Everyday Elegance
         </h3>
         <p className="font-[readexPro] text-[14px] sm:text-[15px] lg:text-[16px] leading-[22px] text-[#4B5563]">
@@ -601,7 +601,7 @@ const Landing = () => {
       {/* Card 4 */}
       <div className="lg:-mt-20">
         <img src="../images/collection4.png" alt="Bridal Sarees" className="w-full" />
-        <h3 className="font-[Gabriola] text-[28px] sm:text-[32px] lg:text-[38px] text-purple-600 mt-4">
+        <h3 className="font-[Gabriola] text-[20px] sm:text-[32px] lg:text-[38px] text-purple-600 mt-4">
           Bridal Sarees
         </h3>
         <p className="font-[readexPro] text-[14px] sm:text-[15px] lg:text-[16px] leading-[22px] text-[#4B5563]">
