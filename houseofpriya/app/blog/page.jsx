@@ -2,7 +2,7 @@
 
 import React from "react";
 import Footer from "../Components/Footer";
-import { MessageCircle } from "lucide-react";
+import { FaWhatsapp } from "react-icons/fa";
 import { ArrowRight } from "lucide-react";
 
 const Landing = () => {
@@ -34,7 +34,7 @@ const Landing = () => {
     {
       id: 3,
       image: "../images/img (10).png",
-      badge: "Bridal Wear",
+      badge: "Festive Wear",
       badgeColor: "bg-purple-600",
       title: "Festive Elegance: Choosing Your Perfect Wedding Saree",
       excerpt:
@@ -70,7 +70,7 @@ const Landing = () => {
     {
       id: 6,
       image: "../images/img (13).png",
-      badge: "Bridal Wear",
+      badge: "Festive Wear",
       badgeColor: "bg-purple-600",
       title: "Spring Celebrations: Pastels and Florals for the Season",
       excerpt:
@@ -82,92 +82,124 @@ const Landing = () => {
   ];
   return (
     <>
-    <section>
-        <div className="min-h-screen relative overflow-hidden ">
-          <div
-            className="absolute inset-0 bg-cover bg-center bg-no-repeat  "
-            style={{
-              backgroundImage: `url('/images/bg.png')`,
-            }}
-          >
-            <div className="absolute inset-0 "></div>
-          </div>
-         <div className="absolute inset-0 pointer-events-none ">
-          <div className="absolute top-20 left-8 right-8 bottom-8 border-2 border-white opacity-40 rounded-sm"></div>
+       <section>
+  <div className="min-h-screen relative overflow-hidden">
+    {/* Background */}
+    <div
+      className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+      style={{ backgroundImage: `url('/images/bg.png')` }}
+    >
+      <div className="absolute inset-0"></div>
+    </div>
+
+    {/* Border */}
+    <div className="absolute inset-0 pointer-events-none">
+      <div className="absolute top-6 sm:top-10 lg:top-20 left-4 sm:left-6 lg:left-8 right-4 sm:right-6 lg:right-8 bottom-4 sm:bottom-6 lg:bottom-8 border-2 border-white opacity-40 rounded-sm"></div>
+    </div>
+
+    {/* NAVBAR */}
+    <nav className="relative z-20 flex flex-col lg:flex-row items-center justify-between px-4 sm:px-6 lg:px-8 py-6 gap-4 lg:gap-0">
+      {/* Logo */}
+      <div className="flex items-center">
+        <div className="w-28 h-28 sm:w-32 sm:h-32 lg:w-40 lg:h-40 rounded-xl flex items-center justify-center lg:ml-10 z-50 relative ">
+          <div className="w-full h-full absolute z-0 bg-[url('/images/bg.png')] rounded-xl"></div>
+          <img
+            src="/images/logo.png"
+            alt="House of Priya Logo"
+            className="w-20 sm:w-24 lg:w-34 object-contain z-10 lg:-mt-9"
+          />
         </div>
+      </div>
 
-          <nav className="relative z-20 flex items-center justify-between px-8 py-6 " >
-            <div className="flex items-center">
-              <div className="w-50 h-30 rounded-xl   flex items-center justify-center lg:ml-10 z-50 relative">
-                <div className="bg-[#b3a1ce] w-40 h-40 absolute z-0"></div>
+      {/* Menu */}
+      <div
+        className="
+          flex gap-6 sm:gap-10 lg:gap-15
+          text-[#6C6C6C]
+          font-[var(--font-readex-pro)]
+          font-bold
+          text-base sm:text-lg lg:text-[20px]
+          leading-normal lg:leading-[0.81]
+          tracking-normal
+          mt-4 lg:-mt-30
+        "
+      >
+        <a href="/" className="hover:text-purple-700 transition">Home</a>
+        <a href="/about" className="hover:text-purple-700 transition">About</a>
+        <a href="/blog" className="hover:text-purple-700 transition">Blog</a>
+      </div>
 
+      {/* Button */}
+      <button className="
+        bg-purple-700 hover:bg-purple-800 text-white
+        px-6 py-2 rounded-md font-medium transition shadow-lg
+        mt-4 lg:-mt-30  
+      ">
+           <a href="https://wa.me/919363167299?text=Hi%20young%20mynds.%20I%20am%20interested%20in%20your%20service."> Enquire on WhatsApp
+ 
+                  </a>
+      </button>
+    </nav>
 
-                <img
-                  src="/images/logo.png"
-                  alt="House of Priya Logo"
-                  className="w-34 h-34 object-contain z-10 "
-                />
-              </div>
-            </div>
+    {/* MAIN CONTENT */}
+    <div className="
+      relative z-10
+      grid grid-cols-1 lg:grid-cols-2
+      gap-10 lg:gap-12
+      items-center
+      px-4 sm:px-8 lg:px-16
+      py-16 lg:py-12
+      max-w-7xl mx-auto
+      mt-0 lg:-mt-26
+    ">
+      {/* Left Content */}
+      <div className="space-y-6 text-center lg:text-left">
+        <h1 className="
+          font-['Cormorant_Garamond']
+          text-[36px] sm:text-[48px] md:text-[56px] lg:text-[74px]
+          leading-tight sm:leading-[60px] lg:leading-[90px]
+          tracking-[-0.5px]
+          text-white
+        ">
+          Grace Woven in Every Thread
+        </h1>
 
-            <div
-              className="flex gap-15 text-[#6C6C6C]  
-                font-[var(--font-readex-pro)] 
-                font-bold 
-                text-[20px] 
-                leading-[0.81] 
-                tracking-normal -mt-22"
-            >
-              <a href="/" className="hover:text-purple-700 transition">
-                Home
-              </a>
-              <a href="/about" className="hover:text-purple-700 transition">
-                About
-              </a>
-              <a href="/blog" className="hover:text-purple-700 transition">
-                Blog
-              </a>
-            </div>
+        <p className="
+          font-[readexPro]
+          text-[16px] sm:text-[18px] lg:text-[20px]
+          text-white font-light
+          tracking-[-0.5px]
+        ">
+          Discover timeless sarees crafted with passion.
+        </p>
 
-            <button className="bg-purple-700 hover:bg-purple-800 text-white px-6 py-2 rounded-md font-medium transition shadow-lg -mt-22">
-              Enquire on WhatsApp
-            </button>
-          </nav>
+        <button className="bg-purple-700 hover:bg-purple-800 text-white px-8 py-3 rounded-md font-medium transition shadow-lg inline-block mt-4">
+             <a href="https://wa.me/919363167299?text=Hi%20young%20mynds.%20I%20am%20interested%20in%20your%20service."> Enquire on WhatsApp
+ 
+                  </a>
+        </button>
+      </div>
 
-          {/* Main Content */}
-          <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center px-8 lg:px-16 py-12 max-w-7xl mx-auto -mt-20  ">
-            {/* Left Content */}
-            <div className="space-y-6">
-              <h1 className="font-['Cormorant_Garamond']  text-[74px] leading-[90px] tracking-[-0.5px] text-white">
-               Stories Woven in
-Tradition & Style
-              </h1>
-              <p className="text-lg text-white font-light">
-                Discover timeless sarees crafted with passion.
-              </p>
-              <button className="bg-purple-700 hover:bg-purple-800 text-white px-8 py-3 rounded-md font-medium transition shadow-lg inline-block mt-4">
-                Enquire on WhatsApp
-              </button>
-            </div>
-
-            {/* Right Content - Woman in Saree */}
-            <div className="relative flex items-start justify-center">
-              {/* Decorative Circle */}
-              <div className="absolute bottom-0 left-1/4 w-64 h-64 "></div>
-
-              {/* Woman Image Section */}
-              <div className="relative z-10 w-full max-w-md">
-                <div className="  px-8 w-[549px] h-[600px] ">
-                  <img src="../images/DSC02599 1.png" className="h-[650px]" />
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Bottom Decorative Circle */}
-          <div className="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-tr from-lime-300 to-yellow-200 rounded-full blur-3xl opacity-40 -translate-x-1/2 translate-y-1/2"></div>
+      {/* Right Image */}
+      <div className="relative flex justify-center">
+        <div className="
+          px-0 sm:px-6 lg:px-8
+          w-full sm:w-[380px] md:w-[450px] lg:w-[549px]
+          h-auto lg:h-[600px]
+        ">
+          <img
+            src="../images/DSC02599 1.png"
+            className="w-full h-auto object-contain"
+            alt="Saree Model"
+          />
         </div>
-      </section>
+      </div>
+    </div>
+
+    {/* Decorative Circle */}
+    <div className="absolute bottom-0 left-0 w-72 sm:w-80 lg:w-96 h-72 sm:h-80 lg:h-96 bg-gradient-to-tr from-lime-300 to-yellow-200 rounded-full blur-3xl opacity-40 -translate-x-1/2 translate-y-1/2"></div>
+  </div>
+</section>
       <section className="bg-white py-20">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
@@ -189,16 +221,18 @@ Tradition & Style
                     className="w-full h-72 object-cover transition-transform duration-500 group-hover:scale-110"
                   />
 
-                  <div className="absolute top-4 left-4">
-                    <span
-                      className={`${post.badgeColor} text-white text-xs font-medium px-3 py-1.5 rounded-full`}
-                    >
-                      {post.badge}
-                    </span>
-                  </div>
+               
                 </div>
+              <div className="mb-3">
+  <span
+    className={`${post.badgeColor} text-white text-xs font-medium px-3 py-1.5 rounded-full`}
+  >
+    {post.badge}
+  </span>
+</div>
 
                 <div className="space-y-3">
+                
                   {/* Title */}
                   <h3 className="text-[26px] font-[gabriola] text-gray-900 leading-tight group-hover:text-purple-700 transition-colors">
                     {post.title}
@@ -250,8 +284,10 @@ Tradition & Style
 
             {/* WhatsApp Button */}
             <button className="inline-flex items-center gap-3 bg-purple-600 hover:bg-purple-700 text-white px-8 py-4 rounded-lg font-medium text-lg transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
-              <MessageCircle className="w-6 h-6" />
-              Enquire on WhatsApp
+          <FaWhatsapp className="w-6 h-6" />
+               <a href="https://wa.me/919363167299?text=Hi%20young%20mynds.%20I%20am%20interested%20in%20your%20service."> Enquire on WhatsApp
+ 
+                  </a>
             </button>
           </div>
         </div>
