@@ -179,7 +179,7 @@ const Landing = () => {
     setCurrentIndex((prevIndex) =>
       prevIndex === sarees.length - 1 ? 0 : prevIndex + 1
     );
-  }, 2000); 
+  }, 3000); 
 
   return () => clearInterval(interval);
 }, [sarees.length]);

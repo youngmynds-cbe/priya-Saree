@@ -6,104 +6,107 @@ import { FaLinkedinIn } from "react-icons/fa";
 
 const Footer = () => {
   return (
+      <div>
+ <footer className="bg-[#E2B05E] text-white">
+  <div className="max-w-7xl mx-auto px-6 py-14
+    grid grid-cols-1 lg:grid-cols-3 gap-12 items-center text-center lg:text-left">
+
+    {/* LEFT – CONTACT */}
     <div>
-      <footer className="bg-[#E2B05E] text-white">
-        <div className="max-w-6xl mx-auto px-8 py-16 grid grid-cols-1 md:grid-cols-3 gap-12 items-center">
-          <div>
-            <h4
-              className="
-    font-[Gabriola]
-    font-normal
-    text-[32px]
-    leading-[78.89px]
-    tracking-[0%]
-    text-center
-    text-[#5B2D8B]
-    mb-6
-    inline-block
-    align-middle
-  "
-            >
-              Contact us
-            </h4>
-            <ul className="space-y-6 font-[Readex_Pro] text-[20px]  font-normal">
-              <li className="flex items-center gap-3">
-                <img src="../images/map.png" className="w-6 h-6" />
-                <span>XYZ, RS Puram, Coimbatore</span>
-              </li>
+      <h4
+        className="
+          font-[Gabriola]
+          text-[28px] sm:text-[32px]
+          leading-none sm:leading-[78.89px]
+          text-[#5B2D8B]
+          mb-6
+        "
+      >
+        Contact us
+      </h4>
 
-              <li className="flex items-center gap-3">
-                <img src="../images/Vector (2).png" className="w-6 h-6" />
-                <span>houseofpriya@gmail.com</span>
-              </li>
+      <ul className="space-y-5 font-[Readex_Pro] text-[16px] sm:text-[18px]">
+        <li className="flex justify-center lg:justify-start items-center gap-3">
+          <img src="/images/map.png" className="w-5 h-5" />
+          <span>XYZ, RS Puram, Coimbatore</span>
+        </li>
 
-              <li className="flex items-center gap-3">
-                <img src="../images/phone-line.png" className="w-6 h-6" />
-                <span>+91 9876543210</span>
-              </li>
-            </ul>
+        <li className="flex justify-center lg:justify-start items-center gap-3">
+          <img src="/images/Vector (2).png" className="w-5 h-5" />
+          <span>houseofpriya@gmail.com</span>
+        </li>
 
-            {/* SOCIAL ICONS */}
-            <div className="flex gap-8 mt-6 text-lg">
-              <span className="cursor-pointer">
-                <FaWhatsapp className="w-6 h-6" />
-              </span>
-              <span className="cursor-pointer">
-                <CiFacebook className="w-6 h-6" />
-              </span>
-              <span className="cursor-pointer">
-                <FaInstagram className="w-6 h-6" />
-              </span>
-              <span className="cursor-pointer">
-                <FaLinkedinIn className="w-6 h-6" />
-              </span>
-            </div>
-          </div>
+        <li className="flex justify-center lg:justify-start items-center gap-3">
+          <img src="/images/phone-line.png" className="w-5 h-5" />
+          <span>+91 9876543210</span>
+        </li>
+      </ul>
 
-          {/* CENTER – LOGO */}
-          <div className="flex justify-center ">
-            <img src="/images/logo.png" alt="House of Priya" className="w-40" />
-          </div>
-
-          {/* RIGHT – QUICK LINKS */}
-          <div className="text-right">
-            <h4 className="font-[gabriola] text-[32px] text-[#5B2D8B] mb-6">
-              Quick Links
-            </h4>
-
-            <ul className="space-y-4 font-[Readex_Pro] text-[20px] ">
-              <li className="flex justify-end items-center gap-2 cursor-pointer">
-                <span>↗</span><a href="/">
-                 Home </a> 
-              </li>
-              <li className="flex justify-end items-center gap-2 cursor-pointer">
-                <span>↗</span><a href="/about">
-                 About us </a> 
-              </li>
-              <li className="flex justify-end items-center gap- cursor-pointer">
-                <span>↗</span> <a href="/blog">Blog
-                  </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        {/* BOTTOM BAR */}
-        <div className="bg-[#C08A2C] text-xs py-4">
-          <div className="max-w-6xl mx-auto px-8 flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="font-['DM_Sans'] text-[14px]  leading-[25.4px] align-middle">
-              Made with by <a href="https://wa.me/919363167299?text=Hi%20young%20mynds.%20I%20am%20interested%20in%20your%20service.">Young Mynds Infotech</a>
-            </p>
-
-            <div className="font-['DM_Sans']  flex gap-6 text-[14px]">
-              <span className="cursor-pointer">Style Guide</span>
-              <span className="cursor-pointer">Licensing</span>
-              <span className="cursor-pointer">Instruction</span>
-            </div>
-          </div>
-        </div>
-      </footer>
+      {/* SOCIAL ICONS */}
+      <div className="flex justify-center lg:justify-start gap-6 mt-6">
+        <FaWhatsapp className="w-6 h-6 cursor-pointer" />
+        <CiFacebook className="w-6 h-6 cursor-pointer" />
+        <FaInstagram className="w-6 h-6 cursor-pointer" />
+        <FaLinkedinIn className="w-6 h-6 cursor-pointer" />
+      </div>
     </div>
+
+    {/* CENTER – LOGO */}
+    <div className="flex justify-center">
+      <img src="/images/logo.png" alt="House of Priya" className="w-32 sm:w-40" />
+    </div>
+
+    {/* RIGHT – QUICK LINKS */}
+ <div className="flex flex-col h-full justify-center items-center">
+  <h4 className="font-[Gabriola] text-[28px] sm:text-[32px] text-[#5B2D8B] mb-6">
+    Quick Links
+  </h4>
+
+  <ul className="space-y-4 font-[Readex_Pro] text-[16px] sm:text-[18px]">
+    <li className="flex justify-center lg:justify-start items-center gap-2">
+      <span>↗</span>
+      <a href="/">Home</a>
+    </li>
+
+    <li className="flex justify-center lg:justify-start items-center gap-2">
+      <span>↗</span>
+      <a href="/about">About us</a>
+    </li>
+
+    <li className="flex justify-center lg:justify-start items-center gap-2">
+      <span>↗</span>
+      <a href="/blog">Blog</a>
+    </li>
+  </ul>
+</div>
+
+  </div>
+
+  {/* BOTTOM BAR */}
+  <div className="bg-[#C08A2C] py-4 text-center">
+    <div className="max-w-6xl mx-auto px-6
+      flex flex-col md:flex-row justify-between items-center gap-4">
+
+      <p className="font-['DM_Sans'] text-[13px] sm:text-[14px]">
+        Made with by{" "}
+        <a
+          href="https://wa.me/919363167299?text=Hi%20young%20mynds.%20I%20am%20interested%20in%20your%20service."
+          className="underline"
+        >
+          Young Mynds Infotech
+        </a>
+      </p>
+
+      <div className="font-['DM_Sans'] flex gap-5 text-[13px] sm:text-[14px]">
+        <span className="cursor-pointer">Style Guide</span>
+        <span className="cursor-pointer">Licensing</span>
+        <span className="cursor-pointer">Instruction</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+      </div>
   );
 };
 
