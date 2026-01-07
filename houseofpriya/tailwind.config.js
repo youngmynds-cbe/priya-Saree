@@ -8,11 +8,11 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        gabriola: ["var(--font-gabriola)"],
-        readex: ["var(--font-readex)"],
-        nanum: ["var(--font-nanum)"],
-        geist: ["var(--font-geist-sans)"],
-        mono: ["var(--font-geist-mono)"],
+        gabriola: ["Gabriola", "cursive"],
+        readex: ["'Readex Pro'", "sans-serif"],
+        nanum: ["'Nanum Myeongjo'", "serif"],
+        geist: ["Geist", "sans-serif"],
+        mono: ["Geist Mono", "monospace"],
       },
     },
   },

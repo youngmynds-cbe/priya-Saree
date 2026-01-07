@@ -443,7 +443,7 @@ const Landing = () => {
 
             {/* CONTENT */}
             <div className="space-y-8 text-center lg:text-left">
-              <h2
+              <h2 
                 className="
             font-[Gabriola]
             font-normal
