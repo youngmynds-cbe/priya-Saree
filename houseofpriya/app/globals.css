@@ -29,6 +29,11 @@ body {
 @font-face {
   font-family: "Gabriola";
   src: url("/fonts/Gabriola.ttf") format("truetype");
-  font-weight: 400;
+  font-weight: normal;
   font-style: normal;
 }
+
+.font-gabriola {
+  font-family: "Gabriola", cursive;
+}
+

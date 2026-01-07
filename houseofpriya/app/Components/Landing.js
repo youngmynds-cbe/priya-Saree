@@ -92,7 +92,7 @@
 "use client";
 
 import React from "react";
-import { useState } from "react";
+import { useState,useEffect } from "react";
 
 import Footer from "../Components/Footer";
 import { ChevronLeft, ChevronRight, Play } from "lucide-react";
@@ -100,6 +100,10 @@ import { ChevronLeft, ChevronRight, Play } from "lucide-react";
 const Landing = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [hoveredCard, setHoveredCard] = useState(null);
+
+
+
+
 
   const [formData, setFormData] = useState({
     name: "",
@@ -170,14 +174,16 @@ const Landing = () => {
       bgColor: "bg-pink-100",
     },
   ];
+  useEffect(() => {
+  const interval = setInterval(() => {
+    setCurrentIndex((prevIndex) =>
+      prevIndex === sarees.length - 1 ? 0 : prevIndex + 1
+    );
+  }, 2000); 
 
-  const nextSlide = () => {
-    setCurrentIndex((prev) => (prev + 1) % sarees.length);
-  };
+  return () => clearInterval(interval);
+}, [sarees.length]);
 
-  const prevSlide = () => {
-    setCurrentIndex((prev) => (prev - 1 + sarees.length) % sarees.length);
-  };
 
   const getVisibleSarees = () => {
     const visible = [];
@@ -557,7 +563,7 @@ const Landing = () => {
     </p>
 
     {/* Cards */}
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 lg:gap-12">
+    <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 lg:gap-12">
       
       {/* Card 1 */}
       <div>
@@ -653,7 +659,7 @@ const Landing = () => {
                 className="
             font-[readexPro]
             text-[14px] sm:text-[15px]
-            leading-[22px] sm:leading-[24px]
+            leading-5.5 sm:leading-6
             text-gray-700
             max-w-xs
           "
@@ -665,7 +671,7 @@ const Landing = () => {
           </div>
 
           {/* LOGO */}
-          <div className="absolute top-4 right-4 sm:top-6 sm:right-6 lg:top-[32px] lg:right-[32px]">
+          <div className="absolute top-4 right-4 sm:top-6 sm:right-6 lg:top-8 lg:right-8 hidden sm:block ">
             <img
               src="/images/logo.png"
               alt="House of Priya Logo"
@@ -810,21 +816,7 @@ const Landing = () => {
           </div>
 
           {/* Arrows */}
-          <div className="flex justify-center gap-4 md:gap-6 mt-10 md:mt-16">
-            <button
-              onClick={prevSlide}
-              className="bg-purple-600 hover:bg-purple-700 text-white p-4 md:p-5 rounded-xl transition-all shadow-xl hover:scale-110"
-            >
-              <ChevronLeft size={28} />
-            </button>
-
-            <button
-              onClick={nextSlide}
-              className="bg-purple-600 hover:bg-purple-700 text-white p-4 md:p-5 rounded-xl transition-all shadow-xl hover:scale-110"
-            >
-              <ChevronRight size={28} />
-            </button>
-          </div>
+      
 
           {/* Dots */}
           <div className="flex justify-center gap-2 md:gap-3 mt-8 md:mt-12">
