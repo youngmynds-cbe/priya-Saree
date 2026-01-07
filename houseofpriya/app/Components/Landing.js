@@ -342,9 +342,10 @@ const Landing = () => {
         mt-4 lg:-mt-30  
       "
             >
-                 <a href="https://wa.me/919363167299?text=Hi%20young%20mynds.%20I%20am%20interested%20in%20your%20service."> Enquire on WhatsApp
- 
-                  </a>
+              <a href="https://wa.me/919363167299?text=Hi%20young%20mynds.%20I%20am%20interested%20in%20your%20service.">
+                {" "}
+                Enquire on WhatsApp
+              </a>
             </button>
           </nav>
 
@@ -387,9 +388,10 @@ const Landing = () => {
               </p>
 
               <button className="bg-purple-700 hover:bg-purple-800 text-white px-8 py-3 rounded-md font-medium transition shadow-lg inline-block mt-4">
-                  <a href="https://wa.me/919363167299?text=Hi%20young%20mynds.%20I%20am%20interested%20in%20your%20service."> Enquire on WhatsApp
- 
-                  </a>
+                <a href="https://wa.me/919363167299?text=Hi%20young%20mynds.%20I%20am%20interested%20in%20your%20service.">
+                  {" "}
+                  Enquire on WhatsApp
+                </a>
               </button>
             </div>
 
@@ -497,10 +499,10 @@ const Landing = () => {
 
               <div>
                 <button className="bg-purple-600 hover:bg-purple-700 text-white font-[var(--font-readex-pro)] px-6 py-3 rounded-lg">
-                <a href="https://wa.me/919363167299?text=Hi%20young%20mynds.%20I%20am%20interested%20in%20your%20service."> Enquire on WhatsApp
- 
+                  <a href="https://wa.me/919363167299?text=Hi%20young%20mynds.%20I%20am%20interested%20in%20your%20service.">
+                    {" "}
+                    Enquire on WhatsApp
                   </a>
-               
                 </button>
               </div>
 
@@ -522,187 +524,139 @@ const Landing = () => {
         </div>
       </section>
 
-      <section className="bg-white py-20">
-        <div className="max-w-7xl mx-auto px-4 text-center">
-          {/* Heading */}
-          <h2
-            className="
+  <section className="bg-white py-12 sm:py-16 lg:py-20">
+  <div className="max-w-7xl mx-auto px-4 text-center">
+    
+    {/* Heading */}
+    <h2
+      className="
         font-[Gabriola]
-        text-[66px]
-        leading-[48px]
+        text-[32px] sm:text-[48px] lg:text-[66px]
+        leading-tight lg:leading-12
         tracking-[-0.5px]
         text-purple-600
       "
-          >
-            Our Exquisite Collection
-          </h2>
+    >
+      Our Exquisite Collection
+    </h2>
 
-          {/* Subheading */}
-          <p
-            className="
-        mt-4
+    {/* Subheading */}
+    <p
+      className="
+        mt-3 sm:mt-4
         font-[readexPro]
-        text-[18px]
-        leading-[26px]
+        text-[14px] sm:text-[16px] lg:text-[18px]
+        leading-[22px] sm:leading-[24px] lg:leading-[26px]
         text-[#4B5563]
         max-w-2xl
         mx-auto
-        mb-30
+        mb-12 sm:mb-16 lg:mb-30
       "
-          >
-            From everyday sophistication to bridal grandeur – a saree for every
-            moment.
-          </p>
+    >
+      From everyday sophistication to bridal grandeur – a saree for every moment.
+    </p>
 
-          {/* Cards */}
-          <div className="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
-            {/* Card 1 */}
-            <div>
-              <img
-                src="../images/collection1.png"
-                alt="Premium Handloom"
-                className="w-full "
-              />
-              <h3 className="font-[Gabriola] text-[38px] text-purple-600">
-                Premium Handloom
-              </h3>
-              <p
-                className="
-            font-[readexPro]
-            text-[16px]
-            leading-[22px]
-            text-[#4B5563]
-          "
-              >
-                Magnificent designs for your special day
-              </p>
-            </div>
+    {/* Cards */}
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 lg:gap-12">
+      
+      {/* Card 1 */}
+      <div>
+        <img src="../images/collection1.png" alt="Premium Handloom" className="w-full" />
+        <h3 className="font-[Gabriola] text-[28px] sm:text-[32px] lg:text-[38px] text-purple-600 mt-4">
+          Premium Handloom
+        </h3>
+        <p className="font-[readexPro] text-[14px] sm:text-[15px] lg:text-[16px] leading-[22px] text-[#4B5563]">
+          Magnificent designs for your special day
+        </p>
+      </div>
 
-            {/* Card 2 */}
-            <div className="-mt-20">
-              <img
-                src="../images/collection2.png"
-                alt="Party Wear"
-                className="w-full "
-              />
-              <h3 className="font-[Gabriola] text-[38px] text-purple-600">
-                Party Wear
-              </h3>
-              <p
-                className="
-            font-[readexPro]
-            text-[16px]
-            leading-[22px]
-            text-[#4B5563]
-          "
-              >
-                Glamorous styles for celebrations
-              </p>
-            </div>
+      {/* Card 2 */}
+      <div className="lg:-mt-20">
+        <img src="../images/collection2.png" alt="Party Wear" className="w-full" />
+        <h3 className="font-[Gabriola] text-[28px] sm:text-[32px] lg:text-[38px] text-purple-600 mt-4">
+          Party Wear
+        </h3>
+        <p className="font-[readexPro] text-[14px] sm:text-[15px] lg:text-[16px] leading-[22px] text-[#4B5563]">
+          Glamorous styles for celebrations
+        </p>
+      </div>
 
-            {/* Card 3 */}
-            <div>
-              <img
-                src="../images/collection3.png"
-                alt="Everyday Elegance"
-                className="w-full "
-              />
-              <h3 className="font-[Gabriola] text-[38px] text-purple-600">
-                Everyday Elegance
-              </h3>
-              <p
-                className="
-               font-[readexPro]
-            text-[16px]
-            leading-[22px]
-            text-[#4B5563]
-          "
-              >
-                Comfortable luxury for daily wear
-              </p>
-            </div>
+      {/* Card 3 */}
+      <div>
+        <img src="../images/collection3.png" alt="Everyday Elegance" className="w-full" />
+        <h3 className="font-[Gabriola] text-[28px] sm:text-[32px] lg:text-[38px] text-purple-600 mt-4">
+          Everyday Elegance
+        </h3>
+        <p className="font-[readexPro] text-[14px] sm:text-[15px] lg:text-[16px] leading-[22px] text-[#4B5563]">
+          Comfortable luxury for daily wear
+        </p>
+      </div>
 
-            {/* Card 4 */}
-            <div className="-mt-20">
-              <img
-                src="../images/collection4.png"
-                alt="Bridal Sarees"
-                className="w-full "
-              />
-              <h3 className="font-[Gabriola] text-[38px] text-purple-600">
-                Bridal Sarees
-              </h3>
-              <p
-                className="
-               font-[readexPro]
-            text-[16px]
-            leading-[22px]
-            text-[#4B5563]
-          "
-              >
-                Artisan crafted masterpieces
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Card 4 */}
+      <div className="lg:-mt-20">
+        <img src="../images/collection4.png" alt="Bridal Sarees" className="w-full" />
+        <h3 className="font-[Gabriola] text-[28px] sm:text-[32px] lg:text-[38px] text-purple-600 mt-4">
+          Bridal Sarees
+        </h3>
+        <p className="font-[readexPro] text-[14px] sm:text-[15px] lg:text-[16px] leading-[22px] text-[#4B5563]">
+          Artisan crafted masterpieces
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
       <section
-        className="relative w-full h-150"
+        className="relative w-full h-[600px] sm:h-[700px] lg:h-[750px]"
         style={{
           backgroundImage: "url('../images/Rectangle 102.png')",
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
       >
-        <div className="relative max-w-7xl mx-auto h-full px-6 flex items-center ">
+        <div className="relative max-w-7xl mx-auto h-full px-4 sm:px-6 flex items-center justify-center lg:justify-start">
           {/* LEFT OVAL CONTENT */}
-          <div className="relative z-10">
+          <div className="relative z-10 w-full flex justify-center lg:justify-start">
             <div
               className="
-    w-100.5
-    h-136
-    bg-white/70
-    backdrop-blur-sm
-    rounded-tl-[200px]
-    rounded-tr-[200px]
-    rounded-bl-none
-    rounded-br-none
-    max-w-md
-    flex
-    flex-col
-    items-center
-    justify-center
-    text-center
-    
-  "
+          bg-white/70
+          backdrop-blur-sm
+          rounded-tl-[160px] rounded-tr-[160px]
+          lg:rounded-tl-[200px] lg:rounded-tr-[200px]
+          max-w-md
+          w-[90%] sm:w-[80%] lg:w-[420px]
+          h-auto
+          py-12 sm:py-16 lg:h-[544px]
+          flex flex-col items-center justify-center
+          text-center
+        "
             >
-              <p className="text-gray-800 text-[40px] font-[Gabriola] mb-2">
+              <p className="text-gray-800 text-[26px] sm:text-[32px] lg:text-[40px] font-[Gabriola] mb-2">
                 The New Edit
               </p>
 
               <h1
                 className="
-    font-[NanumMyeongjo]
-    font-normal
-    text-[45px]
-    leading-[2.07]
-    tracking-normal
-    text-center
-    text-purple-600
-    mb-4
-  "
+            font-[NanumMyeongjo]
+            font-normal
+            text-[28px] sm:text-[36px] lg:text-[45px]
+            leading-tight lg:leading-[2.07]
+            text-purple-600
+            mb-4
+          "
               >
                 House of Priya
               </h1>
 
               <p
                 className="
-      font-[readexPro]
-      text-[15px]
-      leading-[24px]
-      text-gray-700
-      max-w-xs
-    "
+            font-[readexPro]
+            text-[14px] sm:text-[15px]
+            leading-[22px] sm:leading-[24px]
+            text-gray-700
+            max-w-xs
+          "
               >
                 A refined selection of sarees crafted to celebrate feminine
                 elegance.
@@ -710,101 +664,99 @@ const Landing = () => {
             </div>
           </div>
 
-          {/* RIGHT IMAGE */}
-
-          {/* LOGO (top right) */}
-          <div className="absolute top-[32px] right-[32px]">
+          {/* LOGO */}
+          <div className="absolute top-4 right-4 sm:top-6 sm:right-6 lg:top-[32px] lg:right-[32px]">
             <img
               src="/images/logo.png"
               alt="House of Priya Logo"
-              className="w-[178px] h-[177px] object-contain"
+              className="w-[90px] sm:w-[130px] lg:w-[178px] object-contain"
             />
           </div>
         </div>
       </section>
-      <section className="bg-white">
-        {/* ===== TOP WHITE SECTION (CONTAINED) ===== */}
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[600px]">
-            {/* Left - Text */}
-            <div className="flex flex-col justify-start p-12 lg:p-16">
-              <h2 className="text-[66px] font-[Gabriola] text-purple-600 mb-20">
-                Farewell Collection
-              </h2>
 
-              <div className="mx-auto lg:ml-50">
-                <h3 className="text-[40px] font-[Gabriola] text-purple-600 mb-4">
-                  Colorful Joy
-                </h3>
+<section className="bg-white">
+  {/* ===== TOP WHITE SECTION ===== */}
+  <div className="max-w-7xl mx-auto">
+    <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[500px] lg:min-h-[600px]">
 
-                <p
-                  className="
-            font-[Readex_Pro]
-            text-[14px]
-            leading-[1.6]
-            text-justify
-            text-[#5E584E]
-            max-w-md
-          "
-                >
-                  Perfect for women who love subtle elegance with a modern
-                  twist. Each saree flows effortlessly from day wear to evening
-                  occasions.
-                </p>
-              </div>
-            </div>
+      {/* Left - Text */}
+      <div className="flex flex-col justify-start px-6 py-10 sm:px-10 lg:p-16">
+        <h2 className="font-[Gabriola] text-purple-600 mb-10 sm:mb-14 lg:mb-20
+                       text-[36px] sm:text-[48px] lg:text-[66px]">
+          Farewell Collection
+        </h2>
 
-            {/* Right - Image */}
-            <div className="relative flex items-center justify-center p-8">
-              <img
-                src="/images/Rectangle 21 (1).png"
-                alt="Colorful Joy Saree"
-                className="w-full h-full max-h-[500px] object-contain"
-              />
-              <div className="absolute bottom-8 left-8 w-24 h-32 bg-green-600/20 rounded-full blur-2xl" />
-            </div>
-          </div>
+        <div className="mx-auto lg:ml-50">
+          <h3 className="font-[Gabriola] text-purple-600 mb-3
+                         text-[26px] sm:text-[32px] lg:text-[40px]">
+            Colorful Joy
+          </h3>
+
+          <p className="font-[Readex_Pro] text-[#5E584E] text-justify
+                        text-[13px] sm:text-[14px]
+                        leading-[1.6] max-w-md">
+            Perfect for women who love subtle elegance with a modern twist.
+            Each saree flows effortlessly from day wear to evening occasions.
+          </p>
         </div>
+      </div>
 
-        {/* ===== BOTTOM ORANGE SECTION (FULL WIDTH) ===== */}
-        <div className="w-screen bg-[#E2AC52] -mt-20">
-          <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[600px]">
-            {/* Left - Image */}
-            <div className="relative flex items-center justify-center p-8 order-2 lg:order-1">
-              <img
-                src="/images/Rectangle 22 (3).png"
-                alt="Dual Joy Saree"
-                className="w-full h-full max-h-[500px] object-contain -mt-40"
-              />
-              <div className="absolute bottom-12 left-12 w-24 h-32 bg-green-700/30 rounded-full blur-2xl" />
-            </div>
+      {/* Right - Image */}
+      <div className="relative flex items-center justify-center px-6 py-10 sm:p-8">
+        <img
+          src="/images/Rectangle 21 (1).png"
+          alt="Colorful Joy Saree"
+          className="w-full max-w-sm sm:max-w-md lg:max-w-full
+                     h-auto lg:max-h-[500px] object-contain"
+        />
+        <div className="absolute bottom-4 left-4 sm:bottom-8 sm:left-8
+                        w-20 h-28 bg-green-600/20 rounded-full blur-2xl" />
+      </div>
+    </div>
+  </div>
 
-            {/* Right - Text */}
-            <div className="flex items-center justify-start p-12  order-1 lg:order-2">
-              <div>
-                <h3 className="text-[40px] font-[Gabriola] text-purple-600 mb-4">
-                  Dual Joy
-                </h3>
+  {/* ===== BOTTOM ORANGE SECTION ===== */}
+  <div className="w-full bg-[#E2AC52] mt-0 lg:-mt-20">
+    <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[500px] lg:min-h-[600px]">
 
-                <p
-                  className="
-            font-[Readex_Pro]
-            text-[14px]
-            leading-[1.6]
-            text-justify
-            text-[#5E584E]
-            max-w-md
-          "
-                >
-                  Experience the beauty of contrast with our Dual Joy sarees —
-                  thoughtfully designed to blend two harmonious shades into one
-                  graceful drape.
-                </p>
-              </div>
-            </div>
-          </div>
+      {/* Left - Image */}
+      <div className="relative flex items-center justify-center px-6 py-10 sm:p-8
+                      order-1 lg:order-1">
+        <img
+          src="/images/Rectangle 22 (3).png"
+          alt="Dual Joy Saree"
+          className="w-full max-w-sm sm:max-w-md lg:max-w-full
+                     h-auto lg:max-h-[500px] object-contain
+                     lg:-mt-40"
+        />
+        <div className="absolute bottom-6 left-6 sm:bottom-12 sm:left-12
+                        w-20 h-28 bg-green-700/30 rounded-full blur-2xl" />
+      </div>
+
+      {/* Right - Text */}
+      <div className="flex items-center justify-center lg:justify-start
+                      px-6 py-10 sm:px-10 lg:p-12
+                      order-2 lg:order-2">
+        <div>
+          <h3 className="font-[Gabriola] text-purple-600 mb-3
+                         text-[26px] sm:text-[32px] lg:text-[40px]">
+            Dual Joy
+          </h3>
+
+          <p className="font-[Readex_Pro] text-[#5E584E] text-justify
+                        text-[13px] sm:text-[14px]
+                        leading-[1.6] max-w-md">
+            Experience the beauty of contrast with our Dual Joy sarees —
+            thoughtfully designed to blend two harmonious shades into one
+            graceful drape.
+          </p>
         </div>
-      </section>
+      </div>
+    </div>
+  </div>
+</section>
+
 
       <section className="bg-white py-16 md:py-20 px-4">
         <div className="max-w-[1800px] mx-auto">
@@ -982,7 +934,7 @@ const Landing = () => {
       <section className="min-h-screen bg-gradient-to-b from-purple-50 to-white py-20 px-4">
         <div className="max-w-7xl mx-auto">
           {/* Header */}
-          <h2 className="text-[66px] md:text-6xl font-[Gabriola] text-center tracking-[0.5px] text-purple-600 mb-20">
+          <h2 className="text-[38px] md:text-[50px] lg:text-[68px] font-[Gabriola] text-center tracking-[0.5px] text-purple-600 mb-20">
             See Our Sarees Come Alive
           </h2>
 
@@ -1023,63 +975,63 @@ const Landing = () => {
           </div>
         </div>
       </section>
-   <section className="relative min-h-screen overflow-hidden">
-  {/* Background Image */}
-  <div
-    className="absolute inset-0 bg-center bg-cover bg-no-repeat"
-    style={{
-      backgroundImage: 'url("../images/Rectangle 115.png")',
-    }}
-  />
+      <section className="relative min-h-screen overflow-hidden">
+        {/* Background Image */}
+        <div
+          className="absolute inset-0 bg-center bg-cover bg-no-repeat"
+          style={{
+            backgroundImage: 'url("../images/Rectangle 115.png")',
+          }}
+        />
 
-  {/* Content Wrapper */}
-  <div className="relative z-10 min-h-screen flex items-center justify-center lg:justify-start px-4 sm:px-6 lg:px-24">
-    
-    {/* Form Card */}
-    <div
-      className="
+        {/* Content Wrapper */}
+        <div className="relative z-10 min-h-screen flex items-center justify-center lg:justify-start px-4 sm:px-6 lg:px-24">
+          {/* Form Card */}
+          <div
+            className="
         bg-white/70 backdrop-blur-sm shadow-2xl rounded-xl
         w-full sm:max-w-[520px] lg:max-w-[617px]
         p-6 sm:p-8 lg:p-12
       "
-    >
-      <h1 className="text-[28px] sm:text-[34px] lg:text-[40px] font-[Gabriola] text-purple-600 mb-4 leading-tight text-center lg:text-left">
-        House of Priya is Coming to RS Puram
-      </h1>
+          >
+            <h1 className="text-[28px] sm:text-[34px] lg:text-[40px] font-[Gabriola] text-purple-600 mb-4 leading-tight text-center lg:text-left">
+              House of Priya is Coming to RS Puram
+            </h1>
 
-      <p className="text-gray-600 font-[Readex_Pro] text-[14px] sm:text-[15px] lg:text-[16px] leading-relaxed tracking-wide mb-6 text-center lg:text-left">
-        Step into a space where elegance, craftsmanship, and modern sarees come together.
-      </p>
+            <p className="text-gray-600 font-[Readex_Pro] text-[14px] sm:text-[15px] lg:text-[16px] leading-relaxed tracking-wide mb-6 text-center lg:text-left">
+              Step into a space where elegance, craftsmanship, and modern sarees
+              come together.
+            </p>
 
-      {isSubmitted ? (
-        <div className="bg-green-50 border-2 border-green-500 rounded-xl p-5 text-center">
-          <p className="text-green-700 font-semibold text-base sm:text-lg">
-            Thank you! We'll notify you soon! 🎉
-          </p>
-        </div>
-      ) : (
-        <div className="space-y-4">
-          <input
-            type="text"
-            name="name"
-            placeholder="Enter Your Name"
-            value={formData.name}
-            onChange={handleChange}
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-purple-500 transition-all text-gray-700 text-sm sm:text-base placeholder:text-gray-400"
-          />
+            {isSubmitted ? (
+              <div className="bg-green-50 border-2 border-green-500 rounded-xl p-5 text-center">
+                <p className="text-green-700 font-semibold text-base sm:text-lg">
+                  Thank you! We'll notify you soon! 🎉
+                </p>
+              </div>
+            ) : (
+              <div className="space-y-4">
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="Enter Your Name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-purple-500 transition-all text-gray-700 text-sm sm:text-base placeholder:text-gray-400"
+                />
 
-          <input
-            type="email"
-            name="email"
-            placeholder="Enter Your Email ID"
-            value={formData.email}
-            onChange={handleChange}
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-purple-500 transition-all text-gray-700 text-sm sm:text-base placeholder:text-gray-400"
-          />
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="Enter Your Email ID"
+                  value={formData.email}
+                  onChange={handleChange}
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-purple-500 transition-all text-gray-700 text-sm sm:text-base placeholder:text-gray-400"
+                />
 
-          <button
-            onClick={handleSubmit}
-            className="
+                <button
+                  onClick={handleSubmit}
+                  className="
               w-full sm:w-auto
               bg-purple-600 hover:bg-purple-700
               text-white font-semibold
@@ -1088,15 +1040,14 @@ const Landing = () => {
               shadow-lg hover:shadow-xl
               text-sm sm:text-base
             "
-          >
-            Notify Me
-          </button>
+                >
+                  Notify Me
+                </button>
+              </div>
+            )}
+          </div>
         </div>
-      )}
-    </div>
-  </div>
-</section>
-
+      </section>
 
       <Footer />
     </>
