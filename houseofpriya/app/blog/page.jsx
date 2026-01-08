@@ -4,14 +4,16 @@ import React from "react";
 import Footer from "../Components/Footer";
 import { FaWhatsapp } from "react-icons/fa";
 import { ArrowRight } from "lucide-react";
+import { usePathname } from "next/navigation";
 
 const Landing = () => {
+  const pathname=usePathname()
   const blogPosts = [
     {
       id: 1,
       image: "../images/img (8).png",
       badge: "Saree Styling",
-      badgeColor: "bg-purple-600",
+      badgeColor: "bg-[#6B2D8F]",
       title: "The Art of Draping: 5 Modern Styles for the Classic Saree",
       excerpt:
         "Discover contemporary draping techniques that honor tradition while embracing modern...",
@@ -23,7 +25,7 @@ const Landing = () => {
       id: 2,
       image: "../images/img (9).png",
       badge: "Heritage",
-      badgeColor: "bg-purple-600",
+     badgeColor: "bg-[#6B2D8F]",
       title: "Weaving Dreams: The Legacy of Banarasi Silk",
       excerpt:
         "Journey through centuries of craftsmanship as we explore the rich heritage of Banarasi...",
@@ -35,7 +37,7 @@ const Landing = () => {
       id: 3,
       image: "../images/img (10).png",
       badge: "Festive Wear",
-      badgeColor: "bg-purple-600",
+      badgeColor: "bg-[#6B2D8F]",
       title: "Festive Elegance: Choosing Your Perfect Wedding Saree",
       excerpt:
         "From vibrant ceremonies to grand celebrations, find the saree that captures...",
@@ -47,7 +49,7 @@ const Landing = () => {
       id: 4,
       image: "../images/img (11).png",
       badge: "Saree Styling",
-      badgeColor: "bg-purple-600",
+      badgeColor: "bg-[#6B2D8F]",
       title: "Office to Evening: Versatile Saree Styling Tips",
       excerpt:
         "Master the art of transitioning your saree from professional settings to...",
@@ -59,7 +61,7 @@ const Landing = () => {
       id: 5,
       image: "../images/img (12).png",
       badge: "Heritage",
-      badgeColor: "bg-purple-600",
+      badgeColor: "bg-[#6B2D8F]",
       title: "Threads of Heritage: Supporting Indian Handloom Artisans",
       excerpt:
         "Explore the stories behind our master weavers and discover how choosing...",
@@ -71,7 +73,7 @@ const Landing = () => {
       id: 6,
       image: "../images/img (13).png",
       badge: "Festive Wear",
-      badgeColor: "bg-purple-600",
+      badgeColor: "bg-[#6B2D8F]",
       title: "Spring Celebrations: Pastels and Florals for the Season",
       excerpt:
         "Embrace the beauty of spring with our curated collection of pastel sarees featuring...",
@@ -102,7 +104,7 @@ const Landing = () => {
             {/* Logo */}
             <div className="flex items-center">
               <div className="w-28 h-28 sm:w-32 sm:h-32 lg:w-40 lg:h-40 rounded-xl flex items-center justify-center lg:ml-10 z-50 relative ">
-                <div className="w-full h-full absolute z-0 bg-[url('/images/bg.png')] rounded-xl"></div>
+                <div className="w-full h-full absolute z-0 bg-[url('/images/bg.png')] rounded-xl hidden sm:block"></div>
                 <img
                   src="/images/logo.png"
                   alt="House of Priya Logo"
@@ -112,28 +114,49 @@ const Landing = () => {
             </div>
 
             {/* Menu */}
-            <div
-              className="
-          flex gap-6 sm:gap-10 lg:gap-15
-          text-[#6C6C6C]
-          font-[var(--font-readex-pro)]
-          font-bold
-          text-base sm:text-lg lg:text-[20px]
-          leading-normal lg:leading-[0.81]
-          tracking-normal
-          mt-4 lg:-mt-30
-        "
-            >
-              <a href="/" className="hover:text-purple-700 transition">
-                Home
-              </a>
-              <a href="/about" className="hover:text-purple-700 transition">
-                About
-              </a>
-              <a href="/blog" className="hover:text-purple-700 transition">
-                Blog
-              </a>
-            </div>
+       <div
+  className="
+    flex gap-6 sm:gap-10 lg:gap-15
+    font-readex 
+    font-bold
+    text-base sm:text-lg lg:text-[20px]
+    mt-4 lg:-mt-30
+  "
+>
+  <a
+    href="/"
+    className={`transition ${
+      pathname === "/"
+        ? "text-purple-700  border-purple-700"
+        : "text-[#6C6C6C] hover:text-purple-700"
+    }`}
+  >
+    Home
+  </a>
+
+  <a
+    href="/about"
+    className={`transition ${
+      pathname === "/about"
+        ? "text-purple-700  border-purple-700"
+        : "text-[#6C6C6C] hover:text-purple-700"
+    }`}
+  >
+    About
+  </a>
+
+  <a
+    href="/blog"
+    className={`transition ${
+      pathname === "/blog"
+        ? "text-purple-700  border-purple-700"
+        : "text-[#6C6C6C] hover:text-purple-700"
+    }`}
+  >
+    Blog
+  </a>
+</div>
+
 
             {/* Button */}
             <button
@@ -143,7 +166,9 @@ const Landing = () => {
         mt-4 lg:-mt-30  
       "
             >
-              <a href="https://wa.me/919363167299?text=Hi%20young%20mynds.%20I%20am%20interested%20in%20your%20service.">
+              <a href="https://wa.me/919363167299?text=Hi%20young%20mynds.%20I%20am%20interested%20in%20your%20service."
+              target="_blank"
+              rel="noopener noreferer">
                 {" "}
                 Enquire on WhatsApp
               </a>
@@ -169,7 +194,7 @@ const Landing = () => {
                 className="
           font-['Cormorant_Garamond']
           text-[36px] sm:text-[48px] md:text-[56px] lg:text-[74px]
-          leading-tight sm:leading-[60px] lg:leading-[90px]
+          leading-tight sm:leading-15 lg:leading-22.5
           tracking-[-0.5px]
           text-white
         "
@@ -179,17 +204,19 @@ const Landing = () => {
 
               <p
                 className="
-          font-[readexPro]
-          text-[16px] sm:text-[18px] lg:text-[20px]
-          text-white font-light
+         font-readex 
+          text-[16px] sm:text-[18px] lg:text-18px]
+          text-white font-medium
           tracking-[-0.5px]
         "
               >
-                Discover timeless sarees crafted with passion.
+Insights, inspiration, and timeless elegance from House of Priya.
               </p>
 
               <button className="bg-purple-700 hover:bg-purple-800 text-white px-8 py-3 rounded-md font-medium transition shadow-lg inline-block mt-4">
-                <a href="https://wa.me/919363167299?text=Hi%20young%20mynds.%20I%20am%20interested%20in%20your%20service.">
+                <a href="https://wa.me/919363167299?text=Hi%20young%20mynds.%20I%20am%20interested%20in%20your%20service."
+                target="_blank"
+                rel="noopener noreferer">
                   {" "}
                   Enquire on WhatsApp
                 </a>
@@ -254,7 +281,7 @@ const Landing = () => {
                   </h3>
 
                   {/* Excerpt */}
-                  <p className="text-gray-600 text-sm leading-relaxed">
+                  <p className="text-gray-600 font-readex text-sm leading-relaxed">
                     {post.excerpt}
                   </p>
 
@@ -266,15 +293,15 @@ const Landing = () => {
                         alt={post.author}
                         className="w-8 h-8 rounded-full object-cover"
                       />
-                      <span className="text-sm font-medium text-gray-700">
+                      <span className="text-sm font-readex font-medium text-gray-700">
                         {post.author}
                       </span>
                     </div>
-                    <span className="text-sm text-gray-500">{post.date}</span>
+                    <span className="text-sm font-readex text-gray-500">{post.date}</span>
                   </div>
 
                   {/* Read More Link */}
-                  <button className="flex items-center gap-2 text-purple-700 font-medium text-sm group-hover:gap-3 transition-all">
+                  <button className="flex items-center gap-2 font-readex text-[#6B2D8F] font-medium text-sm group-hover:gap-3 transition-all">
                     Read More
                     <ArrowRight className="w-4 h-4" />
                   </button>
@@ -300,7 +327,9 @@ const Landing = () => {
             {/* WhatsApp Button */}
             <button className="inline-flex items-center gap-3 bg-purple-600 hover:bg-purple-700 text-white px-8 py-4 rounded-lg font-medium text-lg transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
               <FaWhatsapp className="w-6 h-6" />
-              <a href="https://wa.me/919363167299?text=Hi%20young%20mynds.%20I%20am%20interested%20in%20your%20service.">
+              <a href="https://wa.me/919363167299?text=Hi%20young%20mynds.%20I%20am%20interested%20in%20your%20service."
+              target="_blank"
+              rel="noopener noreferer">
                 {" "}
                 Enquire on WhatsApp
               </a>

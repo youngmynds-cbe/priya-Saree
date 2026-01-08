@@ -2,8 +2,10 @@
 
 import React from "react";
 import Footer from "../Components/Footer";
+import { usePathname } from "next/navigation";
 
 const Landing = () => {
+  const pathname = usePathname();
   return (
     <>
       <section>
@@ -26,7 +28,7 @@ const Landing = () => {
             {/* Logo */}
             <div className="flex items-center">
               <div className="w-28 h-28 sm:w-32 sm:h-32 lg:w-40 lg:h-40 rounded-xl flex items-center justify-center lg:ml-10 z-50 relative ">
-                <div className="w-full h-full absolute z-0 bg-[url('/images/bg.png')] rounded-xl"></div>
+                <div className="w-full h-full absolute z-0 bg-[url('/images/bg.png')] rounded-xl hidden sm:block"></div>
                 <img
                   src="/images/logo.png"
                   alt="House of Priya Logo"
@@ -36,38 +38,63 @@ const Landing = () => {
             </div>
 
             {/* Menu */}
-            <div
-              className="
-          flex gap-6 sm:gap-10 lg:gap-15
-          text-[#6C6C6C]
-          font-[var(--font-readex-pro)]
-          font-bold
-          text-base sm:text-lg lg:text-[20px]
-          leading-normal lg:leading-[0.81]
-          tracking-normal
-          mt-4 lg:-mt-30
-        "
-            >
-              <a href="/" className="hover:text-purple-700 transition">
-                Home
-              </a>
-              <a href="/about" className="hover:text-purple-700 transition">
-                About
-              </a>
-              <a href="/blog" className="hover:text-purple-700 transition">
-                Blog
-              </a>
-            </div>
+        <div
+  className="
+    flex gap-6 sm:gap-10 lg:gap-15
+   font-readex
+    font-bold
+    text-base sm:text-lg lg:text-[20px]
+    mt-4 lg:-mt-30
+  "
+>
+  <a
+    href="/"
+    className={`transition ${
+      pathname === "/"
+        ? "text-[#6B46C1]  border-purple-700"
+        : "text-[#6C6C6C] hover:text-purple-700"
+    }`}
+  >
+    Home
+  </a>
+
+  <a
+    href="/about"
+    className={`transition ${
+      pathname === "/about"
+        ? "text-[#6B46C1]  border-purple-700"
+        : "text-[#6C6C6C] hover:text-purple-700"
+    }`}
+  >
+    About
+  </a>
+
+  <a
+    href="/blog"
+    className={`transition ${
+      pathname === "/blog"
+        ? "text-[#6B46C1]  border-purple-700"
+        : "text-[#6C6C6C] hover:text-purple-700"
+    }`}
+  >
+    Blog
+  </a>
+</div>
+
 
             {/* Button */}
             <button
               className="
-        bg-purple-700 hover:bg-purple-800 text-white
+        bg-[#6B46C1] hover:bg-purple-800 text-white
         px-6 py-2 rounded-md font-medium transition shadow-lg
         mt-4 lg:-mt-30  
       "
             >
-              <a href="https://wa.me/919363167299?text=Hi%20young%20mynds.%20I%20am%20interested%20in%20your%20service.">
+              <a
+                href="https://wa.me/919363167299?text=Hi%20young%20mynds.%20I%20am%20interested%20in%20your%20service."
+                target="_blank"
+                rel="noopener noreferer"
+              >
                 {" "}
                 Enquire on WhatsApp
               </a>
@@ -103,17 +130,21 @@ const Landing = () => {
 
               <p
                 className="
-          font-[readexPro]
-          text-[16px] sm:text-[18px] lg:text-[20px]
-          text-white font-light
+        font-readex 
+          text-[16px] sm:text-[18px] lg:text-[18px]
+          text-white  font-normal
           tracking-[-0.5px]
         "
               >
-                Discover timeless sarees crafted with passion.
+              Where tradition meets modern elegance — thoughtfully crafted sarees for today's woman.
               </p>
 
-              <button className="bg-purple-700 hover:bg-purple-800 text-white px-8 py-3 rounded-md font-medium transition shadow-lg inline-block mt-4">
-                <a href="https://wa.me/919363167299?text=Hi%20young%20mynds.%20I%20am%20interested%20in%20your%20service.">
+              <button className="bg-[#6B46C1] hover:bg-purple-800 text-white px-8 py-3 rounded-md font-medium transition shadow-lg inline-block mt-4">
+                <a
+                  href="https://wa.me/919363167299?text=Hi%20young%20mynds.%20I%20am%20interested%20in%20your%20service."
+                  target="_blank"
+                  rel="noopener noreferer"
+                >
                   {" "}
                   Enquire on WhatsApp
                 </a>
@@ -150,25 +181,29 @@ const Landing = () => {
               The House of Priya Philosophy
             </h2>
 
-            <p className="mt-8 text-[16px] leading-[26px] text-gray-600 max-w-md">
+            <p  className="mt-8 text-[16px] leading-[26px] tracking-[0.2px]   font-readex text-[#7A7A7A] max-w-md">
               House of Priya was born from a deep love for sarees and the belief
               that every woman deserves to feel confident, graceful, and
               comfortable in what she wears.
             </p>
 
-            <p className="mt-5 text-[16px] leading-[26px] text-gray-600 max-w-md">
+            <p className="mt-5 text-[16px] leading-[26px] tracking-[0.2px] font-readex text-[#7A7A7A] max-w-md">
               We curate and create sarees that balance timeless Indian
               craftsmanship with contemporary design sensibilities – making them
               perfect for both everyday elegance and special occasions.
             </p>
 
-            <p className="mt-5 text-[16px] leading-[26px] text-gray-600 max-w-md">
+            <p className="mt-5 text-[17px] leading-[26px]  tracking-[0.2px] font-readex text-[#7A7A7A] max-w-md">
               Each collection reflects our commitment to quality, detail, and
               aesthetics.
             </p>
 
             <button className="mt-8 bg-[#6D28D9] text-white px-6 py-3 rounded-md text-sm hover:bg-[#5B21B6] transition">
-              <a href="https://wa.me/919363167299?text=Hi%20young%20mynds.%20I%20am%20interested%20in%20your%20service.">
+              <a
+                href="https://wa.me/919363167299?text=Hi%20young%20mynds.%20I%20am%20interested%20in%20your%20service."
+                target="_blank"
+                rel="noopener noreferer"
+              >
                 {" "}
                 Enquire on WhatsApp
               </a>
@@ -213,11 +248,11 @@ const Landing = () => {
                 <img src="../images/div (2).png" />
               </div>
 
-              <h3 className="mt-6 font-[gabriola]text-[22px] text-[#5B2D8B]">
+              <h3 className="mt-6 font-[gabriola] text-[24px] text-[#5B2D8B]">
                 Thoughtfully Curated Designs
               </h3>
 
-              <p className="mt-3 text-sm leading-[22px] text-gray-600">
+              <p className="mt-3 text-[14px] leading-[22px] font-readex text-gray-600">
                 Sarees designed with attention to drape, comfort, and elegance.
               </p>
             </div>
@@ -228,11 +263,11 @@ const Landing = () => {
                 <img src="../images/div (3).png" />
               </div>
 
-              <h3 className="mt-6 font-[gabriola] text-[22px] text-[#5B2D8B]">
+              <h3 className="mt-6 font-[gabriola] text-[24px] text-[#5B2D8B]">
                 Premium Fabrics & Finishes
               </h3>
 
-              <p className="mt-3 text-sm leading-[22px] text-gray-600">
+              <p className="mt-3 text-[14px] leading-[22px] font-readex text-gray-600">
                 Carefully selected materials with refined craftsmanship.
               </p>
             </div>
@@ -243,11 +278,11 @@ const Landing = () => {
                 <img src="../images/div (4).png" />
               </div>
 
-              <h3 className="mt-6 font-[gabriola] text-[22px] text-[#5B2D8B]">
+              <h3 className="mt-6 font-[gabriola] text-[24px] text-[#5B2D8B]">
                 Modern Elegance for Woman
               </h3>
 
-              <p className="mt-3 text-sm leading-[22px] text-gray-600">
+              <p className="mt-3 text-[14px] leading-[22px] font-readex text-gray-600">
                 Styles that move effortlessly from day to evening.
               </p>
             </div>
@@ -258,18 +293,18 @@ const Landing = () => {
                 <img src="../images/div (5).png" />
               </div>
 
-              <h3 className="mt-6 font-[gabriola] text-[22px] text-[#5B2D8B]">
+              <h3 className="mt-6 font-[gabriola] text-[24px] text-[#5B2D8B]">
                 Rooted in Indian Craft
               </h3>
 
-              <p className="mt-3 text-sm leading-[22px] text-gray-600">
+              <p className="mt-3 text-[14px] leading-[22px] font-readex text-gray-600">
                 Inspired by heritage, reimagined for today.
               </p>
             </div>
           </div>
         </div>
       </section>
-      <section className="relative bg-[#FBF7FF] py-18 overflow-hidden">
+      <section className="relative bg-[#F9F5FF] py-18 overflow-hidden">
         <div className="max-w-6xl mx-auto px-6 text-center">
           {/* TITLE */}
           <h2 className="font-[gabriola] font-normal text-[30px] md:text-[38px]  lg:text-[48px] leading-[52px] tracking-[-0.5px] text-[#5B2D8B]">
@@ -277,7 +312,7 @@ const Landing = () => {
           </h2>
 
           {/* DESCRIPTION */}
-          <p className="mt-6 max-w-[720px] mx-auto text-[16px] leading-[26px] text-[#6B6B6B]">
+          <p className="mt-6 max-w-[720px] mx-auto text-[16px] leading-[26px] font-readex text-[#6B6B6B]">
             We collaborate with skilled manufacturers and artisans across India
             to bring you authentic sarees that celebrate regional craftsmanship
             while meeting modern quality standards.
@@ -323,15 +358,15 @@ const Landing = () => {
 
         {/* LEFT DECOR */}
         <img
-          src="/images/pattern-left.svg"
-          className="absolute left-0 top-1/2 -translate-y-1/2 opacity-40 hidden lg:block"
+          src="/images/image 44.png"
+          className="absolute left-0 top-1/2 -translate-y-1/2 opacity-60 hidden lg:block"
           alt=""
         />
 
         {/* RIGHT DECOR */}
         <img
-          src="/images/pattern-right.svg"
-          className="absolute right-0 top-1/2 -translate-y-1/2 opacity-40 hidden lg:block"
+           src="/images/image 45.png"
+          className="absolute right-0 top-1/2 -translate-y-1/2 opacity-60 hidden lg:block"
           alt=""
         />
       </section>
@@ -344,7 +379,7 @@ const Landing = () => {
           </h2>
 
           {/* SUBTEXT */}
-          <p className="mt-4 max-w-[640px] mx-auto text-[15px] leading-[24px] text-[#6B6B6B]">
+          <p className="mt-4 max-w-[640px] font-readex  mx-auto text-[15px] leading-[24px] text-[#6B6B6B]">
             From graceful dual-tone drapes to understated premium classics, our
             collections are designed to feel timeless yet relevant — sarees
             you’ll reach for again and again.
@@ -361,7 +396,7 @@ const Landing = () => {
                   className="w-full h-[360px] object-cover"
                 />
               </div>
-              <p className="mt-4 text-[14px] font-medium text-[#5B2D8B]">
+              <p className="mt-4 text-[16px] font-semibold font-readex text-[#5B2D8B]">
                 Dual-Tone Elegance
               </p>
             </div>
@@ -375,7 +410,7 @@ const Landing = () => {
                   className="w-full h-[360px] object-cover"
                 />
               </div>
-              <p className="mt-4 text-[14px] font-medium text-[#5B2D8B]">
+              <p className="mt-4 text-[16px] font-semibold  font-readex text-[#5B2D8B]">
                 Premium Classics
               </p>
             </div>
@@ -389,7 +424,7 @@ const Landing = () => {
                   className="w-full h-[360px] object-cover"
                 />
               </div>
-              <p className="mt-4 text-[14px] font-medium text-[#5B2D8B]">
+              <p className="mt-4 text-[16px] font-semibold font-readex text-[#5B2D8B]">
                 Contemporary Grace
               </p>
             </div>
@@ -413,18 +448,22 @@ const Landing = () => {
               Designed for Today’s Woman
             </h2>
 
-            <p className="mt-6 max-w-[420px] text-[15px] leading-[24px] text-[#6B6B6B] ">
+            <p className="mt-6 max-w-[420px] font-readex text-[15px] leading-[24px] text-[#6B6B6B] ">
               At House of Priya, we design sarees for women who balance
               tradition with individuality.
             </p>
 
-            <p className="mt-4 max-w-[420px] text-[15px] leading-[24px] text-[#6B6B6B] ">
+            <p className="mt-4 max-w-[420px] font-readex text-[15px] leading-[24px] text-[#6B6B6B] ">
               Our designs celebrate comfort, confidence, and quiet luxury —
               without being overwhelming.
             </p>
 
-            <button className="mt-8 inline-flex items-center justify-center bg-[#6D28D9] text-white text-sm px-6 py-3 rounded-md hover:bg-[#5B21B6] transition">
-              <a href="https://wa.me/919363167299?text=Hi%20young%20mynds.%20I%20am%20interested%20in%20your%20service.">
+            <button className="mt-8 inline-flex items-center font-readex justify-center bg-[#6D28D9] text-white text-sm px-6 py-3 rounded-md hover:bg-[#5B21B6] transition">
+              <a
+                href="https://wa.me/919363167299?text=Hi%20young%20mynds.%20I%20am%20interested%20in%20your%20service."
+                target="_blank"
+                rel="noopener noreferer"
+              >
                 {" "}
                 Enquire on WhatsApp
               </a>
@@ -437,33 +476,42 @@ const Landing = () => {
           {/* PURPLE CONTAINER */}
           <div className="bg-[#5B2D8B] rounded-2xl py-20 px-6 flex flex-col items-center text-center">
             {/* TITLE */}
-            <h2 className="font-[gabriola] font-normal text-[36px] leading-[42px] tracking-[-0.5px] text-white">
+            <h2 className="font-[gabriola] font-normal text-[38px] leading-[42px] tracking-[-0.5px] text-white">
               Opening Soon in RS Puram
             </h2>
 
             {/* SUBTEXT */}
-            <p className="mt-3 max-w-[420px] text-[14px] leading-[22px] text-white/80">
+            <p className="mt-3 max-w-[420px] font-readex  text-[14px] leading-[22px] text-white/80">
               Experience House of Priya in person at our upcoming boutique in RS
               Puram, Coimbatore.
             </p>
 
             {/* FORM CARD */}
             <div className="mt-10 bg-white rounded-xl w-full max-w-[360px] px-6 py-8">
-              <p className="font-gabriola text-[22px] leading-[26px] text-[#5B2D8B] mb-4">
+              <p className="font-gabriola text-[32px] leading-[26px] text-[#5B2D8B] mb-4">
                 Get Notified When We Open
               </p>
 
               <input
-                type="text"
-                placeholder="Your Name"
-                className="w-full mb-3 px-4 py-2 text-sm border border-gray-200 rounded-md focus:outline-none focus:ring-1 focus:ring-[#5B2D8B]"
-              />
+  type="text"
+  placeholder="Your Name"
+  className="w-full bg-white mb-3 px-4 py-2 text-sm
+             text-gray-800
+             placeholder-gray-400
+             border border-gray-200 rounded-md
+             focus:outline-none focus:ring-1 focus:ring-[#5B2D8B]"
+/>
 
-              <input
-                type="email"
-                placeholder="Email ID"
-                className="w-full mb-4 px-4 py-2 text-sm border border-gray-200 rounded-md focus:outline-none focus:ring-1 focus:ring-[#5B2D8B]"
-              />
+<input
+  type="email"
+  placeholder="Email ID"
+  className="w-full bg-white mb-4 px-4 py-2 text-sm
+             text-gray-800
+             placeholder-gray-400
+             border border-gray-200 rounded-md
+             focus:outline-none focus:ring-1 focus:ring-[#5B2D8B]"
+/>
+
 
               <button className="w-full bg-[#5B2D8B] text-white text-sm py-2.5 rounded-md hover:bg-[#4C1D95] transition">
                 Notify Me
@@ -473,13 +521,13 @@ const Landing = () => {
         </div>
       </section>
 
-      <section className="bg-[#E5E7EB] py-32">
-        <div className="max-w-5xl mx-auto px-6 text-center">
+      <section className="bg-[#E5E7EB] py-20">
+        <div className="max-w-5xl mx-auto  text-center">
           {/* QUOTE ICON */}
-          <div className="text-[#6D28D9] text-5xl mb-3">“</div>
+          <div className="text-[#6D28D9] sm:text-[50px] lg:text-[85px]">“</div>
 
           {/* QUOTE TEXT */}
-          <p className="font-[gabriola] font-normal text-[30px] md:text-[40px] lg:text-[63px] leading-[49px] tracking-[-0.5px] text-center text-[#5B2D8B]">
+          <p className="font-[gabriola] font-normal text-[30px] md:text-[40px] lg:text-[45px] leading-[49px] tracking-[-0.5px] text-center text-[#5B2D8B]">
             Every saree at House of Priya is designed to feel personal, elegant,
             and timeless — just like the women who wear them.
           </p>

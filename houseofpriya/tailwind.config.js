@@ -9,7 +9,7 @@ module.exports = {
     extend: {
       fontFamily: {
         gabriola: ["Gabriola", "cursive"],
-        readex: ["'Readex Pro'", "sans-serif"],
+        readex: ["'Readex Pro'"],
         nanum: ["'Nanum Myeongjo'", "serif"],
         geist: ["Geist", "sans-serif"],
         mono: ["Geist Mono", "monospace"],

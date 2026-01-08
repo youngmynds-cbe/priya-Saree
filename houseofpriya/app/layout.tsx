@@ -120,7 +120,6 @@ const geistMono = Geist_Mono({
 
 const readexPro = Readex_Pro({
   subsets: ["latin"],
-  weight: ["400"],
   variable: "--font-readex",
 });
 

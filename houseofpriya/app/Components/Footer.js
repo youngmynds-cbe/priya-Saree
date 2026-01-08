@@ -25,18 +25,18 @@ const Footer = () => {
         Contact us
       </h4>
 
-      <ul className="space-y-5 font-[Readex_Pro] text-[16px] sm:text-[18px]">
+      <ul className="space-y-5 font-readex text-[16px] sm:text-[18px]">
         <li className="flex justify-center lg:justify-start items-center gap-3">
           <img src="/images/map.png" className="w-5 h-5" />
           <span>XYZ, RS Puram, Coimbatore</span>
         </li>
 
-        <li className="flex justify-center lg:justify-start items-center gap-3">
+        <li className="flex justify-center font-readex lg:justify-start items-center gap-3">
           <img src="/images/Vector (2).png" className="w-5 h-5" />
           <span>houseofpriya@gmail.com</span>
         </li>
 
-        <li className="flex justify-center lg:justify-start items-center gap-3">
+        <li className="flex justify-center font-readex lg:justify-start items-center gap-3">
           <img src="/images/phone-line.png" className="w-5 h-5" />
           <span>+91 9876543210</span>
         </li>
@@ -62,18 +62,18 @@ const Footer = () => {
     Quick Links
   </h4>
 
-  <ul className="space-y-4 font-[Readex_Pro] text-[16px] sm:text-[18px]">
+  <ul className="space-y-4 font-readex text-[16px] sm:text-[18px]">
     <li className="flex justify-center lg:justify-start items-center gap-2">
       <span>↗</span>
       <a href="/">Home</a>
     </li>
 
-    <li className="flex justify-center lg:justify-start items-center gap-2">
+    <li className="flex justify-center font-readex lg:justify-start items-center gap-2">
       <span>↗</span>
       <a href="/about">About us</a>
     </li>
 
-    <li className="flex justify-center lg:justify-start items-center gap-2">
+    <li className="flex justify-center font-readex lg:justify-start items-center gap-2">
       <span>↗</span>
       <a href="/blog">Blog</a>
     </li>

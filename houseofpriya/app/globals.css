@@ -36,6 +36,9 @@ body {
 
 
 
+.font-readex {
+  font-family: var(--font-readex);
+}
 
 .font-gabriola {
   font-family: "Gabriola", cursive;
