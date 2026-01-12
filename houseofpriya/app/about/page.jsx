@@ -224,7 +224,7 @@ const Landing = () => {
           {/* RIGHT IMAGE */}
           <div className="flex justify-center">
             <div className="relative">
-              <div className="w-[380px]  h-[500px] lg:h-[550px] rounded-[180px] overflow-hidden  flex items-end justify-center">
+              <div className="w-[380px]  lg:w-[405px]  h-[500px] lg:h-[560px] rounded-[180px] overflow-hidden  flex items-end justify-center">
                 <img
                   src="/images/Frame 52875.png"
                   alt="House of Priya Saree"
