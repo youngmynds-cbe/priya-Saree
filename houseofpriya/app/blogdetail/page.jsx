@@ -27,7 +27,7 @@ const Landing = () => {
       id: 2,
       image: "../images/img (9).png",
       badge: "Heritage",
-       badgeColor: "bg-[#6B2D8F]",
+      badgeColor: "bg-[#6B2D8F]",
       title: "Weaving Dreams: The Legacy of Banarasi Silk",
       excerpt:
         "Journey through centuries of craftsmanship as we explore the rich heritage of Banarasi...",
@@ -41,7 +41,7 @@ const Landing = () => {
       id: 3,
       image: "../images/img (10).png",
       badge: "Festive Wear",
-       badgeColor: "bg-[#6B2D8F]",
+      badgeColor: "bg-[#6B2D8F]",
       title: "Festive Elegance: Choosing Your Perfect Wedding Saree",
       excerpt:
         "From intimate ceremonies to grand celebrations, find the saree that captures your unique style.",
@@ -55,7 +55,7 @@ const Landing = () => {
   return (
     <>
       <section>
-        <div className="min-h-screen relative overflow-hidden">
+        <div className="h-[960px] md:h-[1100px] lg:h-auto relative overflow-hidden">
           {/* Background */}
           <div
             className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -74,7 +74,7 @@ const Landing = () => {
             {/* Logo */}
             <div className="flex items-center">
               <div className="w-28 h-28 sm:w-32 sm:h-32 lg:w-40 lg:h-40 rounded-xl flex items-center justify-center lg:ml-10 z-50 relative ">
-                <div className="w-full h-full absolute z-0 bg-[url('/images/bg.png')] rounded-xl hidden sm:block"></div>
+                <div className="w-full h-full absolute z-0 bg-[url('/images/bg.png')] rounded-xl hidden lg:block"></div>
                 <img
                   src="/images/logo.png"
                   alt="House of Priya Logo"
@@ -90,7 +90,7 @@ const Landing = () => {
    font-readex 
     font-bold
     text-base sm:text-lg lg:text-[20px]
-    mt-4 lg:-mt-30
+    -mt-3 lg:-mt-30
   "
             >
               <a
@@ -132,7 +132,7 @@ const Landing = () => {
               className="
         bg-purple-700 hover:bg-purple-800 text-white
         px-6 py-2 rounded-md font-medium transition shadow-lg
-        mt-4 lg:-mt-30  
+        mt-4 lg:-mt-30 hidden sm:block 
       "
             >
               <a
@@ -161,7 +161,7 @@ const Landing = () => {
     "
           >
             {/* Left Content */}
-            <div className="space-y-6 text-center lg:text-left">
+            <div className="space-y-6 text-center lg:text-left -mt-13 sm:mt-0">
               <h1
                 className="
           font-['Cormorant_Garamond']
@@ -182,7 +182,8 @@ const Landing = () => {
           tracking-[-0.5px]
         "
               >
-               Insights, inspiration, and timeless elegance from House of Priya.
+                Insights, inspiration, and timeless elegance from House of
+                Priya.
               </p>
 
               <button className="bg-purple-700 hover:bg-purple-800 text-white px-8 py-3 rounded-md font-medium transition shadow-lg inline-block mt-4">
@@ -207,7 +208,7 @@ const Landing = () => {
         "
               >
                 <img
-                  src="../images/DSC02440 1.png"
+                  src="../images/DSC02440 1 (1).png"
                   className="w-full h-auto object-contain"
                   alt="Saree Model"
                 />
@@ -216,19 +217,11 @@ const Landing = () => {
           </div>
 
           {/* Decorative Circle */}
-          <div className="absolute bottom-0 left-0 w-72 sm:w-80 lg:w-96 h-72 sm:h-80 lg:h-96 bg-gradient-to-tr from-lime-300 to-yellow-200 rounded-full blur-3xl opacity-40 -translate-x-1/2 translate-y-1/2"></div>
+          <div className="absolute bottom-0 left-0 w-72 sm:w-80 lg:w-96 h-72 sm:h-80 lg:h-96 bg-gradient-to-tr  rounded-full blur-3xl opacity-40 -translate-x-1/2 translate-y-1/2"></div>
         </div>
       </section>
       <section>
         <div className="bg-white">
-          {/* Back Button */}
-          <div className="max-w-6xl mx-auto px-6 pt-8">
-            <button className="flex items-center gap-2 text-purple-700 hover:text-purple-800 font-medium transition-colors">
-              <ArrowLeft className="w-4 h-4" />
-              Back to Stories
-            </button>
-          </div>
-
           {/* Article Container */}
           <article className="max-w-6xl mx-auto px-6 py-12">
             {/* Header */}

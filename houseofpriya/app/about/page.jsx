@@ -9,7 +9,7 @@ const Landing = () => {
   return (
     <>
       <section>
-        <div className="min-h-screen relative overflow-hidden">
+        <div className="h-[940px] md:h-[1100px]  lg:h-auto relative overflow-hidden">
           {/* Background */}
           <div
             className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -28,7 +28,7 @@ const Landing = () => {
             {/* Logo */}
             <div className="flex items-center">
               <div className="w-28 h-28 sm:w-32 sm:h-32 lg:w-40 lg:h-40 rounded-xl flex items-center justify-center lg:ml-10 z-50 relative ">
-                <div className="w-full h-full absolute z-0 bg-[url('/images/bg.png')] rounded-xl hidden sm:block"></div>
+                <div className="w-full h-full absolute z-0 bg-[url('/images/bg.png')] rounded-xl hidden lg:block"></div>
                 <img
                   src="/images/logo.png"
                   alt="House of Priya Logo"
@@ -38,56 +38,55 @@ const Landing = () => {
             </div>
 
             {/* Menu */}
-        <div
-  className="
+            <div
+              className="
     flex gap-6 sm:gap-10 lg:gap-15
    font-readex
     font-bold
     text-base sm:text-lg lg:text-[20px]
-    mt-4 lg:-mt-30
+    -mt-3 lg:-mt-30
   "
->
-  <a
-    href="/"
-    className={`transition ${
-      pathname === "/"
-        ? "text-[#6B46C1]  border-purple-700"
-        : "text-[#6C6C6C] hover:text-purple-700"
-    }`}
-  >
-    Home
-  </a>
+            >
+              <a
+                href="/"
+                className={`transition ${
+                  pathname === "/"
+                    ? "text-[#6B46C1]  border-purple-700"
+                    : "text-[#6C6C6C] hover:text-purple-700"
+                }`}
+              >
+                Home
+              </a>
 
-  <a
-    href="/about"
-    className={`transition ${
-      pathname === "/about"
-        ? "text-[#6B46C1]  border-purple-700"
-        : "text-[#6C6C6C] hover:text-purple-700"
-    }`}
-  >
-    About
-  </a>
+              <a
+                href="/about"
+                className={`transition ${
+                  pathname === "/about"
+                    ? "text-[#6B46C1]  border-purple-700"
+                    : "text-[#6C6C6C] hover:text-purple-700"
+                }`}
+              >
+                About
+              </a>
 
-  <a
-    href="/blog"
-    className={`transition ${
-      pathname === "/blog"
-        ? "text-[#6B46C1]  border-purple-700"
-        : "text-[#6C6C6C] hover:text-purple-700"
-    }`}
-  >
-    Blog
-  </a>
-</div>
-
+              <a
+                href="/blog"
+                className={`transition ${
+                  pathname === "/blog"
+                    ? "text-[#6B46C1]  border-purple-700"
+                    : "text-[#6C6C6C] hover:text-purple-700"
+                }`}
+              >
+                Blog
+              </a>
+            </div>
 
             {/* Button */}
             <button
               className="
-        bg-[#6B46C1] hover:bg-purple-800 text-white
+        bg-[#6B46C1] hover:bg-purple-800 text-white font-readex
         px-6 py-2 rounded-md font-medium transition shadow-lg
-        mt-4 lg:-mt-30  
+        mt-4 lg:-mt-30 hidden sm:block 
       "
             >
               <a
@@ -115,7 +114,7 @@ const Landing = () => {
     "
           >
             {/* Left Content */}
-            <div className="space-y-6 text-center lg:text-left">
+            <div className="space-y-6 text-center lg:text-left -mt-13 sm:mt-0">
               <h1
                 className="
           font-['Cormorant_Garamond']
@@ -136,10 +135,11 @@ const Landing = () => {
           tracking-[-0.5px]
         "
               >
-              Where tradition meets modern elegance — thoughtfully crafted sarees for today's woman.
+                Where tradition meets modern elegance — thoughtfully crafted
+                sarees for today's woman.
               </p>
 
-              <button className="bg-[#6B46C1] hover:bg-purple-800 text-white px-8 py-3 rounded-md font-medium transition shadow-lg inline-block mt-4">
+              <button className="bg-[#6B46C1] hover:bg-purple-800 font-readex text-white px-8 py-3 rounded-md font-medium transition shadow-lg inline-block mt-4">
                 <a
                   href="https://wa.me/919363167299?text=Hi%20young%20mynds.%20I%20am%20interested%20in%20your%20service."
                   target="_blank"
@@ -161,8 +161,8 @@ const Landing = () => {
         "
               >
                 <img
-                  src="../images/DSC02638 (1) 1.png"
-                  className="w-full h-auto object-contain"
+                  src="../images/DSC02638 (1) 1 (1).png"
+                  className="w-full  lg:h-[660px] object-contain"
                   alt="Saree Model"
                 />
               </div>
@@ -170,7 +170,7 @@ const Landing = () => {
           </div>
 
           {/* Decorative Circle */}
-          <div className="absolute bottom-0 left-0 w-72 sm:w-80 lg:w-96 h-72 sm:h-80 lg:h-96 bg-gradient-to-tr from-lime-300 to-yellow-200 rounded-full blur-3xl opacity-40 -translate-x-1/2 translate-y-1/2"></div>
+          <div className="absolute bottom-0 left-0 w-72 sm:w-80 lg:w-96 h-72 sm:h-80 lg:h-96 bg-gradient-to-tr  rounded-full blur-3xl opacity-40 -translate-x-1/2 translate-y-1/2"></div>
         </div>
       </section>
       <section className="bg-white py-15">
@@ -181,7 +181,7 @@ const Landing = () => {
               The House of Priya Philosophy
             </h2>
 
-            <p  className="mt-8 text-[16px] leading-[26px] tracking-[0.2px]   font-readex text-[#7A7A7A] max-w-md">
+            <p className="mt-8 text-[16px] leading-[26px] tracking-[0.2px]   font-readex text-[#7A7A7A] max-w-md">
               House of Priya was born from a deep love for sarees and the belief
               that every woman deserves to feel confident, graceful, and
               comfortable in what she wears.
@@ -198,7 +198,7 @@ const Landing = () => {
               aesthetics.
             </p>
 
-            <button className="mt-8 bg-[#6D28D9] text-white px-6 py-3 rounded-md text-sm hover:bg-[#5B21B6] transition">
+            <button className="mt-8 bg-[#6D28D9] font-readex text-white px-6 py-3 rounded-md text-sm hover:bg-[#5B21B6] transition">
               <a
                 href="https://wa.me/919363167299?text=Hi%20young%20mynds.%20I%20am%20interested%20in%20your%20service."
                 target="_blank"
@@ -213,21 +213,13 @@ const Landing = () => {
           {/* RIGHT IMAGE */}
           <div className="flex justify-center">
             <div className="relative">
-              <div className="w-[340px] h-[520px] rounded-[180px] overflow-hidden bg-[#C97A4A] flex items-end justify-center">
+              <div className="w-[380px]  h-[500px] lg:h-[550px] rounded-[180px] overflow-hidden  flex items-end justify-center">
                 <img
-                  src="/images/Rectangle 19466.png"
+                  src="/images/Frame 52875.png"
                   alt="House of Priya Saree"
                   className="w-full h-full object-cover"
                 />
               </div>
-
-              {/* Decorative ornaments (optional) */}
-              <span className="absolute -top-3 left-1/2 -translate-x-1/2 text-gray-400 text-xl">
-                ✦
-              </span>
-              <span className="absolute -bottom-3 left-1/2 -translate-x-1/2 text-gray-400 text-xl">
-                ✦
-              </span>
             </div>
           </div>
         </div>
@@ -359,21 +351,28 @@ const Landing = () => {
         {/* LEFT DECOR */}
         <img
           src="/images/image 44.png"
-          className="absolute left-0 top-1/2 -translate-y-1/2 opacity-60 hidden lg:block"
+          className="absolute left-0 top-1/2 -translate-y-1/2 opacity-100 hidden lg:block"
           alt=""
         />
 
-        {/* RIGHT DECOR */}
         <img
-           src="/images/image 45.png"
-          className="absolute right-0 top-1/2 -translate-y-1/2 opacity-60 hidden lg:block"
+          src="/images/image 45.png"
+          className="absolute right-0 top-1/2 -translate-y-1/2 opacity-100 hidden lg:block"
           alt=""
         />
       </section>
 
-      <section className="bg-white py-14">
+      <section className="bg-white">
+        <div className="relative w-full">
+          <img src="../images/Group (10).png" alt="" />
+
+          <img
+            src="../images/Group (11).png"
+            alt=""
+            className="absolute right-0 top-0"
+          />
+        </div>
         <div className="max-w-6xl mx-auto px-6 text-center">
-          {/* TITLE */}
           <h2 className="font-[gabriola] font-normal text-[30px] md:text-[38px] lg:text-[48px] leading-[52px] tracking-[-0.5px] text-[#5B2D8B]">
             Our Signature Weave
           </h2>
@@ -396,7 +395,7 @@ const Landing = () => {
                   className="w-full h-[360px] object-cover"
                 />
               </div>
-              <p className="mt-4 text-[16px] font-semibold font-readex text-[#5B2D8B]">
+              <p className="mt-4 text-[20px] font-semibold font-readex text-[#4C1D95]">
                 Dual-Tone Elegance
               </p>
             </div>
@@ -410,7 +409,7 @@ const Landing = () => {
                   className="w-full h-[360px] object-cover"
                 />
               </div>
-              <p className="mt-4 text-[16px] font-semibold  font-readex text-[#5B2D8B]">
+              <p className="mt-4 text-[20px] font-semibold  font-readex text-[#4C1D95]">
                 Premium Classics
               </p>
             </div>
@@ -424,27 +423,54 @@ const Landing = () => {
                   className="w-full h-[360px] object-cover"
                 />
               </div>
-              <p className="mt-4 text-[16px] font-semibold font-readex text-[#5B2D8B]">
+              <p className="mt-4 text-[20px] font-semibold font-readex text-[#4C1D95]">
                 Contemporary Grace
               </p>
             </div>
           </div>
         </div>
       </section>
-      <section className="bg-[#F9F6FF] py-14">
-        <div className="max-w-7xl  grid grid-cols-1 lg:grid-cols-2 items-center gap-5">
+      <section className="bg-[#F9F5FF]  py-14 relative">
+        <div className="max-w-7xl  grid grid-cols-1 lg:grid-cols-2 items-center gap-5 ">
+          {/* RIGHT DECOR */}
+          <img
+            src="/images/Group (6).png"
+            className="absolute right-0 top-1/2 -translate-y-1/2 opacity-100 hidden lg:block"
+            alt=""
+          />
+
           {/* LEFT IMAGE */}
-          <div className="flex justify-center lg:justify-start">
-            <img
-              src="/images/img (7).png"
-              alt="Designed for Today's Woman"
-              className="w-full max-w-[568px] rounded-md object-cover"
-            />
+          <div className=" ">
+            {/* Wrapper */}
+            <div className="relative flex items-center">
+              {/* LEFT / RIGHT DECOR IMAGE */}
+              <img
+                src="/images/Group (7).png" // purple vertical design image
+                alt=""
+                className="
+        absolute right-7 top-1/2 -translate-y-1/2
+        h-full
+        hidden sm:block
+      "
+              />
+
+              {/* MAIN IMAGE */}
+              <img
+                src="/images/img (7).png"
+                alt="Designed for Today's Woman"
+                className="
+        w-full max-w-[568px]
+        rounded-md
+        object-cover
+        relative z-10
+      "
+              />
+            </div>
           </div>
 
           {/* RIGHT CONTENT */}
           <div className="text-left px-5">
-            <h2 className="font-[gabriola] font-normal  text-[36px] lg:text-[63px] leading-[52px] tracking-[-0.5px] text-[#5B2D8B]">
+            <h2 className="font-[gabriola] font-normal  text-[36px] lg:text-[63px] leading-[52px] tracking-[-0.5px] text-[#4C1D95]">
               Designed for Today’s Woman
             </h2>
 
@@ -472,56 +498,83 @@ const Landing = () => {
         </div>
       </section>
       <section className="bg-white py-12">
-        <div className="max-w-5xl mx-auto px-6">
-          {/* PURPLE CONTAINER */}
-          <div className="bg-[#5B2D8B] rounded-2xl py-20 px-6 flex flex-col items-center text-center">
-            {/* TITLE */}
-            <h2 className="font-[gabriola] font-normal text-[38px] leading-[42px] tracking-[-0.5px] text-white">
-              Opening Soon in RS Puram
-            </h2>
-
-            {/* SUBTEXT */}
-            <p className="mt-3 max-w-[420px] font-readex  text-[14px] leading-[22px] text-white/80">
-              Experience House of Priya in person at our upcoming boutique in RS
-              Puram, Coimbatore.
-            </p>
-
-            {/* FORM CARD */}
-            <div className="mt-10 bg-white rounded-xl w-full max-w-[360px] px-6 py-8">
-              <p className="font-gabriola text-[32px] leading-[26px] text-[#5B2D8B] mb-4">
-                Get Notified When We Open
-              </p>
-
-              <input
-  type="text"
-  placeholder="Your Name"
-  className="w-full bg-white mb-3 px-4 py-2 text-sm
-             text-gray-800
-             placeholder-gray-400
-             border border-gray-200 rounded-md
-             focus:outline-none focus:ring-1 focus:ring-[#5B2D8B]"
-/>
-
-<input
-  type="email"
-  placeholder="Email ID"
-  className="w-full bg-white mb-4 px-4 py-2 text-sm
-             text-gray-800
-             placeholder-gray-400
-             border border-gray-200 rounded-md
-             focus:outline-none focus:ring-1 focus:ring-[#5B2D8B]"
-/>
+      <div className="max-w-5xl mx-auto px-6">
+  {/* PURPLE CONTAINER */}
+  <div className="relative bg-gradient-to-br from-[#5B21B6] to-[#4C1D95] rounded-2xl py-20 px-6 overflow-hidden">
 
 
-              <button className="w-full bg-[#5B2D8B] text-white text-sm py-2.5 rounded-md hover:bg-[#4C1D95] transition">
-                Notify Me
-              </button>
-            </div>
-          </div>
-        </div>
+    {/* LEFT IMAGE */}
+    <img
+      src="/images/poster.png"
+      alt=""
+      className="
+        absolute
+        left-0
+        bottom-0
+        h-[70%]
+        opacity-100
+        hidden lg:block
+        pointer-events-none
+      "
+    />
+
+    {/* RIGHT IMAGE */}
+    <img
+      src="/images/poster1.png"
+      alt=""
+      className="
+        absolute
+        right-0
+        bottom-0
+        h-[70%]
+        opacity-100
+        hidden lg:block
+        pointer-events-none
+      "
+    />
+
+    {/* CONTENT */}
+    <div className="relative z-10 flex flex-col items-center text-center">
+      {/* TITLE */}
+      <h2 className="font-[gabriola] font-normal text-[38px] leading-[42px] tracking-[-0.5px] text-white">
+        Opening Soon in RS Puram
+      </h2>
+
+      {/* SUBTEXT */}
+      <p className="mt-3 max-w-[420px] font-readex text-[14px] leading-[22px] text-white/80">
+        Experience House of Priya in person at our upcoming boutique in RS
+        Puram, Coimbatore.
+      </p>
+
+      {/* FORM CARD */}
+      <div className="mt-10 bg-white rounded-xl w-full max-w-[360px] px-6 py-8">
+        <p className="font-gabriola text-[32px] leading-[26px] text-[#5B2D8B] mb-4">
+          Get Notified When We Open
+        </p>
+
+        <input
+          type="text"
+          placeholder="Your Name"
+          className="w-full mb-3 px-4 py-2 text-sm border border-gray-200  placeholder-gray-500 rounded-md focus:ring-1 focus:ring-[#5B2D8B]"
+        />
+
+        <input
+          type="email"
+          placeholder="Email ID"
+          className="w-full mb-4 px-4 py-2 text-sm border  placeholder-gray-500 border-gray-200 rounded-md focus:ring-1 focus:ring-[#5B2D8B]"
+        />
+
+        <button className="w-full bg-[#5B2D8B] text-white text-sm py-2.5 rounded-md hover:bg-[#4C1D95] transition">
+          Notify Me
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
       </section>
 
-      <section className="bg-[#E5E7EB] py-20">
+      <section className="relative bg-[#E5E7EB] py-20">
         <div className="max-w-5xl mx-auto  text-center">
           {/* QUOTE ICON */}
           <div className="text-[#6D28D9] sm:text-[50px] lg:text-[85px]">“</div>
@@ -532,6 +585,17 @@ const Landing = () => {
             and timeless — just like the women who wear them.
           </p>
         </div>
+          <img
+          src="/images/Group (12).png"
+          className="absolute left-0 top-1/2 -translate-y-1/2 opacity-100 hidden lg:block"
+          alt=""
+        />
+
+        <img
+          src="/images/Group (13).png"
+          className="absolute right-0 top-1/2 -translate-y-1/2 opacity-100 hidden lg:block"
+          alt=""
+        />
       </section>
 
       <Footer />

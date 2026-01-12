@@ -7,7 +7,7 @@ import { ArrowRight } from "lucide-react";
 import { usePathname } from "next/navigation";
 
 const Landing = () => {
-  const pathname=usePathname()
+  const pathname = usePathname();
   const blogPosts = [
     {
       id: 1,
@@ -25,7 +25,7 @@ const Landing = () => {
       id: 2,
       image: "../images/img (9).png",
       badge: "Heritage",
-     badgeColor: "bg-[#6B2D8F]",
+      badgeColor: "bg-[#6B2D8F]",
       title: "Weaving Dreams: The Legacy of Banarasi Silk",
       excerpt:
         "Journey through centuries of craftsmanship as we explore the rich heritage of Banarasi...",
@@ -85,7 +85,7 @@ const Landing = () => {
   return (
     <>
       <section>
-        <div className="min-h-screen relative overflow-hidden">
+        <div className="h-[880px] md:h-[1040px]  lg:h-auto relative overflow-hidden">
           {/* Background */}
           <div
             className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -104,7 +104,7 @@ const Landing = () => {
             {/* Logo */}
             <div className="flex items-center">
               <div className="w-28 h-28 sm:w-32 sm:h-32 lg:w-40 lg:h-40 rounded-xl flex items-center justify-center lg:ml-10 z-50 relative ">
-                <div className="w-full h-full absolute z-0 bg-[url('/images/bg.png')] rounded-xl hidden sm:block"></div>
+                <div className="w-full h-full absolute z-0 bg-[url('/images/bg.png')] rounded-xl hidden lg:block"></div>
                 <img
                   src="/images/logo.png"
                   alt="House of Priya Logo"
@@ -114,61 +114,62 @@ const Landing = () => {
             </div>
 
             {/* Menu */}
-       <div
-  className="
+            <div
+              className="
     flex gap-6 sm:gap-10 lg:gap-15
     font-readex 
     font-bold
     text-base sm:text-lg lg:text-[20px]
-    mt-4 lg:-mt-30
+    -mt-3 lg:-mt-30
   "
->
-  <a
-    href="/"
-    className={`transition ${
-      pathname === "/"
-        ? "text-purple-700  border-purple-700"
-        : "text-[#6C6C6C] hover:text-purple-700"
-    }`}
-  >
-    Home
-  </a>
+            >
+              <a
+                href="/"
+                className={`transition ${
+                  pathname === "/"
+                    ? "text-purple-700  border-purple-700"
+                    : "text-[#6C6C6C] hover:text-purple-700"
+                }`}
+              >
+                Home
+              </a>
 
-  <a
-    href="/about"
-    className={`transition ${
-      pathname === "/about"
-        ? "text-purple-700  border-purple-700"
-        : "text-[#6C6C6C] hover:text-purple-700"
-    }`}
-  >
-    About
-  </a>
+              <a
+                href="/about"
+                className={`transition ${
+                  pathname === "/about"
+                    ? "text-purple-700  border-purple-700"
+                    : "text-[#6C6C6C] hover:text-purple-700"
+                }`}
+              >
+                About
+              </a>
 
-  <a
-    href="/blog"
-    className={`transition ${
-      pathname === "/blog"
-        ? "text-purple-700  border-purple-700"
-        : "text-[#6C6C6C] hover:text-purple-700"
-    }`}
-  >
-    Blog
-  </a>
-</div>
-
+              <a
+                href="/blog"
+                className={`transition ${
+                  pathname === "/blog"
+                    ? "text-purple-700  border-purple-700"
+                    : "text-[#6C6C6C] hover:text-purple-700"
+                }`}
+              >
+                Blog
+              </a>
+            </div>
 
             {/* Button */}
             <button
               className="
-        bg-purple-700 hover:bg-purple-800 text-white
+        bg-purple-700 hover:bg-purple-800 text-white font-readex
         px-6 py-2 rounded-md font-medium transition shadow-lg
-        mt-4 lg:-mt-30  
+        mt-4 lg:-mt-30  hidden sm:block
       "
             >
-              <a href="https://wa.me/919363167299?text=Hi%20young%20mynds.%20I%20am%20interested%20in%20your%20service."
-              target="_blank"
-              rel="noopener noreferer">
+              <a
+                href="https://wa.me/919363167299?text=Hi%20young%20mynds.%20I%20am%20interested%20in%20your%20service."
+                target="_blank"
+                rel="noopener noreferer"
+              >
                 {" "}
                 Enquire on WhatsApp
               </a>
@@ -189,7 +190,7 @@ const Landing = () => {
     "
           >
             {/* Left Content */}
-            <div className="space-y-6 text-center lg:text-left">
+            <div className="space-y-6 text-center lg:text-left -mt-13 sm:mt-0">
               <h1
                 className="
           font-['Cormorant_Garamond']
@@ -205,18 +206,21 @@ const Landing = () => {
               <p
                 className="
          font-readex 
-          text-[16px] sm:text-[18px] lg:text-18px]
+          text-[16px] sm:text-[18px] lg:text-18px] font-readex
           text-white font-medium
           tracking-[-0.5px]
         "
               >
-Insights, inspiration, and timeless elegance from House of Priya.
+                Insights, inspiration, and timeless elegance from House of
+                Priya.
               </p>
 
               <button className="bg-purple-700 hover:bg-purple-800 text-white px-8 py-3 rounded-md font-medium transition shadow-lg inline-block mt-4">
-                <a href="https://wa.me/919363167299?text=Hi%20young%20mynds.%20I%20am%20interested%20in%20your%20service."
-                target="_blank"
-                rel="noopener noreferer">
+                <a
+                  href="https://wa.me/919363167299?text=Hi%20young%20mynds.%20I%20am%20interested%20in%20your%20service."
+                  target="_blank"
+                  rel="noopener noreferer"
+                >
                   {" "}
                   Enquire on WhatsApp
                 </a>
@@ -227,14 +231,14 @@ Insights, inspiration, and timeless elegance from House of Priya.
             <div className="relative flex justify-center">
               <div
                 className="
-          px-0 sm:px-6 lg:px-8
+          px-0 sm:px-6 lg:px-1
           w-full sm:w-[380px] md:w-[450px] lg:w-[549px]
           h-auto lg:h-[600px]
         "
               >
                 <img
-                  src="../images/DSC02599 1.png"
-                  className="w-full h-auto object-contain"
+                  src="../images/DSC02599 1 (1).png"
+                  className="w-full h-auto lg:h-162.5 object-cover"
                   alt="Saree Model"
                 />
               </div>
@@ -242,7 +246,7 @@ Insights, inspiration, and timeless elegance from House of Priya.
           </div>
 
           {/* Decorative Circle */}
-          <div className="absolute bottom-0 left-0 w-72 sm:w-80 lg:w-96 h-72 sm:h-80 lg:h-96 bg-gradient-to-tr from-lime-300 to-yellow-200 rounded-full blur-3xl opacity-40 -translate-x-1/2 translate-y-1/2"></div>
+          <div className="absolute bottom-0 left-0 w-72 sm:w-80 lg:w-96 h-72 sm:h-80 lg:h-96 bg-gradient-to-tr  rounded-full blur-3xl opacity-40 -translate-x-1/2 translate-y-1/2"></div>
         </div>
       </section>
       <section className="bg-white py-20">
@@ -260,11 +264,13 @@ Insights, inspiration, and timeless elegance from House of Priya.
             {blogPosts.map((post) => (
               <article key={post.id} className="group cursor-pointer">
                 <div className="relative rounded-2xl overflow-hidden mb-4">
-                  <img
-                    src={post.image}
-                    alt={post.title}
-                    className="w-full h-72 object-cover transition-transform duration-500 group-hover:scale-110"
-                  />
+                  <a href="/blogdetail">
+                    <img
+                      src={post.image}
+                      alt={post.title}
+                      className="w-full h-72 object-cover transition-transform duration-500 group-hover:scale-110"
+                    />
+                  </a>
                 </div>
                 <div className="mb-3">
                   <span
@@ -275,17 +281,17 @@ Insights, inspiration, and timeless elegance from House of Priya.
                 </div>
 
                 <div className="space-y-3">
-                  {/* Title */}
+                  
                   <h3 className="text-[26px] font-[gabriola] text-gray-900 leading-tight group-hover:text-purple-700 transition-colors">
                     {post.title}
                   </h3>
 
-                  {/* Excerpt */}
+                
                   <p className="text-gray-600 font-readex text-sm leading-relaxed">
                     {post.excerpt}
                   </p>
 
-                  {/* Author & Date */}
+                  
                   <div className="flex items-center justify-between pt-2">
                     <div className="flex items-center gap-2">
                       <img
@@ -297,10 +303,12 @@ Insights, inspiration, and timeless elegance from House of Priya.
                         {post.author}
                       </span>
                     </div>
-                    <span className="text-sm font-readex text-gray-500">{post.date}</span>
+                    <span className="text-sm font-readex text-gray-500">
+                      {post.date}
+                    </span>
                   </div>
 
-                  {/* Read More Link */}
+          
                   <button className="flex items-center gap-2 font-readex text-[#6B2D8F] font-medium text-sm group-hover:gap-3 transition-all">
                     Read More
                     <ArrowRight className="w-4 h-4" />
@@ -312,25 +320,57 @@ Insights, inspiration, and timeless elegance from House of Priya.
         </div>
       </section>
       <section>
-        <div className=" flex items-center justify-center bg-gradient-to-br from-purple-100 via-pink-50 to-purple-50">
-          <div className="text-center px-6 py-16 max-w-4xl">
-            {/* Main Heading */}
-            <h1 className="text-[30px] font-[gabriola] md:text-[56px] lg:text-[66px]  text-purple-800 mb-6 leading-tight">
+        <div
+          className="relative flex items-center justify-center overflow-hidden
+                  bg-gradient-to-br from-[#EDE6F4] via-[#F5F1F9] to-[#EDE6F4]"
+        >
+          
+          <img
+            src="/images/Group (5).png"
+            className="
+        absolute left-0 top-1/2 -translate-y-1/2
+        opacity-100 hidden lg:block
+        max-h-[90%]
+      "
+            alt=""
+          />
+
+      
+          <img
+            src="/images/Group (2).png"
+            className="
+        absolute right-0 top-1/2 -translate-y-1/2
+        opacity-100 hidden lg:block
+        max-h-[90%] 
+      "
+            alt=""
+          />
+
+          {/* CENTER CONTENT */}
+          <div className="relative z-10 text-center px-6 py-16 max-w-4xl">
+            <h1
+              className="text-[30px] font-[gabriola] md:text-[56px] lg:text-[66px]
+                     text-purple-800 mb-6 leading-tight"
+            >
               Experience Sarees That Tell a Story
             </h1>
 
-            {/* Subheading */}
             <p className="text-gray-600 text-lg md:text-xl mb-10 font-light">
               Discover handcrafted elegance designed for today's woman.
             </p>
 
-            {/* WhatsApp Button */}
-            <button className="inline-flex items-center gap-3 bg-purple-600 hover:bg-purple-700 text-white px-8 py-4 rounded-lg font-medium text-lg transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
+            <button
+              className="inline-flex items-center gap-3 bg-purple-600 font-readex
+                         hover:bg-purple-700 text-white px-8 py-4 rounded-lg
+                         font-medium text-lg transition-all duration-300
+                         shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
+            >
               <FaWhatsapp className="w-6 h-6" />
-              <a href="https://wa.me/919363167299?text=Hi%20young%20mynds.%20I%20am%20interested%20in%20your%20service."
-              target="_blank"
-              rel="noopener noreferer">
-                {" "}
+              <a
+                href="https://wa.me/919363167299?text=Hi%20young%20mynds.%20I%20am%20interested%20in%20your%20service."
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 Enquire on WhatsApp
               </a>
             </button>

@@ -80,6 +80,18 @@ const Landing = () => {
 
       bgColor: "bg-pink-100",
     },
+    {
+      id: 5,
+      image: "../images/Rectangle 19470.png",
+
+      bgColor: "bg-pink-100",
+    },
+    {
+      id: 6,
+      image: "../images/Rectangle 19470.png",
+
+      bgColor: "bg-pink-100",
+    },
   ];
   useEffect(() => {
     const interval = setInterval(() => {
@@ -99,10 +111,32 @@ const Landing = () => {
     }
     return visible;
   };
+
+  const [screen, setScreen] = useState("desktop");
+
+  useEffect(() => {
+    const updateScreen = () => {
+      if (window.innerWidth < 640) setScreen("mobile");
+      else if (window.innerWidth < 1024) setScreen("tablet");
+      else setScreen("desktop");
+    };
+
+    updateScreen();
+    window.addEventListener("resize", updateScreen);
+    return () => window.removeEventListener("resize", updateScreen);
+  }, []);
+
+  const transformConfig = {
+    mobile: { x: 140, rotate: 10, scale: 0.9 },
+    tablet: { x: 220, rotate: 14, scale: 0.85 },
+    desktop: { x: 520, rotate: 18, scale: 0.78 },
+  };
+
+  const { x, rotate, scale } = transformConfig[screen];
   return (
     <>
       <section>
-        <div className="min-h-screen relative overflow-hidden">
+        <div className="h-[840px] md:h-[1150px] lg:h-auto relative overflow-hidden">
           {/* Background */}
           <div
             className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -111,7 +145,6 @@ const Landing = () => {
             <div className="absolute inset-0"></div>
           </div>
 
-          {/* Border */}
           <div className="absolute inset-0 pointer-events-none">
             <div className="absolute top-6 sm:top-10 lg:top-20 left-4 sm:left-6 lg:left-8 right-4 sm:right-6 lg:right-8 bottom-4 sm:bottom-6 lg:bottom-8 border-2 border-white opacity-40 rounded-sm"></div>
           </div>
@@ -121,7 +154,7 @@ const Landing = () => {
             {/* Logo */}
             <div className="flex items-center">
               <div className="w-28 h-28 sm:w-32 sm:h-32 lg:w-40 lg:h-40 rounded-xl flex items-center justify-center lg:ml-10 z-50 relative ">
-                <div className="w-full h-full absolute z-0 bg-[url('/images/bg.png')] rounded-xl hidden sm:block"></div>
+                <div className="w-full h-full absolute z-0 bg-[url('/images/bg.png')] rounded-xl hidden lg:block"></div>
                 <img
                   src="/images/logo.png"
                   alt="House of Priya Logo"
@@ -137,7 +170,7 @@ const Landing = () => {
     font-readex 
     font-bold
     text-base sm:text-lg lg:text-[20px]
-    mt-4 lg:-mt-30  
+    -mt-3 sm:mt-0 lg:-mt-30  
   "
             >
               <a
@@ -179,7 +212,7 @@ const Landing = () => {
               className="
         bg-[#6B46C1] hover:bg-purple-800 text-white
         px-6 py-2 rounded-md font-medium transition shadow-lg
-        mt-4 lg:-mt-30  
+        mt-4 lg:-mt-30 hidden sm:block 
       "
             >
               <a
@@ -203,18 +236,18 @@ const Landing = () => {
       px-4 sm:px-8 lg:px-16
       py-16 lg:py-12
       max-w-7xl mx-auto
-      mt-0 lg:-mt-26
+      mt-0 lg:-mt-26 
     "
           >
             {/* Left Content */}
-            <div className="space-y-6 text-center lg:text-left">
+            <div className="space-y-6 text-center lg:text-left -mt-13 sm:mt-0">
               <h1
                 className="
           font-['Cormorant_Garamond']
           text-[36px] sm:text-[48px] md:text-[56px] lg:text-[74px]
           leading-tight sm:leading-[60px] lg:leading-[90px]
           tracking-[-0.5px]
-          text-white
+          text-white mt-0 sm:-mt-3
         "
               >
                 Grace Woven in Every Thread
@@ -245,17 +278,17 @@ const Landing = () => {
             </div>
 
             {/* Right Image */}
-            <div className="relative flex justify-center">
+            <div className="relative flex justify-end">
               <div
                 className="
-          px-0 sm:px-6 lg:px-8
-          w-full sm:w-[380px] md:w-[450px] lg:w-[549px]
-          h-auto lg:h-[600px]
+          px-10 sm:px-6 lg:px-15
+          w-full sm:w-[380px] md:w-[450px] lg:w-[549px] 
+          h-auto lg:h-150
         "
               >
                 <img
-                  src="../images/womensaree.png"
-                  className="w-full h-auto object-contain"
+                  src="../images/DSC02740 1 (2).png"
+                  className="w-full h-auto object-cover"
                   alt="Saree Model"
                 />
               </div>
@@ -263,7 +296,7 @@ const Landing = () => {
           </div>
 
           {/* Decorative Circle */}
-          <div className="absolute bottom-0 left-0 w-72 sm:w-80 lg:w-96 h-72 sm:h-80 lg:h-96 bg-gradient-to-tr from-lime-300 to-yellow-200 rounded-full blur-3xl opacity-40 -translate-x-1/2 translate-y-1/2"></div>
+          <div className="absolute bottom-0 left-0 w-72 sm:w-80 lg:w-96 h-72 sm:h-80 lg:h-96 bg-gradient-to-tr  rounded-full blur-3xl opacity-40 -translate-x-1/2 translate-y-1/2"></div>
         </div>
       </section>
 
@@ -359,7 +392,7 @@ const Landing = () => {
               </ul>
 
               <div>
-                <button className="bg-[#6B46C1] hover:bg-purple-700 text-white font-[var(--font-readex-pro)] px-6 py-3 rounded-lg">
+                <button className="bg-[#6B46C1] hover:bg-purple-700 text-white  font-readex px-6 py-3 rounded-lg">
                   <a
                     href="https://wa.me/919363167299?text=Hi%20young%20mynds.%20I%20am%20interested%20in%20your%20service."
                     target="_blank"
@@ -400,7 +433,7 @@ const Landing = () => {
       top-1/2
       -translate-y-1/2
       w-31
-      opacity-40
+      opacity-100
     "
         />
 
@@ -415,7 +448,7 @@ const Landing = () => {
       top-1/2
       -translate-y-1/2
        w-31
-      opacity-40
+      opacity-100
       rotate-180
     "
         />
@@ -529,13 +562,13 @@ const Landing = () => {
           lg:rounded-tl-[200px] lg:rounded-tr-[200px]
           max-w-md
           w-[90%] sm:w-[80%] lg:w-[420px]
-          h-auto
-          py-12 sm:py-16 lg:h-[544px]
+          
+          py-12 sm:py-16 h-[544px] lg:h-[544px]
           flex flex-col items-center justify-center
           text-center
         "
             >
-              <p className="text-gray-800 text-[26px] sm:text-[32px] lg:text-[40px] font-[Gabriola] mb-2">
+              <p className="text-[#000000] text-[32px] sm:text-[32px] lg:text-[40px] font-[Gabriola] mb-2">
                 The New Edit
               </p>
 
@@ -543,7 +576,7 @@ const Landing = () => {
                 className="
             font-[NanumMyeongjo]
             font-normal
-            text-[28px] sm:text-[36px] lg:text-[45px]
+            text-[40px] sm:text-[36px] lg:text-[45px]
             leading-tight lg:leading-[2.07]
             text-[#6B46C1]
             mb-4
@@ -555,8 +588,8 @@ const Landing = () => {
               <p
                 className="
             font-readex
-            text-[16px] sm:text-[15px]
-            leading-10 sm:leading-6
+            text-[18px] sm:text-[15px]
+            leading-7 sm:leading-6
             text-[#454545]
             max-w-xs
           "
@@ -578,62 +611,63 @@ const Landing = () => {
         </div>
       </section>
 
-      <section className="bg-white">
+      <section className="bg-white relative">
+        <img src="../images/Group (8).png" className="absolute hidden lg:block" />
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[500px] lg:min-h-[600px]">
-            <div className="flex flex-col justify-start px-6 py-10 sm:px-10 lg:p-16">
-              <h2
-                className="font-[Gabriola] text-[#6B46C1] mb-10 sm:mb-14 lg:mb-20
-                       text-[36px] sm:text-[48px] lg:text-[66px]"
-              >
-                Farewell Collection
-              </h2>
-
-              <div className="mx-auto lg:ml-50">
+          <h2
+            className="font-[Gabriola] text-[#6B46C1] text-center 
+               text-[36px] sm:text-[48px] lg:text-[66px]"
+          >
+            Farewell Collection
+          </h2>
+          <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[500px] lg:min-h-[600px] items-center">
+            <div className="flex flex-col  px-6 py-10 sm:px-10 lg:px-16">
+              <div className="max-w-md mx-auto lg:mx-0 ml-0 lg:ml-40">
                 <h3
-                  className="font-[Gabriola] text-[#6B46C1] mb-3
-                         text-[26px] sm:text-[32px] lg:text-[40px]"
+                  className="font-[Gabriola] text-[#6B46C1] mb-4
+                     text-[26px] sm:text-[32px] lg:text-[40px] text-center  lg:text-end"
                 >
                   Colorful Joy
                 </h3>
-
                 <p
                   className="font-readex text-[#5E584E] text-justify
-                        text-[13px] sm:text-[14px]
-                        leading-[1.6] max-w-md"
+                    text-[13px] sm:text-[14px]
+                    leading-[1.8] mb-4"
                 >
                   Perfect for women who love subtle elegance with a modern
-                  twist. Each saree flows effortlessly from day wear to evening
+                  twist, each saree flows effortlessly from day wear to evening
                   occasions.
-                  <hr className="mt-3 text-[#745F5F] border" />
                 </p>
+                <hr className="border-t border-[#745F5F] w-full" />
               </div>
             </div>
 
             {/* Right - Image */}
-            <div className="relative flex items-center justify-center px-6 py-10 sm:p-8">
-              <img
-                src="/images/Rectangle 21 (1).png"
-                alt="Colorful Joy Saree"
-                className="w-full max-w-sm sm:max-w-md lg:max-w-full
-                     h-auto lg:max-h-[500px] object-contain"
-              />
+            <div className="relative flex items-center justify-center px-4 sm:px-6 py-10">
               <div
-                className="absolute bottom-4 left-4 sm:bottom-8 sm:left-8
-                        w-20 h-28 bg-green-600/20 rounded-full blur-2xl"
-              />
+                className="
+      w-full
+      max-w-[461px]
+      aspect-[461/576]
+    "
+              >
+                <img
+                  src="/images/Rectangle 21 (1).png"
+                  alt="Colorful Joy Saree"
+                  className="w-full h-full object-cover"
+                />
+              </div>
             </div>
           </div>
         </div>
 
-        {/* ===== BOTTOM ORANGE SECTION ===== */}
-        <div className="w-full bg-[#E2AC52] mt-0 lg:-mt-20">
+        <div className="w-full bg-[#E2AC52] mt-0 lg:-mt-20 relative">
           <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[500px] lg:min-h-[600px]">
-            {/* Left - Image */}
             <div
               className="relative flex items-center justify-center px-6 py-10 sm:p-8
                       order-1 lg:order-1"
             >
+
               <img
                 src="/images/Rectangle 22 (3).png"
                 alt="Dual Joy Saree"
@@ -647,13 +681,13 @@ const Landing = () => {
               />
             </div>
 
-            {/* Right - Text */}
+            
             <div
               className="flex items-center justify-center lg:justify-start
                       px-6 py-10 sm:px-10 lg:p-12
                       order-2 lg:order-2"
             >
-              <div>
+              <div className="ml-0 lg:-ml-40 lg:-mt-20">
                 <h3
                   className="font-[Gabriola] text-[#6B46C1] mb-3
                          text-[26px] sm:text-[32px] lg:text-[40px]"
@@ -669,58 +703,83 @@ const Landing = () => {
                   Experience the beauty of contrast with our Dual Joy sarees —
                   thoughtfully designed to blend two harmonious shades into one
                   graceful drape.
-                  <hr className="mt-3 text-[#745F5F] border" />
                 </p>
+                <hr className="mt-3 text-[#745F5F] border" />
               </div>
+             
             </div>
+            
           </div>
+              <img 
+             src="../images/Group (9).png" 
+             className="absolute -bottom-1 right-8 lg:right-2
+                        w-52 sm:w-64 lg:w-95 
+                        h-96 lg:h-125 hidden lg:block"
+             alt="Decorative paisley design"
+           />
         </div>
       </section>
 
       <section className="bg-white py-16 md:py-20 px-4">
         <div className="max-w-[1800px] mx-auto">
           {/* Heading */}
-          <h1 className="text-[36px] sm:text-[44px] md:text-[64px] font-[Gabriola] text-center mb-16 md:mb-24 text-[#6B46C1]">
+          <h1
+            className="
+            text-[36px] sm:text-[44px] md:text-[64px]
+            font-[Gabriola]
+            text-center
+            mb-16 md:mb-24
+            text-[#6B46C1]
+          "
+          >
             Modern Style Toward Sarees
           </h1>
 
-          {/* Slider */}
-          <div className="relative h-[380px] sm:h-[420px] md:h-[500px] flex items-center justify-center mb-20 overflow-hidden">
+          {/* Carousel */}
+          <div
+            className="
+    relative
+    h-[320px] sm:h-[420px] md:h-[600px]
+    flex items-center justify-center
+    overflow-hidden md:overflow-visible
+    [perspective:1400px]
+  "
+          >
             {getVisibleSarees().map((saree) => {
               const isCenter = saree.position === 0;
 
               return (
                 <div
                   key={saree.id}
-                  className={`absolute transition-all duration-700 ease-in-out ${
-                    isCenter
-                      ? "z-30 scale-100 opacity-100"
-                      : "z-10 scale-[0.75] md:scale-[0.65] opacity-50"
-                  }`}
+                  className={`
+          absolute
+          transition-all duration-700
+          ease-[cubic-bezier(.4,0,.2,1)]
+          ${isCenter ? "z-30 opacity-100" : "z-10 opacity-70"}
+        `}
                   style={{
                     transform: `
-                translateX(${
-                  saree.position *
-                  (typeof window !== "undefined" && window.innerWidth < 768
-                    ? 220
-                    : 600)
-                }px)
-                scale(${isCenter ? 1 : 0.75})
-                rotateY(${saree.position * 8}deg)
-              `,
+            translateX(${saree.position * x}px)
+            scale(${isCenter ? 1 : scale})
+            rotateY(${saree.position * rotate}deg)
+          `,
                   }}
                 >
                   <div
-                    className="rounded-3xl overflow-hidden 
-                            w-[280px] h-[360px]
-                            sm:w-[320px] sm:h-[420px]
-                            md:w-[493px] md:h-[577px]
-                            p-4 sm:p-6 md:p-8"
+                    className="
+            rounded-[24px]
+            overflow-hidden
+            bg-white
+            shadow-[0_25px_50px_rgba(0,0,0,0.25)]
+            w-[220px] h-[280px]
+            sm:w-[300px] sm:h-[400px]
+            md:w-[420px] md:h-[560px]
+          "
                   >
                     <img
                       src={saree.image}
-                      alt={`Saree ${saree.id}`}
-                      className="w-full h-full object-cover "
+                      alt=""
+                      className="w-full h-full object-cover"
                     />
                   </div>
                 </div>
@@ -728,19 +787,20 @@ const Landing = () => {
             })}
           </div>
 
-          {/* Arrows */}
-
           {/* Dots */}
-          <div className="flex justify-center gap-2 md:gap-3 mt-8 md:mt-12">
+          <div className="flex justify-center gap-3 mt-12">
             {sarees.map((_, idx) => (
               <button
                 key={idx}
                 onClick={() => setCurrentIndex(idx)}
-                className={`h-3 md:h-4 rounded-full transition-all ${
+                className={`
+                h-3 rounded-full transition-all
+                ${
                   idx === currentIndex
-                    ? "bg-[#6B46C1] w-8 md:w-12"
-                    : "bg-purple-300 w-3 md:w-4"
-                }`}
+                    ? "bg-[#6B46C1] w-12"
+                    : "bg-purple-300 w-3"
+                }
+              `}
               />
             ))}
           </div>
@@ -758,7 +818,7 @@ const Landing = () => {
           w-[260px] h-[260px]
           sm:w-[300px] sm:h-[300px]
           bg-white   overflow-hidden
-          lg:absolute lg:-top-10 lg:left-0
+          lg:absolute lg:-top-10 lg:left-0 hidden lg:block
         "
               >
                 <img
@@ -768,13 +828,13 @@ const Landing = () => {
                 />
               </div>
 
-              {/* Image 2 */}
+           
               <div
                 className="
           w-[220px] h-[360px]
           sm:w-[280px] sm:h-[400px]
          overflow-hidden z-10
-          lg:absolute lg:bottom-0 lg:left-42
+          lg:absolute lg:bottom-0 lg:left-42 hidden lg:block
         "
               >
                 <img
@@ -784,7 +844,7 @@ const Landing = () => {
                 />
               </div>
 
-              {/* Image 3 */}
+              
               <div
                 className="
           w-[280px] h-[480px]
@@ -801,14 +861,14 @@ const Landing = () => {
               </div>
             </div>
 
-            {/* RIGHT SIDE CONTENT */}
+           
             <div className="space-y-6 text-center lg:text-left">
               <h2 className="text-[36px] sm:text-[44px] md:text-[54px] font-[Gabriola] text-[#6B46C1] mb-6">
                 Trending Fashion
               </h2>
 
               <p className="text-gray-700 text-[14px] font-readex leading-relaxed max-w-xl mx-auto lg:mx-0">
-                At House of Priyá, every saree is thoughtfully curated to
+                At House of Priya, every saree is thoughtfully curated to
                 reflect modern elegance while staying rooted in timeless Indian
                 tradition.
               </p>
@@ -821,12 +881,14 @@ const Landing = () => {
 
               <p className="text-gray-700 text-[14px] font-readex leading-relaxed max-w-xl mx-auto lg:mx-0">
                 From subtle pastels to bold statement drapes, each piece is
-                crafted to make you feel confident, elegant, and effortlessly
-                stylish.
+                crafted to make you feel confident, comfortable, and
+                effortlessly beautiful. Designed for women who appreciate
+                quality, detail, and authenticity, our sarees are perfect for
+                celebrations, workwear, and elegant evenings alike
               </p>
 
               <div className="pt-6">
-                <button className="bg-[#6B46C1] hover:bg-purple-700 text-white font-semibold px-8 py-3 md:px-10 md:py-4 rounded-full transition-all duration-300 shadow-lg hover:scale-105">
+                <button className="bg-[#6B46C1] hover:bg-purple-700  font-readex text-white font-semibold px-8 py-3 md:px-10 md:py-4 rounded-full transition-all duration-300 shadow-lg hover:scale-105">
                   <a
                     href="https://wa.me/919363167299?text=Hi%20young%20mynds.%20I%20am%20interested%20in%20your%20service."
                     target="_blank"
@@ -885,22 +947,32 @@ const Landing = () => {
           </div>
         </div>
       </section>
-      <section className="relative min-h-screen overflow-hidden">
+      <section className="relative overflow-hidden">
         {/* Background Image */}
         <div
-          className="absolute inset-0 bg-center bg-cover bg-no-repeat"
+          className="
+      absolute inset-0 
+      bg-center bg-cover bg-no-repeat
+      h-[60vh] sm:h-[60vh] lg:h-[100vh]
+    "
           style={{
-            backgroundImage: 'url("../images/Rectangle 115.png")',
+            backgroundImage: "url('/images/Rectangle 115.png')",
           }}
         />
 
         {/* Content Wrapper */}
-        <div className="relative z-10 min-h-screen flex items-center justify-center lg:justify-start px-4 sm:px-6 lg:px-24">
-          {/* Form Card */}
+        <div
+          className="
+      relative z-10
+      flex items-center justify-center lg:justify-start
+      px-4 sm:px-6 lg:px-24
+      min-h-[60vh] lg:min-h-screen
+    "
+        >
           <div
             className="
         bg-white/70 backdrop-blur-sm shadow-2xl rounded-xl
-        w-full sm:max-w-[520px] lg:max-w-[617px]
+        w-full max-w-[520px] lg:max-w-[617px]
         p-6 sm:p-8 lg:p-12
       "
           >
@@ -908,7 +980,7 @@ const Landing = () => {
               House of Priya is Coming to RS Puram
             </h1>
 
-            <p className="text-[#5E584E] font-readex  text-[14px] sm:text-[15px] lg:text-[16px] leading-relaxed tracking-wide mb-6 text-center lg:text-left">
+            <p className="text-[#5E584E] font-readex text-[14px] sm:text-[15px] lg:text-[16px] leading-relaxed tracking-wide mb-6 text-center lg:text-left">
               Step into a space where elegance, craftsmanship, and modern sarees
               come together.
             </p>
