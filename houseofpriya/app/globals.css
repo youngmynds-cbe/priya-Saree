@@ -28,10 +28,11 @@ body {
 
 @font-face {
   font-family: "Gabriola";
-  src: url("../fonts/Gabriola.ttf") format("truetype");
-  font-style: normal;
+  src: url("/fonts/Gabriola.ttf") format("truetype");
+  font-weight: 400;
   font-display: swap;
 }
+
 
 
 
