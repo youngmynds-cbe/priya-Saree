@@ -226,7 +226,7 @@ const Landing = () => {
           <article className="max-w-6xl mx-auto px-6 py-12">
             {/* Header */}
             <header className="text-center mb-12">
-              <h1 className="text-[36px] text-center  md:text-[66px] lg:text-[66px] font-[gabriola] text-purple-800 mb-4 leading-tight">
+              <h1 className="text-[36px] text-center  md:text-[66px] lg:text-[66px] font-gabriola text-purple-800 mb-4 leading-tight">
                 Festive Elegance: Choosing Your
                 <br /> Perfect Wedding Saree
               </h1>
@@ -339,7 +339,7 @@ const Landing = () => {
       <section className="bg-gradient-to-b from-purple-50 to-white py-20">
         <div className="max-w-7xl mx-auto px-6">
           {/* Section Title */}
-          <h2 className="text-[37px] lg:text-[66px] font-[gabriola] text-[#6B2D8F] text-center mb-16">
+          <h2 className="text-[37px] lg:text-[66px] font-gabriola text-[#6B2D8F] text-center mb-16">
             Popular Posts
           </h2>
 
@@ -370,7 +370,7 @@ const Landing = () => {
                   </div>
 
                   {/* Title */}
-                  <h3 className="text-[20px] lg:text-[26px] font-[gabriola] text-gray-900 mb-3 leading-snug group-hover:text-purple-700 transition-colors">
+                  <h3 className="text-[20px] lg:text-[26px] font-gabriola text-gray-900 mb-3 leading-snug group-hover:text-purple-700 transition-colors">
                     {post.title}
                   </h3>
 

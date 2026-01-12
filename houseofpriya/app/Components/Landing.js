@@ -321,7 +321,7 @@ const Landing = () => {
             <div className="space-y-8 text-center lg:text-left">
               <h2
                 className="
-            font-[Gabriola]
+            font-gabriola
             font-normal
             text-[40px]
             md:text-[54px]
@@ -456,7 +456,7 @@ const Landing = () => {
         {/* CONTENT */}
         <div className="relative z-10 max-w-7xl mx-auto px-6">
           {/* HEADING */}
-          <h2 className="text-center font-[Gabriola] text-[36px] sm:text-[44px] lg:text-[56px] text-[#6B46C1] mb-2">
+          <h2 className="text-center font-gabriola text-[36px] sm:text-[44px] lg:text-[56px] text-[#6B46C1] mb-2">
             Our Exquisite Collection
           </h2>
 
@@ -487,7 +487,7 @@ const Landing = () => {
                 alt="Premium Handloom"
                 className="w-full"
               />
-              <h3 className="font-[Gabriola] text-[20px] text-center sm:text-[32px] lg:text-[38px] text-purple-600 mt-4">
+              <h3 className="font-gabriola text-[20px] text-center sm:text-[32px] lg:text-[38px] text-purple-600 mt-4">
                 Banarasi Heritage
               </h3>
               <p className="font-readex text-[14px] text-center sm:text-[15px] lg:text-[16px] leading-[22px] text-[#4B5563]">
@@ -502,7 +502,7 @@ const Landing = () => {
                 alt="Party Wear"
                 className="w-full"
               />
-              <h3 className="font-[Gabriola] text-center text-[20px] sm:text-[32px] lg:text-[38px] text-purple-600 mt-4">
+              <h3 className="font-gabriola text-center text-[20px] sm:text-[32px] lg:text-[38px] text-purple-600 mt-4">
                 Kanjeevaram Classics
               </h3>
               <p className="font-readex text-[14px] text-center sm:text-[15px] lg:text-[16px] leading-[22px] text-[#4B5563]">
@@ -517,7 +517,7 @@ const Landing = () => {
                 alt="Everyday Elegance"
                 className="w-full"
               />
-              <h3 className="font-[Gabriola] text-[20px] text-center sm:text-[32px] lg:text-[38px] text-purple-600 mt-4">
+              <h3 className="font-gabriola text-[20px] text-center sm:text-[32px] lg:text-[38px] text-purple-600 mt-4">
                 Contemporary Silks
               </h3>
               <p className="font-readex text-[14px] sm:text-[15px] text-center lg:text-[16px] leading-[22px] text-[#4B5563]">
@@ -532,7 +532,7 @@ const Landing = () => {
                 alt="Bridal Sarees"
                 className="w-full"
               />
-              <h3 className="font-[Gabriola] text-[20px] text-center sm:text-[32px] lg:text-[38px] text-purple-600 mt-4">
+              <h3 className="font-gabriola text-[20px] text-center sm:text-[32px] lg:text-[38px] text-purple-600 mt-4">
                 Bridal Sarees
               </h3>
               <p className="font-readex text-[14px] sm:text-[15px] text-center lg:text-[16px] leading-[22px] text-[#4B5563]">
@@ -568,7 +568,7 @@ const Landing = () => {
           text-center
         "
             >
-              <p className="text-[#000000] text-[32px] sm:text-[32px] lg:text-[40px] font-[Gabriola] mb-2">
+              <p className="text-[#000000] text-[32px] sm:text-[32px] lg:text-[40px] font-gabriola mb-2">
                 The New Edit
               </p>
 
@@ -615,7 +615,7 @@ const Landing = () => {
         <img src="../images/Group (8).png" className="absolute hidden lg:block" />
         <div className="max-w-7xl mx-auto">
           <h2
-            className="font-[Gabriola] text-[#6B46C1] text-center 
+            className="font-gabriola text-[#6B46C1] text-center 
                text-[36px] sm:text-[48px] lg:text-[66px]"
           >
             Farewell Collection
@@ -624,7 +624,7 @@ const Landing = () => {
             <div className="flex flex-col  px-6 py-10 sm:px-10 lg:px-16">
               <div className="max-w-md mx-auto lg:mx-0 ml-0 lg:ml-40">
                 <h3
-                  className="font-[Gabriola] text-[#6B46C1] mb-4
+                  className="font-gabriola text-[#6B46C1] mb-4
                      text-[26px] sm:text-[32px] lg:text-[40px] text-center  lg:text-end"
                 >
                   Colorful Joy
@@ -689,7 +689,7 @@ const Landing = () => {
             >
               <div className="ml-0 lg:-ml-40 lg:-mt-20">
                 <h3
-                  className="font-[Gabriola] text-[#6B46C1] mb-3
+                  className="font-gabriola text-[#6B46C1] mb-3
                          text-[26px] sm:text-[32px] lg:text-[40px]"
                 >
                   Dual Joy
@@ -726,7 +726,7 @@ const Landing = () => {
           <h1
             className="
             text-[36px] sm:text-[44px] md:text-[64px]
-            font-[Gabriola]
+            font-gabriola
             text-center
             mb-16 md:mb-24
             text-[#6B46C1]
@@ -863,7 +863,7 @@ const Landing = () => {
 
            
             <div className="space-y-6 text-center lg:text-left">
-              <h2 className="text-[36px] sm:text-[44px] md:text-[54px] font-[Gabriola] text-[#6B46C1] mb-6">
+              <h2 className="text-[36px] sm:text-[44px] md:text-[54px] font-gabriola text-[#6B46C1] mb-6">
                 Trending Fashion
               </h2>
 
@@ -906,7 +906,7 @@ const Landing = () => {
       <section className="min-h-screen bg-gradient-to-b from-purple-50 to-white py-20 px-4">
         <div className="max-w-7xl mx-auto">
           {/* Header */}
-          <h2 className="text-[38px] md:text-[50px] lg:text-[68px] font-[Gabriola] text-center tracking-[0.5px] text-[#6B46C1] mb-20">
+          <h2 className="text-[38px] md:text-[50px] lg:text-[68px] font-gabriola text-center tracking-[0.5px] text-[#6B46C1] mb-20">
             See Our Sarees Come Alive
           </h2>
 
@@ -950,15 +950,19 @@ const Landing = () => {
       <section className="relative overflow-hidden">
         {/* Background Image */}
         <div
-          className="
-      absolute inset-0 
-      bg-center bg-cover bg-no-repeat
-      h-[60vh] sm:h-[60vh] lg:h-[100vh]
-    "
-          style={{
-            backgroundImage: "url('/images/Rectangle 115.png')",
-          }}
-        />
+  className="
+    absolute inset-0
+    bg-center bg-cover bg-no-repeat
+    h-[60vh]        /* mobile */
+    sm:h-[70vh]     /* large mobile */
+    md:h-[1000px]     /* tablet FIX */
+    lg:h-screen    
+  "
+  style={{
+    backgroundImage: "url('/images/Rectangle 115.png')",
+  }}
+/>
+
 
         {/* Content Wrapper */}
         <div
@@ -976,7 +980,7 @@ const Landing = () => {
         p-6 sm:p-8 lg:p-12
       "
           >
-            <h1 className="text-[28px] sm:text-[34px] lg:text-[40px] font-[Gabriola] text-[#6B46C1] mb-4 leading-tight text-center lg:text-left">
+            <h1 className="text-[28px] sm:text-[34px] lg:text-[40px] font-gabriola text-[#6B46C1] mb-4 leading-tight text-center lg:text-left">
               House of Priya is Coming to RS Puram
             </h1>
 

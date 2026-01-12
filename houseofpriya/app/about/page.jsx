@@ -177,7 +177,7 @@ const Landing = () => {
         <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center px-6">
           {/* LEFT CONTENT */}
           <div className="text-left">
-            <h2 className="font-[gabriola] text-[36px] lg:text-[56px] md:text-[56px] leading-[48px] tracking-[-0.5px] text-[#5B2D8B]">
+            <h2 className="font-gabriola text-[36px] lg:text-[56px] md:text-[56px] leading-[48px] tracking-[-0.5px] text-[#5B2D8B]">
               The House of Priya Philosophy
             </h2>
 
@@ -198,16 +198,27 @@ const Landing = () => {
               aesthetics.
             </p>
 
-            <button className="mt-8 bg-[#6D28D9] font-readex text-white px-6 py-3 rounded-md text-sm hover:bg-[#5B21B6] transition">
-              <a
-                href="https://wa.me/919363167299?text=Hi%20young%20mynds.%20I%20am%20interested%20in%20your%20service."
-                target="_blank"
-                rel="noopener noreferer"
-              >
-                {" "}
-                Enquire on WhatsApp
-              </a>
-            </button>
+           <div className="mt-8 flex justify-center sm:justify-start">
+  <a
+    href="https://wa.me/919363167299?text=Hi%20young%20mynds.%20I%20am%20interested%20in%20your%20service."
+    target="_blank"
+    rel="noopener noreferrer"
+    className="
+      bg-[#6D28D9]
+      font-readex
+      text-white
+      px-6 py-3
+      rounded-md
+      text-sm
+      hover:bg-[#5B21B6]
+      transition
+      inline-block
+    "
+  >
+    Enquire on WhatsApp
+  </a>
+</div>
+
           </div>
 
           {/* RIGHT IMAGE */}
@@ -228,7 +239,7 @@ const Landing = () => {
       <section className="bg-white py-20">
         <div className="max-w-7xl mx-auto px-3">
           {/* SECTION TITLE */}
-          <h2 className="text-center font-[gabriola] text-[28px] lg:text-[48px] md:text-[38px] leading-[52px] tracking-[-0.3px] text-[#5B2D8B]">
+          <h2 className="text-center font-gabriola text-[28px] lg:text-[48px] md:text-[38px] leading-[52px] tracking-[-0.3px] text-[#5B2D8B]">
             What Defines House of Priya
           </h2>
 
@@ -240,7 +251,7 @@ const Landing = () => {
                 <img src="../images/div (2).png" />
               </div>
 
-              <h3 className="mt-6 font-[gabriola] text-[24px] text-[#5B2D8B]">
+              <h3 className="mt-6 font-gabriola text-[24px] text-[#5B2D8B]">
                 Thoughtfully Curated Designs
               </h3>
 
@@ -255,7 +266,7 @@ const Landing = () => {
                 <img src="../images/div (3).png" />
               </div>
 
-              <h3 className="mt-6 font-[gabriola] text-[24px] text-[#5B2D8B]">
+              <h3 className="mt-6 font-gabriola text-[24px] text-[#5B2D8B]">
                 Premium Fabrics & Finishes
               </h3>
 
@@ -270,7 +281,7 @@ const Landing = () => {
                 <img src="../images/div (4).png" />
               </div>
 
-              <h3 className="mt-6 font-[gabriola] text-[24px] text-[#5B2D8B]">
+              <h3 className="mt-6 font-gabriola text-[24px] text-[#5B2D8B]">
                 Modern Elegance for Woman
               </h3>
 
@@ -285,7 +296,7 @@ const Landing = () => {
                 <img src="../images/div (5).png" />
               </div>
 
-              <h3 className="mt-6 font-[gabriola] text-[24px] text-[#5B2D8B]">
+              <h3 className="mt-6 font-gabriola text-[24px] text-[#5B2D8B]">
                 Rooted in Indian Craft
               </h3>
 
@@ -299,7 +310,7 @@ const Landing = () => {
       <section className="relative bg-[#F9F5FF] py-18 overflow-hidden">
         <div className="max-w-6xl mx-auto px-6 text-center">
           {/* TITLE */}
-          <h2 className="font-[gabriola] font-normal text-[30px] md:text-[38px]  lg:text-[48px] leading-[52px] tracking-[-0.5px] text-[#5B2D8B]">
+          <h2 className="font-gabriola font-normal text-[30px] md:text-[38px]  lg:text-[48px] leading-[52px] tracking-[-0.5px] text-[#5B2D8B]">
             Crafted Across India
           </h2>
 
@@ -373,7 +384,7 @@ const Landing = () => {
           />
         </div>
         <div className="max-w-6xl mx-auto px-6 text-center">
-          <h2 className="font-[gabriola] font-normal text-[30px] md:text-[38px] lg:text-[48px] leading-[52px] tracking-[-0.5px] text-[#5B2D8B]">
+          <h2 className="font-gabriola font-normal text-[30px] md:text-[38px] lg:text-[48px] leading-[52px] tracking-[-0.5px] text-[#5B2D8B]">
             Our Signature Weave
           </h2>
 
@@ -470,7 +481,7 @@ const Landing = () => {
 
           {/* RIGHT CONTENT */}
           <div className="text-left px-5">
-            <h2 className="font-[gabriola] font-normal  text-[36px] lg:text-[63px] leading-[52px] tracking-[-0.5px] text-[#4C1D95]">
+            <h2 className="font-gabriola font-normal  text-[36px] lg:text-[63px] leading-[52px] tracking-[-0.5px] text-[#4C1D95]">
               Designed for Today’s Woman
             </h2>
 
@@ -484,16 +495,27 @@ const Landing = () => {
               without being overwhelming.
             </p>
 
-            <button className="mt-8 inline-flex items-center font-readex justify-center bg-[#6D28D9] text-white text-sm px-6 py-3 rounded-md hover:bg-[#5B21B6] transition">
-              <a
-                href="https://wa.me/919363167299?text=Hi%20young%20mynds.%20I%20am%20interested%20in%20your%20service."
-                target="_blank"
-                rel="noopener noreferer"
-              >
-                {" "}
-                Enquire on WhatsApp
-              </a>
-            </button>
+           <div className="mt-8 flex justify-center sm:justify-start">
+  <a
+    href="https://wa.me/919363167299?text=Hi%20young%20mynds.%20I%20am%20interested%20in%20your%20service."
+    target="_blank"
+    rel="noopener noreferrer"
+    className="
+      bg-[#6D28D9]
+      font-readex
+      text-white
+      px-6 py-3
+      rounded-md
+      text-sm
+      hover:bg-[#5B21B6]
+      transition
+      inline-block
+    "
+  >
+    Enquire on WhatsApp
+  </a>
+</div>
+
           </div>
         </div>
       </section>
@@ -536,7 +558,7 @@ const Landing = () => {
     {/* CONTENT */}
     <div className="relative z-10 flex flex-col items-center text-center">
       {/* TITLE */}
-      <h2 className="font-[gabriola] font-normal text-[38px] leading-[42px] tracking-[-0.5px] text-white">
+      <h2 className="font-gabriola font-normal text-[38px] leading-[42px] tracking-[-0.5px] text-white">
         Opening Soon in RS Puram
       </h2>
 
@@ -580,7 +602,7 @@ const Landing = () => {
           <div className="text-[#6D28D9] sm:text-[50px] lg:text-[85px]">“</div>
 
           {/* QUOTE TEXT */}
-          <p className="font-[gabriola] font-normal text-[30px] md:text-[40px] lg:text-[45px] leading-[49px] tracking-[-0.5px] text-center text-[#5B2D8B]">
+          <p className="font-gabriola font-normal text-[30px] md:text-[40px] lg:text-[45px] leading-[49px] tracking-[-0.5px] text-center text-[#5B2D8B]">
             Every saree at House of Priya is designed to feel personal, elegant,
             and timeless — just like the women who wear them.
           </p>

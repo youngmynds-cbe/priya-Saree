@@ -252,7 +252,7 @@ const Landing = () => {
       <section className="bg-white py-20">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-[36px] md:text-[48px] lg:text-[66px] font-[gabriola] text-purple-800 mb-4">
+            <h2 className="text-[36px] md:text-[48px] lg:text-[66px] font-gabriola text-purple-800 mb-4">
               Stories Woven in Tradition & Style
             </h2>
             <p className="text-gray-600 font-[Readex_Pro] text-lg max-w-2xl mx-auto">
@@ -282,7 +282,7 @@ const Landing = () => {
 
                 <div className="space-y-3">
                   
-                  <h3 className="text-[26px] font-[gabriola] text-gray-900 leading-tight group-hover:text-purple-700 transition-colors">
+                  <h3 className="text-[26px] font-gabriola text-gray-900 leading-tight group-hover:text-purple-700 transition-colors">
                     {post.title}
                   </h3>
 
@@ -349,7 +349,7 @@ const Landing = () => {
           {/* CENTER CONTENT */}
           <div className="relative z-10 text-center px-6 py-16 max-w-4xl">
             <h1
-              className="text-[30px] font-[gabriola] md:text-[56px] lg:text-[66px]
+              className="text-[30px] font-gabriola md:text-[56px] lg:text-[66px]
                      text-purple-800 mb-6 leading-tight"
             >
               Experience Sarees That Tell a Story
