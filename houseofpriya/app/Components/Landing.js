@@ -11,27 +11,73 @@ const Landing = () => {
   const pathname = usePathname();
   const [currentIndex, setCurrentIndex] = useState(0);
   const [hoveredCard, setHoveredCard] = useState(null);
+  const [showModal, setShowModal] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const [formData, setFormData] = useState({
     name: "",
     email: "",
   });
-  const [isSubmitted, setIsSubmitted] = useState(false);
 
+  const [errors, setErrors] = useState({});
+  const [isSubmitted, setIsSubmitted] = useState(false);
   const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
+    const { name, value } = e.target;
+
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+
+    // remove error while typing
+    setErrors((prev) => ({
+      ...prev,
+      [name]: "",
+    }));
   };
 
-  const handleSubmit = () => {
-    if (formData.name && formData.email) {
-      setIsSubmitted(true);
-      setTimeout(() => {
-        setIsSubmitted(false);
+  const validateForm = () => {
+    let newErrors = {};
+
+    if (!formData.name.trim()) {
+      newErrors.name = "Name is required";
+    }
+
+    if (!formData.email.trim()) {
+      newErrors.email = "Email is required";
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+      newErrors.email = "Enter a valid email address";
+    }
+
+    setErrors(newErrors);
+
+    return Object.keys(newErrors).length === 0;
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    if (!validateForm()) return;
+
+    try {
+      setLoading(true); // 🔄 start loader
+
+      const res = await fetch("/api/send-mail", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await res.json();
+
+      if (data.success) {
+        setShowModal(true);
         setFormData({ name: "", email: "" });
-      }, 2000);
+      }
+    } catch (error) {
+      console.error(error);
+    } finally {
+      setLoading(false); // ✅ stop loader
     }
   };
 
@@ -612,7 +658,10 @@ const Landing = () => {
       </section>
 
       <section className="bg-white relative">
-        <img src="../images/Group (8).png" className="absolute hidden lg:block" />
+        <img
+          src="../images/Group (8).png"
+          className="absolute hidden lg:block"
+        />
         <div className="max-w-7xl mx-auto">
           <h2
             className="font-gabriola text-[#6B46C1] text-center 
@@ -667,7 +716,6 @@ const Landing = () => {
               className="relative flex items-center justify-center px-6 py-10 sm:p-8
                       order-1 lg:order-1"
             >
-
               <img
                 src="/images/Rectangle 22 (3).png"
                 alt="Dual Joy Saree"
@@ -681,7 +729,6 @@ const Landing = () => {
               />
             </div>
 
-            
             <div
               className="flex items-center justify-center lg:justify-start
                       px-6 py-10 sm:px-10 lg:p-12
@@ -706,17 +753,15 @@ const Landing = () => {
                 </p>
                 <hr className="mt-3 text-[#745F5F] border" />
               </div>
-             
             </div>
-            
           </div>
-              <img 
-             src="../images/Group (9).png" 
-             className="absolute -bottom-1 right-8 lg:right-2
+          <img
+            src="../images/Group (9).png"
+            className="absolute -bottom-1 right-8 lg:right-2
                         w-52 sm:w-64 lg:w-95 
                         h-96 lg:h-125 hidden lg:block"
-             alt="Decorative paisley design"
-           />
+            alt="Decorative paisley design"
+          />
         </div>
       </section>
 
@@ -828,7 +873,6 @@ const Landing = () => {
                 />
               </div>
 
-           
               <div
                 className="
           w-[220px] h-[360px]
@@ -844,7 +888,6 @@ const Landing = () => {
                 />
               </div>
 
-              
               <div
                 className="
           w-[280px] h-[480px]
@@ -861,7 +904,6 @@ const Landing = () => {
               </div>
             </div>
 
-           
             <div className="space-y-6 text-center lg:text-left">
               <h2 className="text-[36px] sm:text-[44px] md:text-[54px] font-gabriola text-[#6B46C1] mb-6">
                 Trending Fashion
@@ -950,7 +992,7 @@ const Landing = () => {
       <section className="relative overflow-hidden">
         {/* Background Image */}
         <div
-  className="
+          className="
     absolute inset-0
     bg-center bg-cover bg-no-repeat
     h-[60vh]        /* mobile */
@@ -958,11 +1000,10 @@ const Landing = () => {
     md:h-[1000px]     /* tablet FIX */
     lg:h-screen    
   "
-  style={{
-    backgroundImage: "url('/images/Rectangle 115.png')",
-  }}
-/>
-
+          style={{
+            backgroundImage: "url('/images/Rectangle 115.png')",
+          }}
+        />
 
         {/* Content Wrapper */}
         <div
@@ -997,35 +1038,42 @@ const Landing = () => {
               </div>
             ) : (
               <div className="space-y-4">
-                <input
-                  type="text"
-                  name="name"
-                  placeholder="Enter Your Name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-[#6B46C1] transition-all text-gray-700 text-sm sm:text-base placeholder:text-gray-400"
-                />
+                {/* Name */}
+                <div>
+                  <input
+                    type="text"
+                    name="name"
+                    placeholder="Enter Your Name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    className={`w-full px-4 py-3 border rounded-lg focus:outline-none transition-all text-gray-700
+       `}
+                  />
+                  {errors.name && (
+                    <p className="text-red-500 text-sm mt-1">{errors.name}</p>
+                  )}
+                </div>
 
-                <input
-                  type="email"
-                  name="email"
-                  placeholder="Enter Your Email ID"
-                  value={formData.email}
-                  onChange={handleChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-[#6B46C1] transition-all text-gray-700 text-sm sm:text-base placeholder:text-gray-400"
-                />
+                {/* Email */}
+                <div>
+                  <input
+                    type="email"
+                    name="email"
+                    placeholder="Enter Your Email ID"
+                    value={formData.email}
+                    onChange={handleChange}
+                    className={`w-full px-4 py-3 border rounded-lg focus:outline-none transition-all text-gray-700
+       `}
+                  />
+                  {errors.email && (
+                    <p className="text-red-500 text-sm mt-1">{errors.email}</p>
+                  )}
+                </div>
 
+                {/* Button */}
                 <button
                   onClick={handleSubmit}
-                  className="
-              w-full sm:w-auto font-readex
-              bg-[#6B46C1] hover:bg-purple-700
-              text-white font-semibold
-              px-8 py-3 rounded-lg
-              transition-all duration-300
-              shadow-lg hover:shadow-xl
-              text-sm sm:text-base
-            "
+                  className="w-full sm:w-auto bg-[#6B46C1] hover:bg-purple-700 text-white font-semibold px-8 py-3 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl"
                 >
                   Notify Me
                 </button>
@@ -1034,6 +1082,42 @@ const Landing = () => {
           </div>
         </div>
       </section>
+      {loading && (
+        <div className="fixed inset-0 bg-black/40 z-50 flex items-center justify-center">
+          <div className="w-12 h-12 border-4 border-white border-t-transparent rounded-full animate-spin" />
+        </div>
+      )}
+
+      {showModal && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50">
+          <div className="relative w-[90%] max-w-lg bg-white rounded-2xl p-8 text-center">
+            {/* Close icon */}
+            <button
+              onClick={() => setShowModal(false)}
+              className="absolute top-4 right-4 text-purple-600 text-xl font-bold"
+            >
+              ✕
+            </button>
+
+            <h2 className="text-2xl font-semibold text-purple-600 mb-4">
+              Thank You for Registering
+            </h2>
+
+            <p className="text-gray-600 mb-8">
+              We’ll notify you as soon as House of Priya opens in RS Puram.
+              <br />
+              Get ready to experience timeless elegance.
+            </p>
+
+            <button
+              onClick={() => setShowModal(false)}
+              className="bg-purple-600 hover:bg-purple-700 text-white px-8 py-3 rounded-lg font-semibold w-full"
+            >
+              Thanks!
+            </button>
+          </div>
+        </div>
+      )}
 
       <Footer />
     </>

@@ -2,10 +2,68 @@
 
 import React from "react";
 import Footer from "../Components/Footer";
+import { useState } from "react";
 import { usePathname } from "next/navigation";
 
 const Landing = () => {
   const pathname = usePathname();
+const [name, setName] = useState("");
+const [email, setEmail] = useState("");
+const [errors, setErrors] = useState({});
+const [loading, setLoading] = useState(false);
+const [showModal, setShowModal] = useState(false);
+
+const validate = () => {
+  let newErrors = {};
+
+  if (!name.trim()) {
+    newErrors.name = "Name is required";
+  }
+
+  if (!email.trim()) {
+    newErrors.email = "Email is required";
+  } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    newErrors.email = "Enter a valid email address";
+  }
+
+  setErrors(newErrors);
+  return Object.keys(newErrors).length === 0;
+};
+
+const handleSubmit = async (e) => {
+  e.preventDefault();
+
+  if (!validate()) return;
+
+  try {
+    setLoading(true);
+
+    const res = await fetch("/api/send-mail", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        name,
+        email,
+      }),
+    });
+
+    const data = await res.json();
+
+    if (data.success) {
+      setShowModal(true);
+      setName("");
+      setEmail("");
+      setErrors({});
+    }
+  } catch (error) {
+    console.error("Submit error:", error);
+  } finally {
+    setLoading(false);
+  }
+};
+
   return (
     <>
       <section>
@@ -198,12 +256,12 @@ const Landing = () => {
               aesthetics.
             </p>
 
-           <div className="mt-8 flex justify-center sm:justify-start">
-  <a
-    href="https://wa.me/919363167299?text=Hi%20young%20mynds.%20I%20am%20interested%20in%20your%20service."
-    target="_blank"
-    rel="noopener noreferrer"
-    className="
+            <div className="mt-8 flex justify-center sm:justify-start">
+              <a
+                href="https://wa.me/919363167299?text=Hi%20young%20mynds.%20I%20am%20interested%20in%20your%20service."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="
       bg-[#6D28D9]
       font-readex
       text-white
@@ -214,11 +272,10 @@ const Landing = () => {
       transition
       inline-block
     "
-  >
-    Enquire on WhatsApp
-  </a>
-</div>
-
+              >
+                Enquire on WhatsApp
+              </a>
+            </div>
           </div>
 
           {/* RIGHT IMAGE */}
@@ -441,6 +498,43 @@ const Landing = () => {
           </div>
         </div>
       </section>
+
+        {loading && (
+        <div className="fixed inset-0 bg-black/40 z-50 flex items-center justify-center">
+          <div className="w-12 h-12 border-4 border-white border-t-transparent rounded-full animate-spin" />
+        </div>
+      )}
+
+         {showModal && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50">
+          <div className="relative w-[90%] max-w-lg bg-white rounded-2xl p-8 text-center">
+            {/* Close icon */}
+            <button
+              onClick={() => setShowModal(false)}
+              className="absolute top-4 right-4 text-purple-600 text-xl font-bold"
+            >
+              ✕
+            </button>
+
+            <h2 className="text-2xl font-semibold text-purple-600 mb-4">
+              Thank You for Registering
+            </h2>
+
+            <p className="text-gray-600 mb-8">
+              We’ll notify you as soon as House of Priya opens in RS Puram.
+              <br />
+              Get ready to experience timeless elegance.
+            </p>
+
+            <button
+              onClick={() => setShowModal(false)}
+              className="bg-purple-600 hover:bg-purple-700 text-white px-8 py-3 rounded-lg font-semibold w-full"
+            >
+              Thanks!
+            </button>
+          </div>
+        </div>
+      )}  
       <section className="bg-[#F9F5FF]  py-14 relative">
         <div className="max-w-7xl  grid grid-cols-1 lg:grid-cols-2 items-center gap-5 ">
           {/* RIGHT DECOR */}
@@ -495,12 +589,12 @@ const Landing = () => {
               without being overwhelming.
             </p>
 
-           <div className="mt-8 flex justify-center sm:justify-start">
-  <a
-    href="https://wa.me/919363167299?text=Hi%20young%20mynds.%20I%20am%20interested%20in%20your%20service."
-    target="_blank"
-    rel="noopener noreferrer"
-    className="
+            <div className="mt-8 flex justify-center sm:justify-start">
+              <a
+                href="https://wa.me/919363167299?text=Hi%20young%20mynds.%20I%20am%20interested%20in%20your%20service."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="
       bg-[#6D28D9]
       font-readex
       text-white
@@ -511,25 +605,22 @@ const Landing = () => {
       transition
       inline-block
     "
-  >
-    Enquire on WhatsApp
-  </a>
-</div>
-
+              >
+                Enquire on WhatsApp
+              </a>
+            </div>
           </div>
         </div>
       </section>
       <section className="bg-white py-12">
-      <div className="max-w-5xl mx-auto px-6">
-  {/* PURPLE CONTAINER */}
-  <div className="relative bg-gradient-to-br from-[#5B21B6] to-[#4C1D95] rounded-2xl py-20 px-6 overflow-hidden">
-
-
-    {/* LEFT IMAGE */}
-    <img
-      src="/images/poster.png"
-      alt=""
-      className="
+        <div className="max-w-5xl mx-auto px-6">
+          {/* PURPLE CONTAINER */}
+          <div className="relative bg-gradient-to-br from-[#5B21B6] to-[#4C1D95] rounded-2xl py-20 px-6 overflow-hidden">
+            {/* LEFT IMAGE */}
+            <img
+              src="/images/poster.png"
+              alt=""
+              className="
         absolute
         left-0
         bottom-0
@@ -538,13 +629,13 @@ const Landing = () => {
         hidden lg:block
         pointer-events-none
       "
-    />
+            />
 
-    {/* RIGHT IMAGE */}
-    <img
-      src="/images/poster1.png"
-      alt=""
-      className="
+            {/* RIGHT IMAGE */}
+            <img
+              src="/images/poster1.png"
+              alt=""
+              className="
         absolute
         right-0
         bottom-0
@@ -553,47 +644,61 @@ const Landing = () => {
         hidden lg:block
         pointer-events-none
       "
-    />
+            />
 
-    {/* CONTENT */}
-    <div className="relative z-10 flex flex-col items-center text-center">
-      {/* TITLE */}
-      <h2 className="font-gabriola font-normal text-[38px] leading-[42px] tracking-[-0.5px] text-white">
-        Opening Soon in RS Puram
-      </h2>
+              <div className="relative z-10 flex flex-col items-center text-center">
+              <h2 className="font-gabriola font-normal text-[38px] leading-[42px] tracking-[-0.5px] text-white">
+                Opening Soon in RS Puram
+              </h2>
 
-      {/* SUBTEXT */}
-      <p className="mt-3 max-w-[420px] font-readex text-[14px] leading-[22px] text-white/80">
-        Experience House of Priya in person at our upcoming boutique in RS
-        Puram, Coimbatore.
-      </p>
+              <p className="mt-3 max-w-[420px] font-readex text-[14px] leading-[22px] text-white/80">
+                Experience House of Priya in person at our upcoming boutique in
+                RS Puram, Coimbatore.
+              </p>
+<form
+  onSubmit={handleSubmit}
+  className="mt-10 bg-white rounded-xl w-full max-w-[360px] px-6 py-8"
+>
+  <p className="font-gabriola text-[32px] leading-[26px] text-[#5B2D8B] mb-4">
+    Get Notified When We Open
+  </p>
 
-      {/* FORM CARD */}
-      <div className="mt-10 bg-white rounded-xl w-full max-w-[360px] px-6 py-8">
-        <p className="font-gabriola text-[32px] leading-[26px] text-[#5B2D8B] mb-4">
-          Get Notified When We Open
-        </p>
+  <input
+    type="text"
+    placeholder="Your Name"
+    value={name}
+    onChange={(e) => setName(e.target.value)}
+    className={`w-full mb-1 text-black placeholder:text-gray-500 px-4 py-2 text-sm border rounded-md focus:ring-1 focus:ring-[#5B2D8B]
+      ${errors.name ? "border-red-500" : "border-gray-200"}`}
+  />
+  {errors.name && (
+    <p className="text-red-500 text-xs mb-2">{errors.name}</p>
+  )}
 
-        <input
-          type="text"
-          placeholder="Your Name"
-          className="w-full mb-3 px-4 py-2 text-sm border border-gray-200  placeholder-gray-500 rounded-md focus:ring-1 focus:ring-[#5B2D8B]"
-        />
+  <input
+    type="email"
+    placeholder="Email ID"
+    value={email}
+    onChange={(e) => setEmail(e.target.value)}
+    className={`w-full mb-1 px-4 py-2 text-black text-sm border rounded-md placeholder:text-gray-500 focus:ring-1 focus:ring-[#5B2D8B]
+      ${errors.email ? "border-red-500" : "border-gray-200"}`}
+  />
+  {errors.email && (
+    <p className="text-red-500 text-xs mb-3">{errors.email}</p>
+  )}
 
-        <input
-          type="email"
-          placeholder="Email ID"
-          className="w-full mb-4 px-4 py-2 text-sm border  placeholder-gray-500 border-gray-200 rounded-md focus:ring-1 focus:ring-[#5B2D8B]"
-        />
+  <button
+    type="submit"
+    disabled={loading}
+    className="w-full bg-[#5B2D8B] text-white text-sm py-2.5 rounded-md hover:bg-[#4C1D95] transition flex justify-center items-center"
+  >
+    {loading ? "Sending..." : "Notify Me"}
+  </button>
+</form>
 
-        <button className="w-full bg-[#5B2D8B] text-white text-sm py-2.5 rounded-md hover:bg-[#4C1D95] transition">
-          Notify Me
-        </button>
-      </div>
-    </div>
-  </div>
-</div>
-
+            </div>
+          </div>
+        </div>
       </section>
 
       <section className="relative bg-[#E5E7EB] py-20">
@@ -607,7 +712,7 @@ const Landing = () => {
             and timeless — just like the women who wear them.
           </p>
         </div>
-          <img
+        <img
           src="/images/Group (12).png"
           className="absolute left-0 top-1/2 -translate-y-1/2 opacity-100 hidden lg:block"
           alt=""
