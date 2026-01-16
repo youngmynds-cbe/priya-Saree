@@ -147,7 +147,7 @@ const Footer = () => {
     <iframe
       title="House of Priya Location"
       src="https://www.google.com/maps?q=RS%20Puram%20Coimbatore&output=embed"
-      className="w-full h-[100px] sm:h-[140px] md:h-[180px] rounded-xl shadow-lg border-0"
+      className="w-full h-[150px] sm:h-[140px] md:h-[180px] rounded-xl shadow-lg border-0"
       loading="lazy"
       referrerPolicy="no-referrer-when-downgrade"
     />
