@@ -84,6 +84,9 @@ const Landing = () => {
   ];
   return (
     <>
+    <main>
+
+  
       <section>
         <div className="h-[880px] md:h-[1040px]  lg:h-auto relative overflow-hidden">
           {/* Background */}
@@ -348,12 +351,12 @@ const Landing = () => {
 
           {/* CENTER CONTENT */}
           <div className="relative z-10 text-center px-6 py-16 max-w-4xl">
-            <h1
+            <h2
               className="text-[30px] font-gabriola md:text-[56px] lg:text-[66px]
                      text-purple-800 mb-6 leading-tight"
             >
               Experience Sarees That Tell a Story
-            </h1>
+            </h2>
 
             <p className="text-gray-600 text-lg md:text-xl mb-10 font-light">
               Discover handcrafted elegance designed for today's woman.
@@ -377,6 +380,7 @@ const Landing = () => {
           </div>
         </div>
       </section>
+        </main>
 
       <Footer />
     </>

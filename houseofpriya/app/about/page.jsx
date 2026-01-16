@@ -66,18 +66,20 @@ const handleSubmit = async (e) => {
 
   return (
     <>
+    <main>
       <section>
         <div className="h-[940px] md:h-[1100px]  lg:h-auto relative overflow-hidden">
           {/* Background */}
           <div
             className="absolute inset-0 bg-cover bg-center bg-no-repeat"
             style={{ backgroundImage: `url('/images/bg.png')` }}
+            aria-hidden="true"
           >
             <div className="absolute inset-0"></div>
           </div>
 
           {/* Border */}
-          <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
             <div className="absolute top-6 sm:top-10 lg:top-20 left-4 sm:left-6 lg:left-8 right-4 sm:right-6 lg:right-8 bottom-4 sm:bottom-6 lg:bottom-8 border-2 border-white opacity-40 rounded-sm"></div>
           </div>
 
@@ -150,7 +152,8 @@ const handleSubmit = async (e) => {
               <a
                 href="https://wa.me/919363167299?text=Hi%20young%20mynds.%20I%20am%20interested%20in%20your%20service."
                 target="_blank"
-                rel="noopener noreferer"
+                rel="noopener noreferrer"
+
               >
                 {" "}
                 Enquire on WhatsApp
@@ -305,7 +308,12 @@ const handleSubmit = async (e) => {
             {/* Card 1 */}
             <div className="border border-gray-100 rounded-2xl p-8 text-center shadow-sm hover:shadow-md transition">
               <div className="w-12 h-12 mx-auto rounded-full bg-purple-100 flex items-center justify-center">
-                <img src="../images/div (2).png" />
+              <img
+  src="../images/div (2).png"
+  alt=""
+  aria-hidden="true"
+/>
+
               </div>
 
               <h3 className="mt-6 font-gabriola text-[24px] text-[#5B2D8B]">
@@ -320,7 +328,8 @@ const handleSubmit = async (e) => {
             {/* Card 2 */}
             <div className="border border-gray-100 rounded-2xl p-8 text-center shadow-sm hover:shadow-md transition">
               <div className="w-12 h-12 mx-auto rounded-full bg-purple-100 flex items-center justify-center">
-                <img src="../images/div (3).png" />
+                <img src="../images/div (3).png"  alt=""
+  aria-hidden="true" />
               </div>
 
               <h3 className="mt-6 font-gabriola text-[24px] text-[#5B2D8B]">
@@ -335,7 +344,8 @@ const handleSubmit = async (e) => {
             {/* Card 3 */}
             <div className="border border-gray-100 rounded-2xl p-8 text-center shadow-sm hover:shadow-md transition">
               <div className="w-12 h-12 mx-auto rounded-full bg-purple-100 flex items-center justify-center">
-                <img src="../images/div (4).png" />
+                <img src="../images/div (4).png"  alt=""
+  aria-hidden="true" />
               </div>
 
               <h3 className="mt-6 font-gabriola text-[24px] text-[#5B2D8B]">
@@ -350,7 +360,8 @@ const handleSubmit = async (e) => {
             {/* Card 4 */}
             <div className="border border-gray-100 rounded-2xl p-8 text-center shadow-sm hover:shadow-md transition">
               <div className="w-12 h-12 mx-auto rounded-full bg-purple-100 flex items-center justify-center">
-                <img src="../images/div (5).png" />
+                <img src="../images/div (5).png"  alt=""
+  aria-hidden="true" />
               </div>
 
               <h3 className="mt-6 font-gabriola text-[24px] text-[#5B2D8B]">
@@ -383,7 +394,8 @@ const handleSubmit = async (e) => {
             {/* ITEM 1 */}
             <div className="flex flex-col items-center">
               <div className="w-16 h-16 rounded-full bg-[#EDE4FF] flex items-center justify-center">
-                <img src="/images/div (6).png" alt="" className="w-16 h-16" />
+                <img src="/images/div (6).png"  alt=""
+  aria-hidden="true" className="w-16 h-16" />
               </div>
               <p className="mt-4 text-[14px] text-[#6B6B6B]">
                 Regional Artisans
@@ -396,7 +408,8 @@ const handleSubmit = async (e) => {
             {/* ITEM 2 */}
             <div className="flex flex-col items-center">
               <div className="w-16 h-16 rounded-full bg-[#EDE4FF] flex items-center justify-center">
-                <img src="/images/div (8).png" alt="" className="w-16 h-16" />
+                <img src="/images/div (8).png"  alt=""
+  aria-hidden="true" className="w-16 h-16" />
               </div>
               <p className="mt-4 text-[14px] text-[#6B6B6B]">
                 Quality Standards
@@ -409,7 +422,8 @@ const handleSubmit = async (e) => {
             {/* ITEM 3 */}
             <div className="flex flex-col items-center">
               <div className="w-16 h-16 rounded-full bg-[#EDE4FF] flex items-center justify-center">
-                <img src="/images/div (7).png" alt="" className="w-16 h-16" />
+                <img src="/images/div (7).png"  alt=""
+  aria-hidden="true" className="w-16 h-16" />
               </div>
               <p className="mt-4 text-[14px] text-[#6B6B6B]">Authentic Craft</p>
             </div>
@@ -420,23 +434,27 @@ const handleSubmit = async (e) => {
         <img
           src="/images/image 44.png"
           className="absolute left-0 top-1/2 -translate-y-1/2 opacity-100 hidden lg:block"
-          alt=""
+           alt=""
+  aria-hidden="true"
         />
 
         <img
           src="/images/image 45.png"
           className="absolute right-0 top-1/2 -translate-y-1/2 opacity-100 hidden lg:block"
-          alt=""
+           alt=""
+  aria-hidden="true"
         />
       </section>
 
       <section className="bg-white">
         <div className="relative w-full">
-          <img src="../images/Group (10).png" alt="" />
+          <img src="../images/Group (10).png"  alt=""
+  aria-hidden="true" />
 
           <img
             src="../images/Group (11).png"
-            alt=""
+             alt=""
+  aria-hidden="true"
             className="absolute right-0 top-0"
           />
         </div>
@@ -541,7 +559,8 @@ const handleSubmit = async (e) => {
           <img
             src="/images/Group (6).png"
             className="absolute right-0 top-1/2 -translate-y-1/2 opacity-100 hidden lg:block"
-            alt=""
+                  alt=""
+  aria-hidden="true"
           />
 
           {/* LEFT IMAGE */}
@@ -551,7 +570,8 @@ const handleSubmit = async (e) => {
               {/* LEFT / RIGHT DECOR IMAGE */}
               <img
                 src="/images/Group (7).png" // purple vertical design image
-                alt=""
+                       alt=""
+  aria-hidden="true"
                 className="
         absolute right-7 top-1/2 -translate-y-1/2
         h-full
@@ -620,6 +640,7 @@ const handleSubmit = async (e) => {
             <img
               src="/images/poster.png"
               alt=""
+              aria-hidden="true"
               className="
         absolute
         left-0
@@ -715,15 +736,18 @@ const handleSubmit = async (e) => {
         <img
           src="/images/Group (12).png"
           className="absolute left-0 top-1/2 -translate-y-1/2 opacity-100 hidden lg:block"
-          alt=""
+           alt=""
+  aria-hidden="true"
         />
 
         <img
           src="/images/Group (13).png"
           className="absolute right-0 top-1/2 -translate-y-1/2 opacity-100 hidden lg:block"
-          alt=""
+                 alt=""
+  aria-hidden="true"
         />
       </section>
+      </main>
 
       <Footer />
     </>

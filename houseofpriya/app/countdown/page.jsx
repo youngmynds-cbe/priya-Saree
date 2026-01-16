@@ -138,12 +138,14 @@ export default function CountdownTimer() {
         src="/images/image 44.png"
         className="absolute left-0 top-1/2 -translate-y-1/2 opacity-100 hidden lg:block"
         alt=""
+         aria-hidden="true"
       />
 
       <img
         src="/images/image 45.png"
         className="absolute right-0 top-1/2 -translate-y-1/2 opacity-100 hidden lg:block"
         alt=""
+         aria-hidden="true"
       />
     </div>
   );

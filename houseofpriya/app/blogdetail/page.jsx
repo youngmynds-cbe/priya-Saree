@@ -162,7 +162,7 @@ const Landing = () => {
           >
             {/* Left Content */}
             <div className="space-y-6 text-center lg:text-left -mt-13 sm:mt-0">
-              <h1
+              <h2
                 className="
           font-['Cormorant_Garamond']
           text-[36px] sm:text-[48px] md:text-[56px] lg:text-[74px]
@@ -172,7 +172,7 @@ const Landing = () => {
         "
               >
                 Grace Woven in Every Thread
-              </h1>
+              </h2>
 
               <p
                 className="
@@ -210,7 +210,7 @@ const Landing = () => {
                 <img
                   src="../images/DSC02440 1 (1).png"
                   className="w-full h-auto object-contain"
-                  alt="Saree Model"
+                  alt="Bridal model wearing designer wedding saree"
                 />
               </div>
             </div>
@@ -223,7 +223,40 @@ const Landing = () => {
       <section>
         <div className="bg-white">
           {/* Article Container */}
-          <article className="max-w-6xl mx-auto px-6 py-12">
+          <article  itemScope
+      itemType="https://schema.org/BlogPosting" className="max-w-6xl mx-auto px-6 py-12">
+
+         <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BlogPosting",
+            headline: "Festive Elegance: Choosing Your Perfect Wedding Saree",
+            description:
+              "A complete guide to choosing the perfect wedding saree – from silk weaves to modern bridal styles.",
+            image:
+              "https://houseofpriya.vercel.app/images/placeholder.png",
+            author: {
+              "@type": "Organization",
+              name: "House of Priya",
+            },
+            publisher: {
+              "@type": "Organization",
+              name: "House of Priya",
+              logo: {
+                "@type": "ImageObject",
+                url:
+                  "https://houseofpriya.vercel.app/images/logo.png",
+              },
+            },
+            datePublished: "2024-12-10",
+            dateModified: "2024-12-10",
+            mainEntityOfPage:
+              "https://houseofpriya.vercel.app/blog/festive-elegance-wedding-saree",
+          }),
+        }}
+      />
             {/* Header */}
             <header className="text-center mb-12">
               <h1 className="text-[36px] text-center  md:text-[66px] lg:text-[66px] font-gabriola text-purple-800 mb-4 leading-tight">
@@ -235,14 +268,17 @@ const Landing = () => {
                 that captures your unique style.
               </p>
 
-              {/* Meta Information */}
+              <div className="flex justify-center gap-4 mt-4 text-sm text-gray-500">
+          <span>By House of Priya</span>
+          <time dateTime="2024-12-10">December 10, 2024</time>
+        </div>
             </header>
 
             {/* Featured Image */}
             <div className="rounded-2xl overflow-hidden mb-8">
               <img
                 src="../images/placeholder.png"
-                alt="Golden sarees with intricate patterns"
+                alt="Golden wedding sarees with intricate silk patterns"
                 className="w-full h-152 object-cover"
               />
             </div>
@@ -312,7 +348,7 @@ const Landing = () => {
               <div className="my-12 rounded-2xl overflow-hidden">
                 <img
                   src="../images/Image (1).png"
-                  alt="Elegant saree details"
+                  alt="Close-up details of handcrafted silk saree"
                   className="w-full h-78 object-cover rounded-2xl"
                 />
               </div>

@@ -181,6 +181,7 @@ const Landing = () => {
   const { x, rotate, scale } = transformConfig[screen];
   return (
     <>
+    <main>
       <section>
         <div className="h-[840px] md:h-[1150px] lg:h-auto relative overflow-hidden">
           {/* Background */}
@@ -254,22 +255,18 @@ const Landing = () => {
             </div>
 
             {/* Button */}
-            <button
+           <a
+              href="https://wa.me/919363167299?text=Hi%20young%20mynds.%20I%20am%20interested%20in%20your%20service."
+              target="_blank"
+              rel="noopener noreferrer"
               className="
         bg-[#6B46C1] hover:bg-purple-800 text-white
         px-6 py-2 rounded-md font-medium transition shadow-lg
         mt-4 lg:-mt-30 hidden sm:block 
       "
             >
-              <a
-                href="https://wa.me/919363167299?text=Hi%20young%20mynds.%20I%20am%20interested%20in%20your%20service."
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                {" "}
-                Enquire on WhatsApp
-              </a>
-            </button>
+              Enquire on WhatsApp
+            </a>
           </nav>
 
           {/* MAIN CONTENT */}
@@ -311,8 +308,8 @@ const Landing = () => {
                 Discover timeless sarees crafted with passion.
               </p>
 
-              <button className="bg-[#6B46C1] hover:bg-purple-800 text-white px-8 py-3 rounded-md font-medium transition shadow-lg inline-block mt-4 font-readex">
-                <a
+             
+                <a className="bg-[#6B46C1] hover:bg-purple-800 text-white px-8 py-3 rounded-md font-medium transition shadow-lg inline-block mt-4 font-readex"
                   href="https://wa.me/919363167299?text=Hi%20young%20mynds.%20I%20am%20interested%20in%20your%20service."
                   target="_blank"
                   rel="noopener noreferrer"
@@ -320,7 +317,7 @@ const Landing = () => {
                   {" "}
                   Enquire on WhatsApp
                 </a>
-              </button>
+             
             </div>
 
             {/* Right Image */}
@@ -336,6 +333,7 @@ const Landing = () => {
                   src="../images/DSC02740 1 (2).png"
                   className="w-full h-auto object-cover"
                   alt="Saree Model"
+                  
                 />
               </div>
             </div>
@@ -412,7 +410,8 @@ const Landing = () => {
                 <li className="flex items-center gap-3 tracking-[0.3px]">
                   <img
                     src="../images/i.png"
-                    alt=""
+                    alt="Check mark icon"
+                     aria-hidden="true"
                     className="w-3 h-5 shrink-0"
                   />
                   <span>Premium silk with 24k gold thread work</span>
@@ -421,7 +420,7 @@ const Landing = () => {
                 <li className="flex items-center gap-3 tracking-[0.3px]">
                   <img
                     src="../images/i (1).png"
-                    alt=""
+                    alt="Check mark icon"
                     className="w-3 h-5 shrink-0"
                   />
                   <span>Hand-woven by master artisans</span>
@@ -430,7 +429,7 @@ const Landing = () => {
                 <li className="flex items-center gap-3 tracking-[0.3px]">
                   <img
                     src="../images/i (2).png"
-                    alt=""
+                    alt="Check mark icon"
                     className="w-3 h-5 shrink-0"
                   />
                   <span>Limited edition collection</span>
@@ -438,16 +437,17 @@ const Landing = () => {
               </ul>
 
               <div>
-                <button className="bg-[#6B46C1] hover:bg-purple-700 text-white  font-readex px-6 py-3 rounded-lg">
+                
                   <a
                     href="https://wa.me/919363167299?text=Hi%20young%20mynds.%20I%20am%20interested%20in%20your%20service."
+                    className="bg-[#6B46C1] hover:bg-purple-700 text-white  font-readex px-6 py-3 rounded-lg"
                     target="_blank"
                     rel="noopener noreferer"
                   >
                     {" "}
                     Enquire on WhatsApp
                   </a>
-                </button>
+               
               </div>
 
               {/* SMALL IMAGE */}
@@ -471,7 +471,9 @@ const Landing = () => {
         {/* LEFT SIDE DECOR IMAGE */}
         <img
           src="../images/image 44.png"
-          alt="Left Decoration"
+         
+           alt=""
+           aria-hidden="true"
           className="
       hidden lg:block
       absolute
@@ -659,9 +661,11 @@ const Landing = () => {
 
       <section className="bg-white relative">
         <img
-          src="../images/Group (8).png"
-          className="absolute hidden lg:block"
-        />
+  src="../images/Group (8).png"
+  alt=""
+  aria-hidden="true"
+  className="absolute hidden lg:block"
+/>
         <div className="max-w-7xl mx-auto">
           <h2
             className="font-gabriola text-[#6B46C1] text-center 
@@ -822,10 +826,10 @@ const Landing = () => {
           "
                   >
                     <img
-                      src={saree.image}
-                      alt=""
-                      className="w-full h-full object-cover"
-                    />
+  src={saree.image}
+  alt={saree.name || "Designer saree from House of Priya"}
+  className="w-full h-full object-cover"
+/>
                   </div>
                 </div>
               );
@@ -833,22 +837,24 @@ const Landing = () => {
           </div>
 
           {/* Dots */}
-          <div className="flex justify-center gap-3 mt-12">
-            {sarees.map((_, idx) => (
-              <button
-                key={idx}
-                onClick={() => setCurrentIndex(idx)}
-                className={`
-                h-3 rounded-full transition-all
-                ${
-                  idx === currentIndex
-                    ? "bg-[#6B46C1] w-12"
-                    : "bg-purple-300 w-3"
-                }
-              `}
-              />
-            ))}
-          </div>
+        <div className="flex justify-center gap-3 mt-12">
+  {sarees.map((_, idx) => (
+    <button
+      key={idx}
+      onClick={() => setCurrentIndex(idx)}
+      aria-label={`Go to slide ${idx + 1}`}
+      aria-current={idx === currentIndex ? "true" : "false"}
+      className={`
+        h-3 rounded-full transition-all
+        ${
+          idx === currentIndex
+            ? "bg-[#6B46C1] w-12"
+            : "bg-purple-300 w-3"
+        }
+      `}
+    />
+  ))}
+</div>
         </div>
       </section>
 
@@ -930,15 +936,16 @@ const Landing = () => {
               </p>
 
               <div className="pt-6">
-                <button className="bg-[#6B46C1] hover:bg-purple-700  font-readex text-white font-semibold px-8 py-3 md:px-10 md:py-4 rounded-full transition-all duration-300 shadow-lg hover:scale-105">
+               
                   <a
                     href="https://wa.me/919363167299?text=Hi%20young%20mynds.%20I%20am%20interested%20in%20your%20service."
+                    className="bg-[#6B46C1] hover:bg-purple-700  font-readex text-white font-semibold px-8 py-3 md:px-10 md:py-4 rounded-full transition-all duration-300 shadow-lg hover:scale-105"
                     target="_blank"
                     rel="noopener noreferer"
                   >
                     Enquire on WhatsApp
                   </a>
-                </button>
+                
               </div>
             </div>
           </div>
@@ -1084,15 +1091,19 @@ const Landing = () => {
       </section>
       {loading && (
         <div className="fixed inset-0 bg-black/40 z-50 flex items-center justify-center">
-          <div className="w-12 h-12 border-4 border-white border-t-transparent rounded-full animate-spin" />
+          <div
+            role="status"
+            aria-label="Loading"
+            className="w-12 h-12 border-4 border-white border-t-transparent rounded-full animate-spin"
+          />
         </div>
       )}
 
       {showModal && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50">
           <div className="relative w-[90%] max-w-lg bg-white rounded-2xl p-8 text-center">
-            {/* Close icon */}
             <button
+              aria-label="Close modal"
               onClick={() => setShowModal(false)}
               className="absolute top-4 right-4 text-purple-600 text-xl font-bold"
             >
@@ -1118,7 +1129,7 @@ const Landing = () => {
           </div>
         </div>
       )}
-
+</main>
       <Footer />
     </>
   );
