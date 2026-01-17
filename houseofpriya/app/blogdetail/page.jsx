@@ -221,45 +221,47 @@ const Landing = () => {
       </section> */}
       <section>
         <div className="bg-white">
-<a href="/blog" className="p-5 text-gray-500 flex items-center gap-2">
-  <ArrowLeft size={18} />
-  Back to blog
-</a>
-         
-          <article  itemScope
-      itemType="https://schema.org/BlogPosting" className="max-w-6xl mx-auto px-6 py-3 lg:py-12">
+          <a href="/blog" className="p-5 text-gray-500 flex items-center gap-2">
+            <ArrowLeft size={18} />
+            Back to blog
+          </a>
 
-         <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "BlogPosting",
-            headline: "Festive Elegance: Choosing Your Perfect Wedding Saree",
-            description:
-              "A complete guide to choosing the perfect wedding saree – from silk weaves to modern bridal styles.",
-            image:
-              "https://houseofpriya.vercel.app/images/placeholder.png",
-            author: {
-              "@type": "Organization",
-              name: "House of Priya",
-            },
-            publisher: {
-              "@type": "Organization",
-              name: "House of Priya",
-              logo: {
-                "@type": "ImageObject",
-                url:
-                  "https://houseofpriya.vercel.app/images/logo.png",
-              },
-            },
-            datePublished: "2024-12-10",
-            dateModified: "2024-12-10",
-            mainEntityOfPage:
-              "https://houseofpriya.vercel.app/blog/festive-elegance-wedding-saree",
-          }),
-        }}
-      />
+          <article
+            itemScope
+            itemType="https://schema.org/BlogPosting"
+            className="max-w-6xl mx-auto px-6 py-3 lg:py-12"
+          >
+            <script
+              type="application/ld+json"
+              dangerouslySetInnerHTML={{
+                __html: JSON.stringify({
+                  "@context": "https://schema.org",
+                  "@type": "BlogPosting",
+                  headline:
+                    "Festive Elegance: Choosing Your Perfect Wedding Saree",
+                  description:
+                    "A complete guide to choosing the perfect wedding saree – from silk weaves to modern bridal styles.",
+                  image:
+                    "https://houseofpriya.vercel.app/images/placeholder.png",
+                  author: {
+                    "@type": "Organization",
+                    name: "House of Priya",
+                  },
+                  publisher: {
+                    "@type": "Organization",
+                    name: "House of Priya",
+                    logo: {
+                      "@type": "ImageObject",
+                      url: "https://houseofpriya.vercel.app/images/logo.png",
+                    },
+                  },
+                  datePublished: "2024-12-10",
+                  dateModified: "2024-12-10",
+                  mainEntityOfPage:
+                    "https://houseofpriya.vercel.app/blog/festive-elegance-wedding-saree",
+                }),
+              }}
+            />
             {/* Header */}
             <header className="text-center mb-12">
               <h1 className="text-[36px] text-center  md:text-[66px] lg:text-[66px] font-gabriola text-purple-800 mb-4 leading-tight">
@@ -272,9 +274,9 @@ const Landing = () => {
               </p>
 
               <div className="flex justify-center gap-4 mt-4 text-sm text-gray-500">
-          <span>By House of Priya</span>
-          <time dateTime="2024-12-10">December 10, 2024</time>
-        </div>
+                <span>By House of Priya</span>
+                <time dateTime="2024-12-10">December 10, 2024</time>
+              </div>
             </header>
 
             {/* Featured Image */}
@@ -433,7 +435,6 @@ const Landing = () => {
                     </span>
                   </div>
 
-                  {/* Read More Link */}
                   <button className="flex items-center font-readex gap-2 lg:text-[14px] text-[10px] text-[#6B2D8F] font-[readexPro] text-sm group-hover:gap-3 transition-all">
                     Read More
                     <ArrowRight className="w-4 h-4" />
