@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import { useState } from "react";
 import Footer from "../Components/Footer";
 import { FaWhatsapp } from "react-icons/fa";
 import { ArrowRight } from "lucide-react";
@@ -8,6 +9,8 @@ import { usePathname } from "next/navigation";
 
 const Landing = () => {
   const pathname = usePathname();
+  const [menuOpen, setMenuOpen] = useState(false);
+
   const blogPosts = [
     {
       id: 1,
@@ -103,81 +106,88 @@ const Landing = () => {
           </div>
 
           {/* NAVBAR */}
-          <nav className="relative z-20 flex flex-col lg:flex-row items-center justify-between px-4 sm:px-6 lg:px-8 py-6 gap-4 lg:gap-0">
-            {/* Logo */}
-            <div className="flex items-center">
-              <div className="w-28 h-28 sm:w-32 sm:h-32 lg:w-40 lg:h-40 rounded-xl flex items-center justify-center lg:ml-10 z-50 relative ">
-                <div className="w-full h-full absolute z-0 bg-[url('/images/bg.png')] rounded-xl hidden lg:block"></div>
-                <img
-                  src="/images/logo.png"
-                  alt="House of Priya Logo"
-                  className="w-20 sm:w-24 lg:w-34 object-contain z-10 lg:-mt-9"
-                />
-              </div>
-            </div>
+               <nav className="relative z-20 px-4 sm:px-6 lg:px-8 py-6">
+  {/* TOP ROW */}
+  <div className="flex items-center justify-between">
+    {/* Logo */}
+    <div className="w-28 h-28 sm:w-32 sm:h-32 lg:w-40 lg:h-40 rounded-xl flex items-center justify-center lg:ml-10 relative">
+      <div className="w-full h-full absolute bg-[url('/images/bg.png')] rounded-xl hidden lg:block"></div>
+      <img
+        src="/images/logo.png"
+        alt="House of Priya Logo"
+        className="w-20 sm:w-24 lg:w-34 object-contain z-10 lg:-mt-9"
+      />
+    </div>
 
-            {/* Menu */}
-            <div
-              className="
-    flex gap-6 sm:gap-10 lg:gap-15
-    font-readex 
-    font-bold
-    text-base sm:text-lg lg:text-[20px]
-    -mt-3 lg:-mt-30
-  "
-            >
-              <a
-                href="/"
-                className={`transition ${
-                  pathname === "/"
-                    ? "text-purple-700  border-purple-700"
-                    : "text-[#6C6C6C] hover:text-purple-700"
-                }`}
-              >
-                Home
-              </a>
+    {/* Desktop Menu */}
+    <div className="hidden lg:flex gap-15 font-readex font-bold text-[20px] -mt-30">
+      <a
+        href="/"
+        className={pathname === "/" ? "text-[#6B46C1]" : "text-[#6C6C6C] hover:text-purple-700"}
+      >
+        Home
+      </a>
+      <a
+        href="/about"
+        className={pathname === "/about" ? "text-[#6B46C1]" : "text-[#6C6C6C] hover:text-purple-700"}
+      >
+        About
+      </a>
+      <a
+        href="/blog"
+        className={pathname === "/blog" ? "text-[#6B46C1]" : "text-[#6C6C6C] hover:text-purple-700"}
+      >
+        Blog
+      </a>
+    </div>
 
-              <a
-                href="/about"
-                className={`transition ${
-                  pathname === "/about"
-                    ? "text-purple-700  border-purple-700"
-                    : "text-[#6C6C6C] hover:text-purple-700"
-                }`}
-              >
-                About
-              </a>
+    {/* Desktop Button */}
+    <a
+      href="https://wa.me/919363167299"
+      target="_blank"
+      className="hidden lg:block bg-[#6B46C1] hover:bg-purple-800 text-white px-6 py-2 rounded-md font-medium shadow-lg -mt-30"
+    >
+      Enquire on WhatsApp
+    </a>
 
-              <a
-                href="/blog"
-                className={`transition ${
-                  pathname === "/blog"
-                    ? "text-purple-700  border-purple-700"
-                    : "text-[#6C6C6C] hover:text-purple-700"
-                }`}
-              >
-                Blog
-              </a>
-            </div>
+    {/* Hamburger (Mobile only – LAST) */}
+    <button
+      onClick={() => setMenuOpen(!menuOpen)}
+      className="lg:hidden text-4xl text-gray-500 z-50 p-5"
+    >
+      ☰
+    </button>
+  </div>
 
-            {/* Button */}
-            <button
-              className="
-        bg-purple-700 hover:bg-purple-800 text-white font-readex
-        px-6 py-2 rounded-md font-medium transition shadow-lg
-        mt-4 lg:-mt-30  hidden sm:block
-      "
-            >
-              <a
-                href="https://wa.me/919363167299?text=Hi%20young%20mynds.%20I%20am%20interested%20in%20your%20service."
-                target="_blank"
-                rel="noopener noreferer"
-              >
-                {" "}
-                Enquire on WhatsApp
-              </a>
-            </button>
-          </nav>
+  {/* MOBILE DROPDOWN */}
+  {menuOpen && (
+    <div className="lg:hidden mt-4 bg-white rounded-xl shadow-lg p-6 flex flex-col gap-4 font-readex font-bold text-lg">
+      <a
+        href="/"
+        onClick={() => setMenuOpen(false)}
+        className={pathname === "/" ? "text-[#6B46C1]" : "text-gray-600"}
+      >
+        Home
+      </a>
+      <a
+        href="/about"
+        onClick={() => setMenuOpen(false)}
+        className={pathname === "/about" ? "text-[#6B46C1]" : "text-gray-600"}
+      >
+        About
+      </a>
+      <a
+        href="/blog"
+        onClick={() => setMenuOpen(false)}
+        className={pathname === "/blog" ? "text-[#6B46C1]" : "text-gray-600"}
+      >
+        Blog
+      </a>
+
+
+    </div>
+  )}
+</nav>
 
           {/* MAIN CONTENT */}
           <div
@@ -200,7 +210,7 @@ const Landing = () => {
           text-[36px] sm:text-[48px] md:text-[56px] lg:text-[74px]
           leading-tight sm:leading-15 lg:leading-22.5
           tracking-[-0.5px]
-          text-white
+          lg:text-white text-[#6B46C1]
         "
               >
                 Grace Woven in Every Thread
@@ -210,7 +220,7 @@ const Landing = () => {
                 className="
          font-readex 
           text-[16px] sm:text-[18px] lg:text-18px] font-readex
-          text-white font-medium
+          lg:text-white text-gray-500 font-medium
           tracking-[-0.5px]
         "
               >
@@ -253,7 +263,7 @@ const Landing = () => {
         </div>
       </section>
       <section className="bg-white py-20">
-        <div className="max-w-7xl mx-auto px-6">
+        <div className="max-w-7xl mx-auto px-2 lg:px-6">
           <div className="text-center mb-16">
             <h2 className="text-[36px] md:text-[48px] lg:text-[66px] font-gabriola text-purple-800 mb-4">
               Stories Woven in Tradition & Style
@@ -263,7 +273,7 @@ const Landing = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-25">
+          <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-3 lg:gap-25">
             {blogPosts.map((post) => (
               <article key={post.id} className="group cursor-pointer">
                 <div className="relative rounded-2xl overflow-hidden mb-4">
@@ -285,12 +295,12 @@ const Landing = () => {
 
                 <div className="space-y-3">
                   
-                  <h3 className="text-[26px] font-gabriola text-gray-900 leading-tight group-hover:text-purple-700 transition-colors">
+                  <h3 className="lg:text-[26px] text-[18px] font-gabriola text-gray-900 leading-tight group-hover:text-purple-700 transition-colors">
                     {post.title}
                   </h3>
 
                 
-                  <p className="text-gray-600 font-readex text-sm leading-relaxed">
+                  <p className="text-gray-600 font-readex lg:text-sm text-[10px] leading-relaxed">
                     {post.excerpt}
                   </p>
 
@@ -302,17 +312,17 @@ const Landing = () => {
                         alt={post.author}
                         className="w-8 h-8 rounded-full object-cover"
                       />
-                      <span className="text-sm font-readex font-medium text-gray-700">
+                      <span className="lg:text-sm  text-[10px] font-readex font-medium text-gray-700">
                         {post.author}
                       </span>
                     </div>
-                    <span className="text-sm font-readex text-gray-500">
+                    <span className="lg:text-sm text-[10px] font-readex text-gray-500">
                       {post.date}
                     </span>
                   </div>
 
           
-                  <button className="flex items-center gap-2 font-readex text-[#6B2D8F] font-medium text-sm group-hover:gap-3 transition-all">
+                  <button className="flex items-center gap-2 font-readex text-[#6B2D8F] font-medium lg:text-sm  text-[10px] group-hover:gap-3 transition-all">
                     Read More
                     <ArrowRight className="w-4 h-4" />
                   </button>
@@ -386,5 +396,22 @@ const Landing = () => {
     </>
   );
 };
+
+function NavLink({ path, label, pathname, mobile }) {
+  return (
+    <a
+      href={path}
+      className={`transition ${
+        pathname === path
+          ? "text-[#6B46C1]"
+          : mobile
+          ? "text-gray-600"
+          : "text-[#6C6C6C] hover:text-purple-700"
+      }`}
+    >
+      {label}
+    </a>
+  );
+} 
 
 export default Landing;

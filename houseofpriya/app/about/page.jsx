@@ -11,6 +11,8 @@ const [name, setName] = useState("");
 const [email, setEmail] = useState("");
 const [errors, setErrors] = useState({});
 const [loading, setLoading] = useState(false);
+const [menuOpen, setMenuOpen] = useState(false);
+
 const [showModal, setShowModal] = useState(false);
 
 const validate = () => {
@@ -84,82 +86,88 @@ const handleSubmit = async (e) => {
           </div>
 
           {/* NAVBAR */}
-          <nav className="relative z-20 flex flex-col lg:flex-row items-center justify-between px-4 sm:px-6 lg:px-8 py-6 gap-4 lg:gap-0">
-            {/* Logo */}
-            <div className="flex items-center">
-              <div className="w-28 h-28 sm:w-32 sm:h-32 lg:w-40 lg:h-40 rounded-xl flex items-center justify-center lg:ml-10 z-50 relative ">
-                <div className="w-full h-full absolute z-0 bg-[url('/images/bg.png')] rounded-xl hidden lg:block"></div>
-                <img
-                  src="/images/logo.png"
-                  alt="House of Priya Logo"
-                  className="w-20 sm:w-24 lg:w-34 object-contain z-10 lg:-mt-9"
-                />
-              </div>
-            </div>
+              <nav className="relative z-20 px-4 sm:px-6 lg:px-8 py-6">
+  {/* TOP ROW */}
+  <div className="flex items-center justify-between">
+    {/* Logo */}
+    <div className="w-28 h-28 sm:w-32 sm:h-32 lg:w-40 lg:h-40 rounded-xl flex items-center justify-center lg:ml-10 relative">
+      <div className="w-full h-full absolute bg-[url('/images/bg.png')] rounded-xl hidden lg:block"></div>
+      <img
+        src="/images/logo.png"
+        alt="House of Priya Logo"
+        className="w-20 sm:w-24 lg:w-34 object-contain z-10 lg:-mt-9"
+      />
+    </div>
 
-            {/* Menu */}
-            <div
-              className="
-    flex gap-6 sm:gap-10 lg:gap-15
-   font-readex
-    font-bold
-    text-base sm:text-lg lg:text-[20px]
-    -mt-3 lg:-mt-30
-  "
-            >
-              <a
-                href="/"
-                className={`transition ${
-                  pathname === "/"
-                    ? "text-[#6B46C1]  border-purple-700"
-                    : "text-[#6C6C6C] hover:text-purple-700"
-                }`}
-              >
-                Home
-              </a>
+    {/* Desktop Menu */}
+    <div className="hidden lg:flex gap-15 font-readex font-bold text-[20px] -mt-30">
+      <a
+        href="/"
+        className={pathname === "/" ? "text-[#6B46C1]" : "text-[#6C6C6C] hover:text-purple-700"}
+      >
+        Home
+      </a>
+      <a
+        href="/about"
+        className={pathname === "/about" ? "text-[#6B46C1]" : "text-[#6C6C6C] hover:text-purple-700"}
+      >
+        About
+      </a>
+      <a
+        href="/blog"
+        className={pathname === "/blog" ? "text-[#6B46C1]" : "text-[#6C6C6C] hover:text-purple-700"}
+      >
+        Blog
+      </a>
+    </div>
 
-              <a
-                href="/about"
-                className={`transition ${
-                  pathname === "/about"
-                    ? "text-[#6B46C1]  border-purple-700"
-                    : "text-[#6C6C6C] hover:text-purple-700"
-                }`}
-              >
-                About
-              </a>
+    {/* Desktop Button */}
+    <a
+      href="https://wa.me/919363167299"
+      target="_blank"
+      className="hidden lg:block bg-[#6B46C1] hover:bg-purple-800 text-white px-6 py-2 rounded-md font-medium shadow-lg -mt-30"
+    >
+      Enquire on WhatsApp
+    </a>
 
-              <a
-                href="/blog"
-                className={`transition ${
-                  pathname === "/blog"
-                    ? "text-[#6B46C1]  border-purple-700"
-                    : "text-[#6C6C6C] hover:text-purple-700"
-                }`}
-              >
-                Blog
-              </a>
-            </div>
+    {/* Hamburger (Mobile only – LAST) */}
+    <button
+      onClick={() => setMenuOpen(!menuOpen)}
+      className="lg:hidden text-4xl text-gray-500 z-50 p-5"
+    >
+      ☰
+    </button>
+  </div>
 
-            {/* Button */}
-            <button
-              className="
-        bg-[#6B46C1] hover:bg-purple-800 text-white font-readex
-        px-6 py-2 rounded-md font-medium transition shadow-lg
-        mt-4 lg:-mt-30 hidden sm:block 
-      "
-            >
-              <a
-                href="https://wa.me/919363167299?text=Hi%20young%20mynds.%20I%20am%20interested%20in%20your%20service."
-                target="_blank"
-                rel="noopener noreferrer"
+  {/* MOBILE DROPDOWN */}
+  {menuOpen && (
+    <div className="lg:hidden mt-4 bg-white rounded-xl shadow-lg p-6 flex flex-col gap-4 font-readex font-bold text-lg">
+      <a
+        href="/"
+        onClick={() => setMenuOpen(false)}
+        className={pathname === "/" ? "text-[#6B46C1]" : "text-gray-600"}
+      >
+        Home
+      </a>
+      <a
+        href="/about"
+        onClick={() => setMenuOpen(false)}
+        className={pathname === "/about" ? "text-[#6B46C1]" : "text-gray-600"}
+      >
+        About
+      </a>
+      <a
+        href="/blog"
+        onClick={() => setMenuOpen(false)}
+        className={pathname === "/blog" ? "text-[#6B46C1]" : "text-gray-600"}
+      >
+        Blog
+      </a>
 
-              >
-                {" "}
-                Enquire on WhatsApp
-              </a>
-            </button>
-          </nav>
+
+    </div>
+  )}
+</nav>
 
           {/* MAIN CONTENT */}
           <div
@@ -182,7 +190,7 @@ const handleSubmit = async (e) => {
           text-[36px] sm:text-[48px] md:text-[56px] lg:text-[74px]
           leading-tight sm:leading-[60px] lg:leading-[90px]
           tracking-[-0.5px]
-          text-white
+          lg:text-white text-[#6B46C1]
         "
               >
                 Grace Woven in Every Thread
@@ -192,7 +200,7 @@ const handleSubmit = async (e) => {
                 className="
         font-readex 
           text-[16px] sm:text-[18px] lg:text-[18px]
-          text-white  font-normal
+          lg:text-white text-gray-500  font-normal
           tracking-[-0.5px]
         "
               >
@@ -304,10 +312,10 @@ const handleSubmit = async (e) => {
           </h2>
 
           {/* CARDS */}
-          <div className="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="mt-16 grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {/* Card 1 */}
-            <div className="border border-gray-100 rounded-2xl p-8 text-center shadow-sm hover:shadow-md transition">
-              <div className="w-12 h-12 mx-auto rounded-full bg-purple-100 flex items-center justify-center">
+            <div className="border border-gray-100 rounded-2xl p-5 lg:p-8 text-center shadow-sm hover:shadow-md transition">
+              <div className="w-15 h-12 mx-auto rounded-full bg-purple-100 flex items-center justify-center">
               <img
   src="../images/div (2).png"
   alt=""
@@ -326,7 +334,7 @@ const handleSubmit = async (e) => {
             </div>
 
             {/* Card 2 */}
-            <div className="border border-gray-100 rounded-2xl p-8 text-center shadow-sm hover:shadow-md transition">
+            <div className="border border-gray-100 rounded-2xl p-5 lg:p-8 text-center shadow-sm hover:shadow-md transition">
               <div className="w-12 h-12 mx-auto rounded-full bg-purple-100 flex items-center justify-center">
                 <img src="../images/div (3).png"  alt=""
   aria-hidden="true" />
@@ -342,7 +350,7 @@ const handleSubmit = async (e) => {
             </div>
 
             {/* Card 3 */}
-            <div className="border border-gray-100 rounded-2xl p-8 text-center shadow-sm hover:shadow-md transition">
+            <div className="border border-gray-100 rounded-2xl p-5 lg:p-8 text-center shadow-sm hover:shadow-md transition">
               <div className="w-12 h-12 mx-auto rounded-full bg-purple-100 flex items-center justify-center">
                 <img src="../images/div (4).png"  alt=""
   aria-hidden="true" />
@@ -358,7 +366,7 @@ const handleSubmit = async (e) => {
             </div>
 
             {/* Card 4 */}
-            <div className="border border-gray-100 rounded-2xl p-8 text-center shadow-sm hover:shadow-md transition">
+            <div className="border border-gray-100 rounded-2xl p-5 lg:p-8 text-center shadow-sm hover:shadow-md transition">
               <div className="w-12 h-12 mx-auto rounded-full bg-purple-100 flex items-center justify-center">
                 <img src="../images/div (5).png"  alt=""
   aria-hidden="true" />
@@ -375,7 +383,7 @@ const handleSubmit = async (e) => {
           </div>
         </div>
       </section>
-      <section className="relative bg-[#F9F5FF] py-18 overflow-hidden">
+      <section className="relative bg-[#F9F5FF] py-18 overflow-hidden hidden lg:block">
         <div className="max-w-6xl mx-auto px-6 text-center">
           {/* TITLE */}
           <h2 className="font-gabriola font-normal text-[30px] md:text-[38px]  lg:text-[48px] leading-[52px] tracking-[-0.5px] text-[#5B2D8B]">
@@ -471,17 +479,17 @@ const handleSubmit = async (e) => {
           </p>
 
           {/* CARDS */}
-          <div className="mt-16 grid grid-cols-1 sm:grid-cols-3 gap-8">
+          <div className="mt-16 grid grid-cols-2 sm:grid-cols-3  gap-2 lg:gap-8">
             {/* CARD 1 */}
             <div className="text-left">
               <div className="rounded-2xl overflow-hidden">
                 <img
                   src="/images/div (9).png"
                   alt="Dual Tone Elegance"
-                  className="w-full h-[360px] object-cover"
+                  className="w-full h-[250px] lg:h-[360px] object-cover"
                 />
               </div>
-              <p className="mt-4 text-[20px] font-semibold font-readex text-[#4C1D95]">
+              <p className="mt-4 text-[15px] lg:text-[20px] font-semibold font-readex text-[#4C1D95]">
                 Dual-Tone Elegance
               </p>
             </div>
@@ -492,10 +500,10 @@ const handleSubmit = async (e) => {
                 <img
                   src="/images/div (10).png"
                   alt="Premium Classics"
-                  className="w-full h-[360px] object-cover"
+                  className="w-full h-[250px] lg:h-[360px] object-cover"
                 />
               </div>
-              <p className="mt-4 text-[20px] font-semibold  font-readex text-[#4C1D95]">
+              <p className="mt-4 text-[15px] lg:text-[20px] font-semibold  font-readex text-[#4C1D95]">
                 Premium Classics
               </p>
             </div>
@@ -506,10 +514,10 @@ const handleSubmit = async (e) => {
                 <img
                   src="/images/div (11).png"
                   alt="Contemporary Grace"
-                  className="w-full h-[360px] object-cover"
+                  className="w-full h-[250px] lg:h-[360px] object-cover"
                 />
               </div>
-              <p className="mt-4 text-[20px] font-semibold font-readex text-[#4C1D95]">
+              <p className="mt-4 text-[15px] lg:text-[20px] font-semibold font-readex text-[#4C1D95]">
                 Contemporary Grace
               </p>
             </div>
@@ -553,7 +561,7 @@ const handleSubmit = async (e) => {
           </div>
         </div>
       )}  
-      <section className="bg-[#F9F5FF]  py-14 relative">
+      <section className="bg-[#F9F5FF]  py-14 relative hidden lg:block">
         <div className="max-w-7xl  grid grid-cols-1 lg:grid-cols-2 items-center gap-5 ">
           {/* RIGHT DECOR */}
           <img
@@ -753,5 +761,21 @@ const handleSubmit = async (e) => {
     </>
   );
 };
+function NavLink({ path, label, pathname, mobile }) {
+  return (
+    <a
+      href={path}
+      className={`transition ${
+        pathname === path
+          ? "text-[#6B46C1]"
+          : mobile
+          ? "text-gray-600"
+          : "text-[#6C6C6C] hover:text-purple-700"
+      }`}
+    >
+      {label}
+    </a>
+  );
+}
 
 export default Landing;

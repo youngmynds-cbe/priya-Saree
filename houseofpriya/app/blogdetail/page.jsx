@@ -4,7 +4,8 @@ import React from "react";
 import Footer from "../Components/Footer";
 import { ArrowRight } from "lucide-react";
 import { usePathname } from "next/navigation";
-import { ArrowLeft, Calendar, User, Clock } from "lucide-react";
+
+import { ArrowLeft } from "lucide-react";
 
 const Landing = () => {
   const pathname = usePathname();
@@ -54,9 +55,9 @@ const Landing = () => {
   ];
   return (
     <>
-      <section>
+      {/* <section>
         <div className="h-[960px] md:h-[1100px] lg:h-auto relative overflow-hidden">
-          {/* Background */}
+      
           <div
             className="absolute inset-0 bg-cover bg-center bg-no-repeat"
             style={{ backgroundImage: `url('/images/bg.png')` }}
@@ -64,14 +65,13 @@ const Landing = () => {
             <div className="absolute inset-0"></div>
           </div>
 
-          {/* Border */}
           <div className="absolute inset-0 pointer-events-none">
             <div className="absolute top-6 sm:top-10 lg:top-20 left-4 sm:left-6 lg:left-8 right-4 sm:right-6 lg:right-8 bottom-4 sm:bottom-6 lg:bottom-8 border-2 border-white opacity-40 rounded-sm"></div>
           </div>
 
-          {/* NAVBAR */}
+    
           <nav className="relative z-20 flex flex-col lg:flex-row items-center justify-between px-4 sm:px-6 lg:px-8 py-6 gap-4 lg:gap-0">
-            {/* Logo */}
+          
             <div className="flex items-center">
               <div className="w-28 h-28 sm:w-32 sm:h-32 lg:w-40 lg:h-40 rounded-xl flex items-center justify-center lg:ml-10 z-50 relative ">
                 <div className="w-full h-full absolute z-0 bg-[url('/images/bg.png')] rounded-xl hidden lg:block"></div>
@@ -83,7 +83,7 @@ const Landing = () => {
               </div>
             </div>
 
-            {/* Menu */}
+        
             <div
               className="
     flex gap-6 sm:gap-10 lg:gap-15
@@ -127,7 +127,7 @@ const Landing = () => {
               </a>
             </div>
 
-            {/* Button */}
+        
             <button
               className="
         bg-purple-700 hover:bg-purple-800 text-white
@@ -147,7 +147,7 @@ const Landing = () => {
             </button>
           </nav>
 
-          {/* MAIN CONTENT */}
+     
           <div
             className="
       relative z-10
@@ -160,7 +160,6 @@ const Landing = () => {
       mt-0 lg:-mt-26
     "
           >
-            {/* Left Content */}
             <div className="space-y-6 text-center lg:text-left -mt-13 sm:mt-0">
               <h2
                 className="
@@ -198,7 +197,7 @@ const Landing = () => {
               </button>
             </div>
 
-            {/* Right Image */}
+         
             <div className="relative flex justify-center">
               <div
                 className="
@@ -216,15 +215,19 @@ const Landing = () => {
             </div>
           </div>
 
-          {/* Decorative Circle */}
+          
           <div className="absolute bottom-0 left-0 w-72 sm:w-80 lg:w-96 h-72 sm:h-80 lg:h-96 bg-gradient-to-tr  rounded-full blur-3xl opacity-40 -translate-x-1/2 translate-y-1/2"></div>
         </div>
-      </section>
+      </section> */}
       <section>
         <div className="bg-white">
-          {/* Article Container */}
+<a href="/blog" className="p-5 text-gray-500 flex items-center gap-2">
+  <ArrowLeft size={18} />
+  Back to blog
+</a>
+         
           <article  itemScope
-      itemType="https://schema.org/BlogPosting" className="max-w-6xl mx-auto px-6 py-12">
+      itemType="https://schema.org/BlogPosting" className="max-w-6xl mx-auto px-6 py-3 lg:py-12">
 
          <script
         type="application/ld+json"
@@ -373,14 +376,14 @@ const Landing = () => {
         </div>
       </section>
       <section className="bg-gradient-to-b from-purple-50 to-white py-20">
-        <div className="max-w-7xl mx-auto px-6">
+        <div className="max-w-7xl mx-auto px-3 lg:px-6">
           {/* Section Title */}
           <h2 className="text-[37px] lg:text-[66px] font-gabriola text-[#6B2D8F] text-center mb-16">
             Popular Posts
           </h2>
 
           {/* Posts Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3  gap-2 lg:gap-8">
             {popularPosts.map((post) => (
               <article
                 key={post.id}
@@ -399,18 +402,18 @@ const Landing = () => {
                 <div className="p-6">
                   <div className="mb-3">
                     <span
-                      className={`${post.badgeColor} text-white text-xs font-medium px-4 py-1.5 rounded-full`}
+                      className={`${post.badgeColor} text-white text-[10px] lg:text-xs font-medium px-4 py-1.5 rounded-full`}
                     >
                       {post.badge}
                     </span>
                   </div>
 
                   {/* Title */}
-                  <h3 className="text-[20px] lg:text-[26px] font-gabriola text-gray-900 mb-3 leading-snug group-hover:text-purple-700 transition-colors">
+                  <h3 className="text-[18px] lg:text-[26px] font-gabriola text-gray-900 mb-3 leading-snug group-hover:text-purple-700 transition-colors">
                     {post.title}
                   </h3>
 
-                  <p className="text-gray-600  font-readex text-[16px] leading-relaxed mb-4">
+                  <p className="text-gray-600  font-readex text-[10px] lg:text-[26px] leading-relaxed mb-4">
                     {post.excerpt}
                   </p>
 
@@ -421,17 +424,17 @@ const Landing = () => {
                         alt={post.author.name}
                         className="w-9 h-9 rounded-full object-cover"
                       />
-                      <span className="text-[14px] font-readex  text-gray-700 font-[readexPro]">
+                      <span className="lg:text-[14px] text-[10px] font-readex  text-gray-700 font-[readexPro]">
                         {post.author.name}
                       </span>
                     </div>
-                    <span className="text-[14px] font-readex  text-gray-500 font-[readexPro]">
+                    <span className="lg:text-[14px] text-[10px] font-readex  text-gray-500 font-[readexPro]">
                       {post.date}
                     </span>
                   </div>
 
                   {/* Read More Link */}
-                  <button className="flex items-center font-readex gap-2 text-[14px] text-[#6B2D8F] font-[readexPro] text-sm group-hover:gap-3 transition-all">
+                  <button className="flex items-center font-readex gap-2 lg:text-[14px] text-[10px] text-[#6B2D8F] font-[readexPro] text-sm group-hover:gap-3 transition-all">
                     Read More
                     <ArrowRight className="w-4 h-4" />
                   </button>
