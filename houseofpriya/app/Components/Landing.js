@@ -246,39 +246,39 @@ const Landing = () => {
     <button
       onClick={() => setMenuOpen(!menuOpen)}
       className="lg:hidden text-4xl text-gray-500 z-50 p-5"
+      arial-label="Toggle menu"
     >
-      ☰
+       {menuOpen ? "✕" : "☰"}
     </button>
   </div>
 
   {/* MOBILE DROPDOWN */}
-  {menuOpen && (
-    <div className="lg:hidden mt-4 bg-white rounded-xl shadow-lg p-6 flex flex-col gap-4 font-readex font-bold text-lg">
-      <a
-        href="/"
-        onClick={() => setMenuOpen(false)}
-        className={pathname === "/" ? "text-[#6B46C1]" : "text-gray-600"}
-      >
-        Home
-      </a>
-      <a
-        href="/about"
-        onClick={() => setMenuOpen(false)}
-        className={pathname === "/about" ? "text-[#6B46C1]" : "text-gray-600"}
-      >
-        About
-      </a>
-      <a
-        href="/blog"
-        onClick={() => setMenuOpen(false)}
-        className={pathname === "/blog" ? "text-[#6B46C1]" : "text-gray-600"}
-      >
-        Blog
-      </a>
+ {menuOpen && (
+  <div className="lg:hidden mt-4 bg-white rounded-xl shadow-lg p-6 flex flex-col gap-4 font-readex font-bold text-lg">
+    <a
+      href="/"
+      onClick={() => setMenuOpen(false)}
+      className={pathname === "/" ? "text-[#6B46C1]" : "text-gray-600"}
+    >
+      Home
+    </a>
+    <a
+      href="/about"
+      onClick={() => setMenuOpen(false)}
+      className={pathname === "/about" ? "text-[#6B46C1]" : "text-gray-600"}
+    >
+      About
+    </a>
+    <a
+      href="/blog"
+      onClick={() => setMenuOpen(false)}
+      className={pathname === "/blog" ? "text-[#6B46C1]" : "text-gray-600"}
+    >
+      Blog
+    </a>
+  </div>
+)}
 
-
-    </div>
-  )}
 </nav>
 
 
