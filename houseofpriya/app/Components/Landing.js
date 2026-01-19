@@ -941,7 +941,7 @@ const Landing = () => {
                 <div className="pt-6">
                   <a
                     href="https://wa.me/919363167299?text=Hi%20young%20mynds.%20I%20am%20interested%20in%20your%20service."
-                    className="bg-[#6B46C1] hover:bg-purple-700  font-readex text-white font-semibold px-8 py-3 md:px-10 md:py-4 rounded-full transition-all duration-300 shadow-lg hover:scale-105"
+                     className="bg-[#6B46C1] hover:bg-purple-800 text-white px-8 py-3 rounded-md font-medium transition shadow-lg inline-block mt-4 font-readex"
                     target="_blank"
                     rel="noopener noreferer"
                   >
@@ -965,7 +965,7 @@ const Landing = () => {
               {sareeCollections.map((collection) => (
                 <div
                   key={collection.id}
-                  className="group relative overflow-hidden rounded-3xl shadow-2xl cursor-pointer transform transition-all duration-500 hover:scale-105 hover:shadow-3xl"
+                  className="group relative overflow-hidden rounded-3xl  cursor-pointer  "
                   onMouseEnter={() => setHoveredCard(collection.id)}
                   onMouseLeave={() => setHoveredCard(null)}
                 >
@@ -974,13 +974,13 @@ const Landing = () => {
                     <img
                       src={collection.image}
                       alt={collection.title}
-                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                      className="w-full h-full "
                     />
 
                     {/* Gradient Overlay */}
-                    <div
+                    {/* <div
                       className={`absolute inset-0 bg-gradient-to-t ${collection.gradient} transition-opacity duration-500`}
-                    />
+                    /> */}
                   </div>
 
                   {/* Play Button */}
@@ -1048,36 +1048,42 @@ const Landing = () => {
                 <div className="space-y-4">
                   {/* Name */}
                   <div>
-                    <input
-                      type="text"
-                      name="name"
-                      placeholder="Enter Your Name"
-                      value={formData.name}
-                      onChange={handleChange}
-                      className={`w-full px-4 py-3 border rounded-lg focus:outline-none transition-all text-gray-700
-       `}
-                    />
-                    {errors.name && (
-                      <p className="text-red-500 text-sm mt-1">{errors.name}</p>
-                    )}
+                  <input
+  type="text"
+  name="name"
+  placeholder="Enter Your Name"
+  value={formData.name}
+  onChange={handleChange}
+  onBlur={handleChange}
+  autoComplete="name"
+  required
+  className="w-full px-4 py-3 border rounded-lg focus:outline-none transition-all text-gray-700"
+/>
+
+{errors.name && (
+  <p className="text-red-500 text-sm mt-1">{errors.name}</p>
+)}
+
                   </div>
 
                   {/* Email */}
                   <div>
-                    <input
-                      type="email"
-                      name="email"
-                      placeholder="Enter Your Email ID"
-                      value={formData.email}
-                      onChange={handleChange}
-                      className={`w-full px-4 py-3 border rounded-lg focus:outline-none transition-all text-gray-700
-       `}
-                    />
-                    {errors.email && (
-                      <p className="text-red-500 text-sm mt-1">
-                        {errors.email}
-                      </p>
-                    )}
+                   <input
+  type="email"
+  name="email"
+  placeholder="Enter Your Email ID"
+  value={formData.email}
+  onChange={handleChange}
+  onBlur={handleChange}
+  autoComplete="email"
+  required
+  className="w-full px-4 py-3 border rounded-lg focus:outline-none transition-all text-gray-700"
+/>
+
+{errors.email && (
+  <p className="text-red-500 text-sm mt-1">{errors.email}</p>
+)}
+
                   </div>
 
                   {/* Button */}
