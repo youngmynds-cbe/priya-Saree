@@ -6,7 +6,7 @@ import Footer from "../Components/Footer";
 import { FaWhatsapp } from "react-icons/fa";
 import { ArrowRight } from "lucide-react";
 import { usePathname } from "next/navigation";
-
+import { MoveUpRight } from 'lucide-react';
 const Landing = () => {
   const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
@@ -139,6 +139,15 @@ const Landing = () => {
       >
         Blog
       </a>
+      <a
+  href="https://maps.app.goo.gl/FfJAE7u8PAacKddm6"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="flex items-center gap-1 text-[#6C6C6C] hover:text-purple-700"
+>
+  <span>Location</span>
+  <MoveUpRight className="w-5 h-5" strokeWidth={2.5} />
+</a>
     </div>
 
     {/* Desktop Button */}
@@ -183,6 +192,16 @@ const Landing = () => {
       >
         Blog
       </a>
+      <a
+  href="https://maps.app.goo.gl/FfJAE7u8PAacKddm6"
+  target="_blank"
+  rel="noopener noreferrer"
+  onClick={() => setMenuOpen(false)}
+  className="flex items-center gap-1 text-gray-600 hover:text-[#6B46C1] transition"
+>
+  <span>Location</span>
+  <MoveUpRight className="w-5 h-5" strokeWidth={2.5} />
+</a>
 
 
     </div>

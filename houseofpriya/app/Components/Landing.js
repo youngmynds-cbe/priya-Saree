@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 
 import Footer from "../Components/Footer";
 import { ChevronLeft, ChevronRight, Play } from "lucide-react";
+import { MoveUpRight } from "lucide-react";
 
 const Landing = () => {
   const pathname = usePathname();
@@ -13,7 +14,7 @@ const Landing = () => {
   const [hoveredCard, setHoveredCard] = useState(null);
   const [showModal, setShowModal] = useState(false);
   const [loading, setLoading] = useState(false);
-   const [menuOpen, setMenuOpen] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   const [formData, setFormData] = useState({
     name: "",
@@ -143,7 +144,7 @@ const Landing = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) =>
-        prevIndex === sarees.length - 1 ? 0 : prevIndex + 1
+        prevIndex === sarees.length - 1 ? 0 : prevIndex + 1,
       );
     }, 3000);
 
@@ -185,104 +186,149 @@ const Landing = () => {
       <main>
         <section>
           <div className="h-[840px] md:h-[1150px] lg:h-auto relative overflow-hidden">
-          
             <div
-              className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-              style={{ backgroundImage: `url('/images/bg.png')` }}
+              className="absolute inset-0 bg-cover bg-center bg-no-repeat z-0"
+              style={{ backgroundImage: `url('/images/k bg (5).png')` }}
             >
+              <div
+  className="absolute inset-0 bg-cover bg-center bg-no-repeat z-0 block lg:hidden"
+  style={{ backgroundImage: "url('/images/bg.png')" }}
+/>
               <div className="absolute inset-0"></div>
             </div>
 
-            <div className="absolute inset-0 pointer-events-none">
+            <div className="absolute inset-0 pointer-events-none block lg:hidden">
               <div className="absolute top-6 sm:top-10 lg:top-20 left-4 sm:left-6 lg:left-8 right-4 sm:right-6 lg:right-8 bottom-4 sm:bottom-6 lg:bottom-8 border-2 border-white opacity-40 rounded-sm"></div>
             </div>
 
-      
-        <nav className="relative z-20 px-4 sm:px-6 lg:px-8 py-6">
-  {/* TOP ROW */}
-  <div className="flex items-center justify-between">
-    {/* Logo */}
-    <div className="w-28 h-28 sm:w-32 sm:h-32 lg:w-40 lg:h-40 rounded-xl flex items-center justify-center lg:ml-10 relative">
-      <div className="w-full h-full absolute bg-[url('/images/bg.png')] rounded-xl hidden lg:block"></div>
-      <img
-        src="/images/logo.png"
-        alt="House of Priya Logo"
-        className="w-20 sm:w-24 lg:w-34 object-contain z-10 lg:-mt-9"
-      />
-    </div>
+            <nav className="relative z-20 px-4 sm:px-6 lg:px-8 py-6">
+              {/* TOP ROW */}
+              <div className="flex items-center justify-between">
+                {/* Logo */}
+                <div className="w-28 h-28 sm:w-32 sm:h-32 lg:w-40 lg:h-40 rounded-xl flex items-center justify-center lg:ml-10 relative">
+                  {/* <div className="w-full h-full absolute bg-[url('/images/bg.png')] rounded-xl hidden lg:block bg-transparent"></div> */}
+  
+{/* 
+                  <img
+                    src="/images/logo3.png"
+                    alt="House of Priya Logo"
+                    className="w-20 sm:w-24 lg:w-68 object-contain z-10 lg:-mt-2"
+                  />   */}
+                  <img
+  src="/images/logoimage.png"
+  alt="House of Priya Logo"
+  className="
+    object-contain z-10
+    w-20 sm:w-20 md:w-24
+    block lg:hidden
+  "
+/>
 
-    {/* Desktop Menu */}
-    <div className="hidden lg:flex gap-15 font-readex font-bold text-[20px] -mt-30">
-      <a
-        href="/"
-        className={pathname === "/" ? "text-[#6B46C1]" : "text-[#6C6C6C] hover:text-purple-700"}
-      >
-        Home
-      </a>
-      <a
-        href="/about"
-        className={pathname === "/about" ? "text-[#6B46C1]" : "text-[#6C6C6C] hover:text-purple-700"}
-      >
-        About
-      </a>
-      <a
-        href="/blog"
-        className={pathname === "/blog" ? "text-[#6B46C1]" : "text-[#6C6C6C] hover:text-purple-700"}
-      >
-        Blog
-      </a>
-    </div>
+                </div>
 
-    {/* Desktop Button */}
-    <a
-      href="https://wa.me/919363167299"
-      target="_blank"
-      className="hidden lg:block bg-[#6B46C1] hover:bg-purple-800 text-white px-6 py-2 rounded-md font-medium shadow-lg -mt-30"
-    >
-      Enquire on WhatsApp
-    </a>
+                {/* Desktop Menu */}
+                <div className="hidden lg:flex gap-15 font-readex font-bold text-[20px] -mt-30">
+                  <a
+                    href="/"
+                    className={
+                      pathname === "/"
+                        ? "text-[#6B46C1]"
+                        : "text-[#6C6C6C] hover:text-purple-700"
+                    }
+                  >
+                    Home
+                  </a>
+                  <a
+                    href="/about"
+                    className={
+                      pathname === "/about"
+                        ? "text-[#6B46C1]"
+                        : "text-[#6C6C6C] hover:text-purple-700"
+                    }
+                  >
+                    About
+                  </a>
+                  <a
+                    href="/blog"
+                    className={
+                      pathname === "/blog"
+                        ? "text-[#6B46C1]"
+                        : "text-[#6C6C6C] hover:text-purple-700"
+                    }
+                  >
+                    Blog
+                  </a>
+                  <a
+                    href="https://maps.app.goo.gl/FfJAE7u8PAacKddm6"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-1 text-[#6C6C6C] hover:text-purple-700"
+                  >
+                    <span>Location</span>
+                    <MoveUpRight className="w-5 h-5" strokeWidth={2.5} />
+                  </a>
+                </div>
 
-    {/* Hamburger (Mobile only – LAST) */}
-    <button
-      onClick={() => setMenuOpen(!menuOpen)}
-      className="lg:hidden text-4xl text-gray-500 z-50 p-5"
-      arial-label="Toggle menu"
-    >
-       {menuOpen ? "✕" : "☰"}
-    </button>
-  </div>
+                <a
+                  href="https://wa.me/919363167299"
+                  target="_blank"
+                  className="hidden lg:block bg-[#6B46C1] hover:bg-purple-800 text-white px-6 py-2 rounded-md font-medium shadow-lg -mt-30"
+                >
+                  Enquire on WhatsApp
+                </a>
 
-  {/* MOBILE DROPDOWN */}
- {menuOpen && (
-  <div className="lg:hidden mt-4 bg-white rounded-xl shadow-lg p-6 flex flex-col gap-4 font-readex font-bold text-lg">
-    <a
-      href="/"
-      onClick={() => setMenuOpen(false)}
-      className={pathname === "/" ? "text-[#6B46C1]" : "text-gray-600"}
-    >
-      Home
-    </a>
-    <a
-      href="/about"
-      onClick={() => setMenuOpen(false)}
-      className={pathname === "/about" ? "text-[#6B46C1]" : "text-gray-600"}
-    >
-      About
-    </a>
-    <a
-      href="/blog"
-      onClick={() => setMenuOpen(false)}
-      className={pathname === "/blog" ? "text-[#6B46C1]" : "text-gray-600"}
-    >
-      Blog
-    </a>
-  </div>
-)}
+                <button
+                  onClick={() => setMenuOpen(!menuOpen)}
+                  className="lg:hidden text-4xl text-gray-500 z-50 p-5"
+                  arial-label="Toggle menu"
+                >
+                  {menuOpen ? "✕" : "☰"}
+                </button>
+              </div>
 
-</nav>
+              {menuOpen && (
+                <div className="lg:hidden mt-4 bg-white rounded-xl shadow-lg p-6 flex flex-col gap-4 font-readex font-bold text-lg">
+                  <a
+                    href="/"
+                    onClick={() => setMenuOpen(false)}
+                    className={
+                      pathname === "/" ? "text-[#6B46C1]" : "text-gray-600"
+                    }
+                  >
+                    Home
+                  </a>
+                  <a
+                    href="/about"
+                    onClick={() => setMenuOpen(false)}
+                    className={
+                      pathname === "/about" ? "text-[#6B46C1]" : "text-gray-600"
+                    }
+                  >
+                    About
+                  </a>
+                  <a
+                    href="/blog"
+                    onClick={() => setMenuOpen(false)}
+                    className={
+                      pathname === "/blog" ? "text-[#6B46C1]" : "text-gray-600"
+                    }
+                  >
+                    Blog
+                  </a>
+                  <a
+                    href="https://maps.app.goo.gl/FfJAE7u8PAacKddm6"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={() => setMenuOpen(false)}
+                    className="flex items-center gap-1 text-gray-600 hover:text-[#6B46C1] transition"
+                  >
+                    <span>Location</span>
+                    <MoveUpRight className="w-5 h-5" strokeWidth={2.5} />
+                  </a>
+                </div>
+              )}
+            </nav>
 
-
-         
             <div
               className="
       relative z-10
@@ -295,7 +341,6 @@ const Landing = () => {
       mt-0 lg:-mt-26 
     "
             >
-        
               <div className="space-y-6 text-center lg:text-left -mt-13 sm:mt-0">
                 <h1
                   className="
@@ -332,7 +377,6 @@ const Landing = () => {
                 </a>
               </div>
 
-             
               <div className="relative flex justify-end">
                 <div
                   className="
@@ -350,7 +394,6 @@ const Landing = () => {
               </div>
             </div>
 
-         
             <div className="absolute bottom-0 left-0 w-72 sm:w-80 lg:w-96 h-72 sm:h-80 lg:h-96 bg-gradient-to-tr  rounded-full blur-3xl opacity-40 -translate-x-1/2 translate-y-1/2"></div>
           </div>
         </section>
@@ -679,7 +722,7 @@ const Landing = () => {
               className="font-gabriola text-[#6B46C1] text-center 
                text-[36px] sm:text-[48px] lg:text-[66px]"
             >
-              Farewell Collection
+              <span className="">Farewell Collection</span>
             </h2>
             <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[500px] lg:min-h-[600px] items-center">
               <div className="flex flex-col  px-6 py-10 sm:px-10 lg:px-16">
@@ -941,7 +984,7 @@ const Landing = () => {
                 <div className="pt-6">
                   <a
                     href="https://wa.me/919363167299?text=Hi%20young%20mynds.%20I%20am%20interested%20in%20your%20service."
-                     className="bg-[#6B46C1] hover:bg-purple-800 text-white px-8 py-3 rounded-md font-medium transition shadow-lg inline-block mt-4 font-readex"
+                    className="bg-[#6B46C1] hover:bg-purple-800 text-white px-8 py-3 rounded-md font-medium transition shadow-lg inline-block mt-4 font-readex"
                     target="_blank"
                     rel="noopener noreferer"
                   >
@@ -1048,42 +1091,42 @@ const Landing = () => {
                 <div className="space-y-4">
                   {/* Name */}
                   <div>
-                  <input
-  type="text"
-  name="name"
-  placeholder="Enter Your Name"
-  value={formData.name}
-  onChange={handleChange}
-  onBlur={handleChange}
-  autoComplete="name"
-  required
-  className="w-full px-4 py-3 border rounded-lg focus:outline-none transition-all text-gray-700"
-/>
+                    <input
+                      type="text"
+                      name="name"
+                      placeholder="Enter Your Name"
+                      value={formData.name}
+                      onChange={handleChange}
+                      onBlur={handleChange}
+                      autoComplete="name"
+                      required
+                      className="w-full px-4 py-3 border rounded-lg focus:outline-none transition-all text-gray-700"
+                    />
 
-{errors.name && (
-  <p className="text-red-500 text-sm mt-1">{errors.name}</p>
-)}
-
+                    {errors.name && (
+                      <p className="text-red-500 text-sm mt-1">{errors.name}</p>
+                    )}
                   </div>
 
                   {/* Email */}
                   <div>
-                   <input
-  type="email"
-  name="email"
-  placeholder="Enter Your Email ID"
-  value={formData.email}
-  onChange={handleChange}
-  onBlur={handleChange}
-  autoComplete="email"
-  required
-  className="w-full px-4 py-3 border rounded-lg focus:outline-none transition-all text-gray-700"
-/>
+                    <input
+                      type="email"
+                      name="email"
+                      placeholder="Enter Your Email ID"
+                      value={formData.email}
+                      onChange={handleChange}
+                      onBlur={handleChange}
+                      autoComplete="email"
+                      required
+                      className="w-full px-4 py-3 border rounded-lg focus:outline-none transition-all text-gray-700"
+                    />
 
-{errors.email && (
-  <p className="text-red-500 text-sm mt-1">{errors.email}</p>
-)}
-
+                    {errors.email && (
+                      <p className="text-red-500 text-sm mt-1">
+                        {errors.email}
+                      </p>
+                    )}
                   </div>
 
                   {/* Button */}
@@ -1152,8 +1195,8 @@ function NavLink({ path, label, pathname, mobile }) {
         pathname === path
           ? "text-[#6B46C1]"
           : mobile
-          ? "text-gray-600"
-          : "text-[#6C6C6C] hover:text-purple-700"
+            ? "text-gray-600"
+            : "text-[#6C6C6C] hover:text-purple-700"
       }`}
     >
       {label}
