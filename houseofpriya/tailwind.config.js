@@ -9,6 +9,7 @@ module.exports = {
     extend: {
       fontFamily: {
         gabriola: ["Gabriola", "cursive"],
+        cormorant: ["var(--font-cormorant)", "serif"],
         readex: ["'Readex Pro'"],
         nanum: ["'Nanum Myeongjo'", "serif"],
         geist: ["Geist", "sans-serif"],

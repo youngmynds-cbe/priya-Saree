@@ -187,24 +187,22 @@ const Footer = () => {
             </h4>
 
             <ul className="space-y-4 font-readex text-[16px]">
-          <li className="flex gap-3">
-  <img src="/images/map.png" className="w-5 h-5 mt-1" />
-  <span>
-    <a
-      href="https://maps.app.goo.gl/FfJAE7u8PAacKddm6"
-      target="_blank"
-      rel="noopener noreferrer"
-      
-    >
-      1st Floor, 356, Diwan Bahadur Rd,
-      <br />
-      Opposite Kennedy Theatre, R.S. Puram,
-      <br />
-      Coimbatore, Tamil Nadu 641002
-    </a>
-  </span>
-</li>
-
+              <li className="flex gap-3">
+                <img src="/images/map.png" className="w-5 h-5 mt-1" />
+                <span>
+                  <a
+                    href="https://maps.app.goo.gl/FfJAE7u8PAacKddm6"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    1st Floor, 356, Diwan Bahadur Rd,
+                    <br />
+                    Opposite Kennedy Theatre, R.S. Puram,
+                    <br />
+                    Coimbatore, Tamil Nadu 641002
+                  </a>
+                </span>
+              </li>
 
               <li className="flex gap-3 items-center">
                 <img src="/images/Vector (2).png" className="w-5 h-5" />
@@ -270,12 +268,13 @@ const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="bg-[#8B6220] py-4 text-center text-sm">
+        <div className="relative z-10 bg-[#8B6220] py-4 text-center text-sm">
           Developed by{" "}
           <a
-            href="https://wa.me/919363167299?text=Hi%20young%20mynds.%20I%20am%20interested%20in%20your%20service."
+            href="https://wa.me/919363167299?text=Hi%20Young%20Mynds.%20I%20am%20interested%20in%20your%20service."
             target="_blank"
-            className="underline"
+            rel="noopener noreferrer"
+            className="underline cursor-pointer text-white hover:text-gray-200"
           >
             Young Mynds Infotech
           </a>
@@ -287,7 +286,7 @@ const Footer = () => {
           src="/images/image 55.png"
           alt=""
           aria-hidden
-          className="absolute inset-0 w-full h-full object-cover z-0"
+          className="absolute inset-0 w-full h-full object-cover z-0 opacity-40"
         />
 
         <div className="relative z-10 px-5 py-10 text-center">
@@ -324,17 +323,16 @@ const Footer = () => {
               <img src="/images/map.png" className="w-4 h-4 mt-1" />
               <span className="leading-relaxed">
                 <a
-      href="https://maps.app.goo.gl/FfJAE7u8PAacKddm6"
-      target="_blank"
-      rel="noopener noreferrer"
-      
-    >
-      1st Floor, 356, Diwan Bahadur Rd,
-      <br />
-      Opposite Kennedy Theatre, R.S. Puram,
-      <br />
-      Coimbatore, Tamil Nadu 641002
-    </a>
+                  href="https://maps.app.goo.gl/FfJAE7u8PAacKddm6"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  1st Floor, 356, Diwan Bahadur Rd,
+                  <br />
+                  Opposite Kennedy Theatre, R.S. Puram,
+                  <br />
+                  Coimbatore, Tamil Nadu 641002
+                </a>
               </span>
             </li>
 
@@ -351,9 +349,9 @@ const Footer = () => {
 
           {/* SOCIAL ICONS */}
           <div className="flex justify-center gap-8 mt-6">
-            <FaInstagram className="w-7 h-7"/>
-            <CiFacebook className="w-7 h-7"/>
-            <FaYoutube className="w-7 h-7"/>
+            <FaInstagram className="w-7 h-7" />
+            <CiFacebook className="w-7 h-7" />
+            <FaYoutube className="w-7 h-7" />
           </div>
 
           {/* LOCATION */}
@@ -370,12 +368,13 @@ const Footer = () => {
             />
           </div>
         </div>
-        <div className="bg-[#8B6220] py-4 text-center text-sm">
+        <div className="relative z-10 bg-[#8B6220] py-4 text-center text-sm">
           Developed by{" "}
           <a
-             href="https://wa.me/919363167299?text=Hi%20young%20mynds.%20I%20am%20interested%20in%20your%20service."
+            href="https://wa.me/919363167299?text=Hi%20Young%20Mynds.%20I%20am%20interested%20in%20your%20service."
             target="_blank"
-         
+            rel="noopener noreferrer"
+            className="underline cursor-pointer text-white hover:text-gray-200"
           >
             Young Mynds Infotech
           </a>

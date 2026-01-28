@@ -294,7 +294,7 @@ const angleStep = 360 / sarees.length;
                     src="/images/logos.svg"
                     alt="House of Priya Logo"
                     className="
-    object-contain z-10 mt-5
+    object-contain z-10 mt-5 md:mt-20
     w-20 sm:w-20 md:w-24
     block lg:hidden
   "
@@ -419,7 +419,7 @@ const angleStep = 360 / sarees.length;
               <div className="space-y-6 text-center lg:text-left -mt-13 sm:mt-0">
                 <h1
                   className="
-          font-['Cormorant_Garamond']
+          font-['Cormorant_Garamond'] font-semibold
           text-[36px] sm:text-[48px] md:text-[56px] lg:text-[74px]
           leading-tight sm:leading-[60px] lg:leading-[90px]
           tracking-[-0.5px]
@@ -464,7 +464,7 @@ const angleStep = 360 / sarees.length;
                 >
                   <img
                     src="../images/DSC02740 1 (2).png"
-                    className="w-full h-auto object-cover"
+                    className="w-full h-[450px] md:h-[750px] lg:h-auto  object-contain"
                     alt="Saree Model"
                   />
                 </div>
@@ -1275,7 +1275,7 @@ const angleStep = 360 / sarees.length;
             </div>
           </div>
         </section>
-        <section className="relative overflow-hidden">
+        <section className="-mt-17 lg:mt-0 md:mt-0 sm:mt-0  relative overflow-hidden ">
           {/* Background Image */}
           <div
             className="

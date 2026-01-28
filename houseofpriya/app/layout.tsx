@@ -164,6 +164,7 @@ import {
   Geist_Mono,
   Readex_Pro,
   Nanum_Myeongjo,
+   Cormorant_Garamond,
 } from "next/font/google";
 import "./globals.css";
 
@@ -181,6 +182,11 @@ const geistMono = Geist_Mono({
 const readexPro = Readex_Pro({
   subsets: ["latin"],
   variable: "--font-readex",
+});
+const cormorant = Cormorant_Garamond({
+  subsets: ["latin"],
+  variable: "--font-cormorant",
+  display: "swap",
 });
 
 const nanumMyeongjo = Nanum_Myeongjo({
@@ -284,6 +290,7 @@ export default function RootLayout({
           ${geistMono.variable}
           ${readexPro.variable}
           ${nanumMyeongjo.variable}
+          ${cormorant.variable}
           antialiased
         `}
       >

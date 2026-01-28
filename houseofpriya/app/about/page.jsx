@@ -115,7 +115,7 @@ const Landing = () => {
                   <img
                     src="/images/logos.svg"
                     alt="House of Priya Logo"
-                    className="mt-5 w-20 sm:w-24 lg:w-34 object-contain z-10 lg:-mt-9 block lg:hidden"
+                    className="mt-5 md:mt-20 w-20 sm:w-24 lg:w-34 object-contain z-10 lg:-mt-9 block lg:hidden"
                   />
                 </div>
 
@@ -242,7 +242,7 @@ const Landing = () => {
               <div className="space-y-6 text-center lg:text-left -mt-13 sm:mt-0">
                 <h1
                   className="
-          font-['Cormorant_Garamond']
+          font-['Cormorant_Garamond'] font-semibold
           text-[36px] sm:text-[48px] md:text-[56px] lg:text-[74px]
           leading-tight sm:leading-[60px] lg:leading-[90px]
           tracking-[-0.5px]
@@ -288,7 +288,7 @@ const Landing = () => {
                 >
                   <img
                     src="../images/DSC02638 (1) 1 (1).png"
-                    className="w-full  lg:h-[660px] object-contain"
+                    className="w-full h-[500px] md:h-[700px]  lg:h-[660px] object-contain"
                     alt="Saree Model"
                   />
                 </div>
