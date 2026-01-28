@@ -574,14 +574,16 @@ const angleStep = 360 / sarees.length;
 
                 <div>
                   <a
-                    href="https://wa.me/919363167299?text=Hi%20young%20mynds.%20I%20am%20interested%20in%20your%20service."
-                    className="bg-[#6B46C1] hover:bg-purple-700 text-white  font-readex px-6 py-3 rounded-lg"
-                    target="_blank"
-                    rel="noopener noreferer"
-                  >
-                    {" "}
-                    Enquire on WhatsApp
-                  </a>
+                  className="bg-[#6B46C1] hover:bg-purple-800 text-white px-8 py-3 rounded-md 
+             font-medium transition shadow-lg inline-flex items-center gap-2 
+             mt-4 font-readex"
+                  href="https://wa.me/919363167299?text=Hi%20young%20mynds.%20I%20am%20interested%20in%20your%20service."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <FaWhatsapp className="text-xl" />
+                  <span>Enquire on WhatsApp</span>
+                </a>
                 </div>
 
                 {/* SMALL IMAGE */}
@@ -1248,7 +1250,7 @@ const angleStep = 360 / sarees.length;
                   onMouseLeave={() => setHoveredCard(null)}
                 >
                   {/* Background Image */}
-                  <div className="relative h-[280px] md:h-[500px] lg:h-[500px] overflow-hidden">
+                  <div className="relative h-[250px] md:h-[500px] lg:h-[500px] overflow-hidden">
                     <img
                       src={collection.image}
                       alt={collection.title}

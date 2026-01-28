@@ -188,7 +188,7 @@ const Footer = () => {
 
             <ul className="space-y-4 font-readex text-[16px]">
               <li className="flex gap-3">
-                <img src="/images/map.png" className="w-5 h-5 mt-1" />
+                <img src="/images/Vector (8).png" className="w-5 h-5 mt-1" />
                 <span>
                   <a
                     href="https://maps.app.goo.gl/FfJAE7u8PAacKddm6"
@@ -205,14 +205,14 @@ const Footer = () => {
               </li>
 
               <li className="flex gap-3 items-center">
-                <img src="/images/Vector (2).png" className="w-5 h-5" />
+                <img src="/images/Vector (7).png" className="w-5 h-5" />
                 <a href="mailto:houseofpriya@gmail.com">
                   houseofpriya@gmail.com
                 </a>
               </li>
 
               <li className="flex gap-3 items-center">
-                <img src="/images/phone-line.png" className="w-5 h-5" />
+                <img src="/images/Vector (9).png" className="w-5 h-5" />
                 <a href="tel:+919876543210">+91 9876543210</a>
               </li>
             </ul>
@@ -320,7 +320,7 @@ const Footer = () => {
 
           <ul className="space-y-4 font-readex text-[15px]">
             <li className="flex justify-center gap-3">
-              <img src="/images/map.png" className="w-4 h-4 mt-1" />
+              <img src="/images/Vector (8).png" className="w-3 h-4 mt-1" />
               <span className="leading-relaxed">
                 <a
                   href="https://maps.app.goo.gl/FfJAE7u8PAacKddm6"
@@ -337,12 +337,12 @@ const Footer = () => {
             </li>
 
             <li className="flex justify-center gap-3 items-center">
-              <img src="/images/Vector (2).png" className="w-4 h-4" />
+              <img src="/images/Vector (7).png" className="w-4 h-4" />
               <a href="mailto:houseofpriya@gmail.com">houseofpriya@gmail.com</a>
             </li>
 
             <li className="flex justify-center gap-3 items-center">
-              <img src="/images/phone-line.png" className="w-4 h-4" />
+              <img src="/images/Vector (9).png" className="w-4 h-4" />
               <a href="tel:+919876543210">+91 9876543210</a>
             </li>
           </ul>
