@@ -1,20 +1,34 @@
 "use client";
 
 import React from "react";
-import { useState, useEffect } from "react";
+import { useState, useEffect,useRef } from "react";
 import { usePathname } from "next/navigation";
-
+import { FaWhatsapp } from "react-icons/fa";
 import Footer from "../Components/Footer";
 import { ChevronLeft, ChevronRight, Play } from "lucide-react";
 import { MoveUpRight } from "lucide-react";
 
 const Landing = () => {
   const pathname = usePathname();
+  const sliderRef = useRef(null);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [hoveredCard, setHoveredCard] = useState(null);
   const [showModal, setShowModal] = useState(false);
   const [loading, setLoading] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+    const [isMobile, setIsMobile] = useState(false);
+  const [isTablet, setIsTablet] = useState(false);
+
+   useEffect(() => {
+    const checkView = () => {
+      setIsMobile(window.innerWidth < 640);
+      setIsTablet(window.innerWidth >= 640 && window.innerWidth < 1024);
+    };
+
+    checkView();
+    window.addEventListener("resize", checkView);
+    return () => window.removeEventListener("resize", checkView);
+  }, []);
 
   const [formData, setFormData] = useState({
     name: "",
@@ -37,6 +51,40 @@ const Landing = () => {
       [name]: "",
     }));
   };
+
+  useEffect(() => {
+  const interval = setInterval(() => {
+    handleNext();
+  }, 3000); // 3 sec auto scroll
+
+  return () => clearInterval(interval);
+}, [currentIndex]);
+
+
+const scrollToIndex = (index) => {
+  if (!sliderRef.current) return;
+
+  const slideWidth = sliderRef.current.children[0].offsetWidth;
+  sliderRef.current.scrollTo({
+    left: slideWidth * index,
+    behavior: "smooth",
+  });
+
+  setCurrentIndex(index);
+};
+
+// const handlePrev = () => {
+//   const newIndex =
+//     currentIndex === 0 ? sarees.length - 1 : currentIndex - 1;
+//   scrollToIndex(newIndex);
+// };
+
+// const handleNext = () => {
+//   const newIndex =
+//     currentIndex === sarees.length - 1 ? 0 : currentIndex + 1;
+//   scrollToIndex(newIndex);
+// };
+
 
   const validateForm = () => {
     let newErrors = {};
@@ -107,40 +155,52 @@ const Landing = () => {
   const sarees = [
     {
       id: 1,
-      image: "../images/Rectangle 19470.png",
+      image: "../images/Rectangle 19470 (1).png",
 
       bgColor: "bg-yellow-100",
     },
     {
       id: 2,
-      image: "../images/Vector 2.png",
+      image: "../images/DSC02515.jpg",
       bgColor: "bg-green-100",
     },
     {
       id: 3,
-      image: "../images/Rectangle 19470.png",
+      image: "../images/DSC02561 (1).jpg",
 
       bgColor: "bg-orange-200",
     },
     {
       id: 4,
-      image: "../images/Rectangle 19470.png",
+      image: "../images/DSC02673.jpg",
 
       bgColor: "bg-pink-100",
     },
     {
       id: 5,
-      image: "../images/Rectangle 19470.png",
+      image: "../images/DSC02804.jpg",
 
       bgColor: "bg-pink-100",
     },
     {
       id: 6,
-      image: "../images/Rectangle 19470.png",
+      image: "../images/DSC02902.jpg",
 
       bgColor: "bg-pink-100",
     },
   ];
+const angleStep = 360 / sarees.length;
+  const radius = isTablet ? 320 : 520;
+
+  const handleNext = () => {
+    setCurrentIndex((prev) => (prev + 1) % sarees.length);
+  };
+
+  const handlePrev = () => {
+    setCurrentIndex((prev) =>
+      prev === 0 ? sarees.length - 1 : prev - 1
+    );
+  };
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) =>
@@ -191,15 +251,31 @@ const Landing = () => {
               style={{ backgroundImage: `url('/images/k bg (5).png')` }}
             >
               <div
-  className="absolute inset-0 bg-cover bg-center bg-no-repeat z-0 block lg:hidden"
-  style={{ backgroundImage: "url('/images/bg.png')" }}
-/>
+                className="absolute inset-0 bg-cover bg-center bg-no-repeat z-0 block lg:hidden"
+                style={{ backgroundImage: "url('/images/bgmobile1.png')" }}
+              />
               <div className="absolute inset-0"></div>
             </div>
 
             <div className="absolute inset-0 pointer-events-none block lg:hidden">
-              <div className="absolute top-6 sm:top-10 lg:top-20 left-4 sm:left-6 lg:left-8 right-4 sm:right-6 lg:right-8 bottom-4 sm:bottom-6 lg:bottom-8 border-2 border-white opacity-40 rounded-sm"></div>
-            </div>
+  {/* Border */}
+  <div className="absolute top-6 sm:top-10 left-4 sm:left-6 right-4 sm:right-6 bottom-4 sm:bottom-6 border-2 border-white opacity-40 rounded-sm"></div>
+
+  {/* Bottom Right Image on Border */}
+  <img
+    src="/images/Frame 52784.png" 
+    alt=""
+    aria-hidden
+    className="
+      absolute
+      bottom-3 sm:bottom-5
+      right-7 sm:right-5
+      w-10 sm:w-12
+      z-20
+    " 
+  />
+</div>
+
 
             <nav className="relative z-20 px-4 sm:px-6 lg:px-8 py-6">
               {/* TOP ROW */}
@@ -207,23 +283,22 @@ const Landing = () => {
                 {/* Logo */}
                 <div className="w-28 h-28 sm:w-32 sm:h-32 lg:w-40 lg:h-40 rounded-xl flex items-center justify-center lg:ml-10 relative">
                   {/* <div className="w-full h-full absolute bg-[url('/images/bg.png')] rounded-xl hidden lg:block bg-transparent"></div> */}
-  
-{/* 
+
+                  {/* 
                   <img
                     src="/images/logo3.png"
                     alt="House of Priya Logo"
                     className="w-20 sm:w-24 lg:w-68 object-contain z-10 lg:-mt-2"
                   />   */}
                   <img
-  src="/images/logoimage.png"
-  alt="House of Priya Logo"
-  className="
+                    src="/images/logoimage.png"
+                    alt="House of Priya Logo"
+                    className="
     object-contain z-10
     w-20 sm:w-20 md:w-24
     block lg:hidden
   "
-/>
-
+                  />
                 </div>
 
                 {/* Desktop Menu */}
@@ -367,13 +442,15 @@ const Landing = () => {
                 </p>
 
                 <a
-                  className="bg-[#6B46C1] hover:bg-purple-800 text-white px-8 py-3 rounded-md font-medium transition shadow-lg inline-block mt-4 font-readex"
+                  className="bg-[#6B46C1] hover:bg-purple-800 text-white px-8 py-3 rounded-md 
+             font-medium transition shadow-lg inline-flex items-center gap-2 
+             mt-4 font-readex"
                   href="https://wa.me/919363167299?text=Hi%20young%20mynds.%20I%20am%20interested%20in%20your%20service."
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  {" "}
-                  Enquire on WhatsApp
+                  <FaWhatsapp className="text-xl" />
+                  <span>Enquire on WhatsApp</span>
                 </a>
               </div>
 
@@ -402,7 +479,7 @@ const Landing = () => {
           <div className="max-w-7xl mx-auto px-4">
             <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-12">
               {/* LEFT IMAGE */}
-              <div className="flex justify-center lg:justify-start z-30">
+              <div className="flex justify-center lg:justify-start z-30 ">
                 <img
                   src="../images/ellipse.png"
                   alt="Woman in purple sari"
@@ -410,7 +487,7 @@ const Landing = () => {
             w-[260px] h-auto
             md:w-[380px]
             lg:w-[492px] lg:h-[699px]
-            lg:-mt-50
+            lg:-mt-50 hidden lg:block
           "
                 />
               </div>
@@ -466,7 +543,7 @@ const Landing = () => {
                       src="../images/i.png"
                       alt="Check mark icon"
                       aria-hidden="true"
-                      className="w-3 h-5 shrink-0"
+                      className="w-3 h-5 shrink"
                     />
                     <span>Premium silk with 24k gold thread work</span>
                   </li>
@@ -511,7 +588,7 @@ const Landing = () => {
               w-[180px]
               md:w-[220px]
               lg:w-[270px]
-              h-auto
+              h-auto hidden lg:block
             "
                   />
                 </div>
@@ -586,7 +663,7 @@ const Landing = () => {
                   alt="Premium Handloom"
                   className="w-full"
                 />
-                <h3 className="font-gabriola text-[20px] text-center sm:text-[32px] lg:text-[38px] text-purple-600 mt-4">
+                <h3 className="font-gabriola text-[20px] text-center sm:text-[32px] lg:text-[38px] text-[#6B46C1] mt-4">
                   Banarasi Heritage
                 </h3>
                 <p className="font-readex text-[14px] text-center sm:text-[15px] lg:text-[16px] leading-[22px] text-[#4B5563]">
@@ -601,7 +678,7 @@ const Landing = () => {
                   alt="Party Wear"
                   className="w-full"
                 />
-                <h3 className="font-gabriola text-center text-[20px] sm:text-[32px] lg:text-[38px] text-purple-600 mt-4">
+                <h3 className="font-gabriola text-center text-[20px] sm:text-[32px] lg:text-[38px] text-[#6B46C1] mt-4">
                   Kanjeevaram Classics
                 </h3>
                 <p className="font-readex text-[14px] text-center sm:text-[15px] lg:text-[16px] leading-[22px] text-[#4B5563]">
@@ -616,7 +693,7 @@ const Landing = () => {
                   alt="Everyday Elegance"
                   className="w-full"
                 />
-                <h3 className="font-gabriola text-[20px] text-center sm:text-[32px] lg:text-[38px] text-purple-600 mt-4">
+                <h3 className="font-gabriola text-[20px] text-center sm:text-[32px] lg:text-[38px] text-[#6B46C1] mt-4">
                   Contemporary Silks
                 </h3>
                 <p className="font-readex text-[14px] sm:text-[15px] text-center lg:text-[16px] leading-[22px] text-[#4B5563]">
@@ -631,7 +708,7 @@ const Landing = () => {
                   alt="Bridal Sarees"
                   className="w-full"
                 />
-                <h3 className="font-gabriola text-[20px] text-center sm:text-[32px] lg:text-[38px] text-purple-600 mt-4">
+                <h3 className="font-gabriola text-[20px] text-center sm:text-[32px] lg:text-[38px] text-[#6B46C1] mt-4">
                   Bridal Sarees
                 </h3>
                 <p className="font-readex text-[14px] sm:text-[15px] text-center lg:text-[16px] leading-[22px] text-[#4B5563]">
@@ -642,7 +719,7 @@ const Landing = () => {
           </div>
         </section>
 
-        <section
+        {/* <section
           className="relative w-full h-[600px] sm:h-[700px] lg:h-[750px]"
           style={{
             backgroundImage: "url('../images/Rectangle 102.png')",
@@ -651,7 +728,7 @@ const Landing = () => {
           }}
         >
           <div className="relative max-w-7xl mx-auto h-full px-4 sm:px-6 flex items-center justify-center lg:justify-start">
-            {/* LEFT OVAL CONTENT */}
+     
             <div className="relative z-10 w-full flex justify-center lg:justify-start">
               <div
                 className="
@@ -699,7 +776,7 @@ const Landing = () => {
               </div>
             </div>
 
-            {/* LOGO */}
+          
             <div className="absolute top-4 right-4 sm:top-6 sm:right-6 lg:top-8 lg:right-8 hidden sm:block ">
               <img
                 src="/images/logo.png"
@@ -708,7 +785,7 @@ const Landing = () => {
               />
             </div>
           </div>
-        </section>
+        </section> */}
 
         <section className="bg-white relative">
           <img
@@ -720,7 +797,7 @@ const Landing = () => {
           <div className="max-w-7xl mx-auto">
             <h2
               className="font-gabriola text-[#6B46C1] text-center 
-               text-[36px] sm:text-[48px] lg:text-[66px]"
+               text-[36px] sm:text-[48px] lg:text-[66px] mb-10"
             >
               <span className="">Farewell Collection</span>
             </h2>
@@ -747,37 +824,83 @@ const Landing = () => {
               </div>
 
               {/* Right - Image */}
-              <div className="relative flex items-center justify-center px-4 sm:px-6 py-10">
-                <div
+              <div
+                className="
+    w-full
+    max-w-[461px]
+    h-[400px] lg:h-full
+    aspect-[461/576]
+    relative  
+  "
+              >
+                {/* bgline – backside */}
+                <img
+                  src="/images/bgline.png"
+                  alt="bg line"
                   className="
-      w-full
-      max-w-[461px] 
-      h-[400px] lg:h-full
-      aspect-[461/576]
+      absolute
+      top-[-10px]
+      lg:top-[-20px]
+      left-38
+      md:left-33
+      lg:left-20
+      w-50
+      md:w-68
+      lg:w-100
+      h-auto
+      z-10
+   
     "
-                >
-                  <img
-                    src="/images/Rectangle 21 (1).png"
-                    alt="Colorful Joy Saree"
-                    className="w-full h-full "
-                  />
-                </div>
+                />
+
+                {/* main image – TOP layer */}
+                <img
+                  src="/images/Rectangle 21 (1).png"
+                  alt="Colorful Joy Saree"
+                  className="
+    relative z-20
+    w-[260px] h-[320px]        /* 📱 mobile size */
+    sm:w-[320px] sm:h-[400px] /* 📱 tablet */
+    lg:w-full lg:h-full       /* 🖥 desktop */
+    object-cover
+    mx-auto lg:mx-0
+  "
+                />
               </div>
             </div>
           </div>
 
-          <div className="w-full bg-[#E2AC52] mt-0 lg:-mt-20 relative">
+          <div className="w-full bg-[#E2AC52] mt-0 lg:-mt-20 relative z-100">
             <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[500px] lg:min-h-[600px]">
               <div
                 className="relative flex items-center justify-center px-6 py-10 sm:p-8
                       order-1 lg:order-1"
               >
                 <img
+                  src="/images/bgline.png"
+                  alt="bg line"
+                  className="
+      absolute
+      lg:top-[160px]
+      top-[250px]
+      md:top-[280px]
+      left-2
+      md:left-32
+      lg:left-35
+      w-90
+      lg:w-100
+      h-auto
+      z-10
+      
+    "
+                />
+
+                <img
                   src="/images/Rectangle 22 (3).png"
                   alt="Dual Joy Saree"
                   className="w-full max-w-sm sm:max-w-md lg:max-w-full
                      h-[550px] sm:h-[550px] lg:max-h-[550px] object-contain
-                     lg:-mt-40"
+                     lg:-mt-40 z-30"
                 />
                 <div
                   className="absolute bottom-6 left-6 sm:bottom-12 sm:left-12
@@ -821,88 +944,88 @@ const Landing = () => {
           </div>
         </section>
 
-        <section className="bg-white py-16 md:py-20 px-4">
-          <div className="max-w-[1800px] mx-auto">
-            <h1
-              className="
-            text-[36px] sm:text-[44px] md:text-[64px]
-            font-gabriola
-            text-center
-            mb-16 md:mb-24
-            text-[#6B46C1]
-          "
-            >
-              Modern Style Toward Sarees
-            </h1>
+  <section className="bg-white py-16 px-4">
+      <div className="max-w-[1800px] mx-auto">
+        <h1 className="text-[36px] sm:text-[44px] md:text-[64px] text-center mb-16 text-[#6B46C1] font-gabriola">
+          Modern Style Toward Sarees
+        </h1>
 
-            <div
-              className="
-    relative
-    h-[320px] sm:h-[420px] md:h-[600px]
-    flex items-center justify-center
-    overflow-hidden md:overflow-visible
-    [perspective:1400px]
-  "
-            >
-              {getVisibleSarees().map((saree) => {
-                const isCenter = saree.position === 0;
-
-                return (
-                  <div
-                    key={saree.id}
-                    className={`
-          absolute
-          transition-all duration-700
-          ease-[cubic-bezier(.4,0,.2,1)]
-          ${isCenter ? "z-30 opacity-100" : "z-10 opacity-70"}
-        `}
-                    style={{
-                      transform: `
-            translateX(${saree.position * x}px)
-            scale(${isCenter ? 1 : scale})
-            rotateY(${saree.position * rotate}deg)
-          `,
-                    }}
-                  >
-                    <div
-                      className="
-            rounded-[24px]
-            overflow-hidden
-            bg-white
-            shadow-[0_25px_50px_rgba(0,0,0,0.25)]
-            w-[220px] h-[280px]
-            sm:w-[300px] sm:h-[400px]
-            md:w-[420px] md:h-[560px]
-          "
-                    >
-                      <img
-                        src={saree.image}
-                        alt={saree.name || "Designer saree from House of Priya"}
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
-
-            {/* Dots */}
-            <div className="flex justify-center gap-3 mt-12">
-              {sarees.map((_, idx) => (
-                <button
-                  key={idx}
-                  onClick={() => setCurrentIndex(idx)}
-                  aria-label={`Go to slide ${idx + 1}`}
-                  aria-current={idx === currentIndex ? "true" : "false"}
-                  className={`
-        h-3 rounded-full transition-all
-        ${idx === currentIndex ? "bg-[#6B46C1] w-12" : "bg-purple-300 w-3"}
-      `}
-                />
-              ))}
+        {/* MOBILE FLAT SLIDER */}
+        {isMobile ? (
+          <div className="flex justify-center">
+            <div className="w-[260px] h-[360px] rounded-[24px] overflow-hidden shadow-xl">
+              <img
+                src={sarees[currentIndex].image}
+                className="w-full h-full object-cover"
+                alt=""
+              />
             </div>
           </div>
-        </section>
+        ) : (
+          /* DESKTOP + TABLET 3D */
+          <div className="relative h-[600px] flex items-center justify-center [perspective:1600px]">
+            {sarees.map((saree, index) => {
+              const relativeIndex =
+                (index - currentIndex + sarees.length) % sarees.length;
+              const isCenter = relativeIndex === 0;
+
+              return (
+                <div
+                  key={saree.id}
+                  className={`absolute transition-all duration-700 ease-[cubic-bezier(.4,0,.2,1)]
+                    ${isCenter ? "z-30 opacity-100" : "z-10 opacity-60"}
+                  `}
+                  style={{
+                    transform: isCenter
+                      ? "translateZ(0px) scale(1)"
+                      : `
+                          rotateY(${relativeIndex * angleStep}deg)
+                          translateZ(${radius}px)
+                          scale(0.85)
+                        `,
+                  }}
+                >
+                  <div
+                    className="
+                      w-[220px] h-[300px]
+                      sm:w-[300px] sm:h-[420px]
+                      md:w-[360px] md:h-[500px]
+                      lg:w-[420px] lg:h-[560px]
+                      rounded-[24px]
+                      overflow-hidden
+                      bg-white
+                      shadow-2xl
+                    "
+                  >
+                    <img
+                      src={saree.image}
+                      className="w-full h-full object-cover"
+                      alt=""
+                    />
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        )}
+
+        {/* Controls */}
+        <div className="flex justify-center gap-6 mt-12">
+          <button
+            onClick={handlePrev}
+            className="w-20 h-12 rounded-xl bg-[#6B46C1] text-white text-2xl"
+          >
+            ‹
+          </button>
+          <button
+            onClick={handleNext}
+            className="w-20 h-12 rounded-xl bg-[#6B46C1] text-white text-2xl"
+          >
+            ›
+          </button>
+        </div>
+      </div>
+    </section>
 
         <section className="min-h-screen bg-gradient-to-br from-purple-50 to-pink-50 py-16 md:py-20 px-4 hidden lg:block">
           <div className="max-w-7xl mx-auto">

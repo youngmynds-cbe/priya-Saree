@@ -4,8 +4,9 @@ import React from "react";
 import Footer from "../Components/Footer";
 import { useState } from "react";
 import { usePathname } from "next/navigation";
-import { MoveUpRight } from 'lucide-react';
 
+import { MoveUpRight } from 'lucide-react';
+import { FaWhatsapp } from "react-icons/fa";
 const Landing = () => {
   const pathname = usePathname();
 const [name, setName] = useState("");
@@ -73,18 +74,36 @@ const handleSubmit = async (e) => {
       <section>
         <div className="h-[940px] md:h-[1100px]  lg:h-auto relative overflow-hidden">
           {/* Background */}
-          <div
-            className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-            style={{ backgroundImage: `url('/images/bg.png')` }}
-            aria-hidden="true"
-          >
+                  <div
+              className="absolute inset-0 bg-cover bg-center bg-no-repeat z-0"
+              style={{ backgroundImage: `url('/images/k bg (5).png')` }}
+            >
+              <div
+  className="absolute inset-0 bg-cover bg-center bg-no-repeat z-0 block lg:hidden"
+  style={{ backgroundImage: "url('/images/bg.png')" }}
+/>
             <div className="absolute inset-0"></div>
           </div>
 
           {/* Border */}
-          <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
-            <div className="absolute top-6 sm:top-10 lg:top-20 left-4 sm:left-6 lg:left-8 right-4 sm:right-6 lg:right-8 bottom-4 sm:bottom-6 lg:bottom-8 border-2 border-white opacity-40 rounded-sm"></div>
-          </div>
+         <div className="absolute inset-0 pointer-events-none block lg:hidden">
+  {/* Border */}
+  <div className="absolute top-6 sm:top-10 left-4 sm:left-6 right-4 sm:right-6 bottom-4 sm:bottom-6 border-2 border-white opacity-40 rounded-sm"></div>
+
+  {/* Bottom Right Image on Border */}
+  <img
+    src="/images/Frame 52784.png" // unga image path
+    alt=""
+    aria-hidden
+    className="
+      absolute
+      bottom-3 sm:bottom-5
+      right-3 sm:right-5
+      w-10 sm:w-12
+      z-20
+    "
+  />
+</div>
 
           {/* NAVBAR */}
               <nav className="relative z-20 px-4 sm:px-6 lg:px-8 py-6">
@@ -92,11 +111,11 @@ const handleSubmit = async (e) => {
   <div className="flex items-center justify-between">
     {/* Logo */}
     <div className="w-28 h-28 sm:w-32 sm:h-32 lg:w-40 lg:h-40 rounded-xl flex items-center justify-center lg:ml-10 relative">
-      <div className="w-full h-full absolute bg-[url('/images/bg.png')] rounded-xl hidden lg:block"></div>
+      {/* <div className="w-full h-full absolute bg-[url('/images/bg.png')] rounded-xl hidden lg:block"></div> */}
       <img
-        src="/images/logo.png"
+        src="/images/logoimage.png"
         alt="House of Priya Logo"
-        className="w-20 sm:w-24 lg:w-34 object-contain z-10 lg:-mt-9"
+        className="w-20 sm:w-24 lg:w-34 object-contain z-10 lg:-mt-9 block lg:hidden"
       />
     </div>
 
@@ -143,11 +162,12 @@ const handleSubmit = async (e) => {
 
     {/* Hamburger (Mobile only – LAST) */}
     <button
-      onClick={() => setMenuOpen(!menuOpen)}
-      className="lg:hidden text-4xl text-gray-500 z-50 p-5"
-    >
-      ☰
-    </button>
+                  onClick={() => setMenuOpen(!menuOpen)}
+                  className="lg:hidden text-4xl text-gray-500 z-50 p-5"
+                  arial-label="Toggle menu"
+                >
+                  {menuOpen ? "✕" : "☰"}
+                </button>
   </div>
 
   {/* MOBILE DROPDOWN */}
@@ -214,7 +234,8 @@ const handleSubmit = async (e) => {
           lg:text-white text-[#6B46C1]
         "
               >
-                Grace Woven in Every Thread
+           Our Story,
+Woven with Grace
               </h1>
 
               <p
@@ -225,20 +246,22 @@ const handleSubmit = async (e) => {
           tracking-[-0.5px]
         "
               >
-                Where tradition meets modern elegance — thoughtfully crafted
-                sarees for today's woman.
+                Where tradition meets modern elegance — thoughtfully crafted sarees for today's woman.
               </p>
 
-              <button className="bg-[#6B46C1] hover:bg-purple-800 font-readex text-white px-8 py-3 rounded-md font-medium transition shadow-lg inline-block mt-4">
-                <a
+          
+               <a
+                  className="bg-[#6B46C1] hover:bg-purple-800 text-white px-8 py-3 rounded-md 
+             font-medium transition shadow-lg inline-flex items-center gap-2 
+             mt-4 font-readex"
                   href="https://wa.me/919363167299?text=Hi%20young%20mynds.%20I%20am%20interested%20in%20your%20service."
                   target="_blank"
-                  rel="noopener noreferer"
+                  rel="noopener noreferrer"
                 >
-                  {" "}
-                  Enquire on WhatsApp
+                  <FaWhatsapp className="text-xl" />
+                  <span>Enquire on WhatsApp</span>
                 </a>
-              </button>
+            
             </div>
 
             {/* Right Image */}
@@ -311,13 +334,13 @@ const handleSubmit = async (e) => {
           </div>
 
           {/* RIGHT IMAGE */}
-          <div className="flex justify-center">
-            <div className="relative">
-              <div className="w-[380px]  lg:w-[405px]  h-[500px] lg:h-[560px] rounded-[180px] overflow-hidden  flex items-end justify-center">
+          <div className="flex justify-center hidden lg:block">
+            <div className="relative ">
+              <div className="w-[380px]  lg:w-[405px]  h-[500px] lg:h-[560px] rounded-[180px] overflow-hidden  flex items-end justify-center ">
                 <img
                   src="/images/Frame 52875.png"
                   alt="House of Priya Saree"
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover "
                 />
               </div>
             </div>
@@ -582,9 +605,9 @@ const handleSubmit = async (e) => {
           </div>
         </div>
       )}  
-      <section className="bg-[#F9F5FF]  py-14 relative hidden lg:block">
+      {/* <section className="bg-[#F9F5FF]  py-14 relative hidden lg:block">
         <div className="max-w-7xl  grid grid-cols-1 lg:grid-cols-2 items-center gap-5 ">
-          {/* RIGHT DECOR */}
+         
           <img
             src="/images/Group (6).png"
             className="absolute right-0 top-1/2 -translate-y-1/2 opacity-100 hidden lg:block"
@@ -592,13 +615,12 @@ const handleSubmit = async (e) => {
   aria-hidden="true"
           />
 
-          {/* LEFT IMAGE */}
           <div className=" ">
-            {/* Wrapper */}
+         
             <div className="relative flex items-center">
-              {/* LEFT / RIGHT DECOR IMAGE */}
+            
               <img
-                src="/images/Group (7).png" // purple vertical design image
+                src="/images/Group (7).png" 
                        alt=""
   aria-hidden="true"
                 className="
@@ -608,7 +630,7 @@ const handleSubmit = async (e) => {
       "
               />
 
-              {/* MAIN IMAGE */}
+              
               <img
                 src="/images/img (7).png"
                 alt="Designed for Today's Woman"
@@ -622,7 +644,7 @@ const handleSubmit = async (e) => {
             </div>
           </div>
 
-          {/* RIGHT CONTENT */}
+         
           <div className="text-left px-5">
             <h2 className="font-gabriola font-normal  text-[36px] lg:text-[63px] leading-[52px] tracking-[-0.5px] text-[#4C1D95]">
               Designed for Today’s Woman
@@ -660,7 +682,7 @@ const handleSubmit = async (e) => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
       <section className="bg-white py-12">
         <div className="max-w-5xl mx-auto px-6">
           {/* PURPLE CONTAINER */}
