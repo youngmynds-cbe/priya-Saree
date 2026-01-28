@@ -291,10 +291,10 @@ const angleStep = 360 / sarees.length;
                     className="w-20 sm:w-24 lg:w-68 object-contain z-10 lg:-mt-2"
                   />   */}
                   <img
-                    src="/images/logoimage.png"
+                    src="/images/logos.svg"
                     alt="House of Priya Logo"
                     className="
-    object-contain z-10
+    object-contain z-10 mt-5
     w-20 sm:w-20 md:w-24
     block lg:hidden
   "
@@ -496,6 +496,11 @@ const angleStep = 360 / sarees.length;
               <div className="space-y-8 text-center lg:text-left">
                 <h2
                   className="
+                  -mt-23
+
+                  lg:mt-0
+                  md:mt-0
+                  sm:-mt-23
             font-gabriola
             font-normal
             text-[40px]
@@ -503,7 +508,7 @@ const angleStep = 360 / sarees.length;
             lg:text-[66px]
             leading-tight
             tracking-[-0.5px]
-            text-purple-700
+            text-[#6B46C1]
           "
                 >
                   Our Signature Weave
@@ -796,7 +801,7 @@ const angleStep = 360 / sarees.length;
           />
           <div className="max-w-7xl mx-auto">
             <h2
-              className="font-gabriola text-[#6B46C1] text-center 
+              className="-mt-17 lg:mt-0 sm:mt-0 md:mt-0 font-gabriola text-[#6B46C1] text-center 
                text-[36px] sm:text-[48px] lg:text-[66px] mb-10"
             >
               <span className="">Farewell Collection</span>
@@ -805,7 +810,7 @@ const angleStep = 360 / sarees.length;
               <div className="flex flex-col  px-6 py-10 sm:px-10 lg:px-16">
                 <div className="max-w-md mx-auto lg:mx-0 ml-0 lg:ml-40">
                   <h3
-                    className="font-gabriola text-[#6B46C1] mb-4
+                    className="-mt-20 lg:mt-0 md:mt-0 font-gabriola text-[#6B46C1] mb-4
                      text-[26px] sm:text-[32px] lg:text-[40px] text-center  lg:text-end"
                   >
                     Colorful Joy
@@ -882,12 +887,12 @@ const angleStep = 360 / sarees.length;
                   className="
       absolute
       lg:top-[160px]
-      top-[250px]
+      top-[280px]
       md:top-[280px]
       left-2
       md:left-32
       lg:left-35
-      w-90
+      w-80
       lg:w-100
       h-auto
       z-10
@@ -915,7 +920,7 @@ const angleStep = 360 / sarees.length;
               >
                 <div className="ml-0 lg:-ml-40 lg:-mt-20">
                   <h3
-                    className="font-gabriola text-[#6B46C1] mb-3
+                    className="-mt-20 lg:mt-0 md:mt-0 sm:mt-0 font-gabriola text-[#6B46C1] mb-3
                          text-[26px] sm:text-[32px] lg:text-[40px]"
                   >
                     Dual Joy
@@ -944,13 +949,12 @@ const angleStep = 360 / sarees.length;
           </div>
         </section>
 
-  <section className="bg-white py-16 px-4">
+  {/* <section className="bg-white py-16 px-4">
       <div className="max-w-[1800px] mx-auto">
-        <h1 className="text-[36px] sm:text-[44px] md:text-[64px] text-center mb-16 text-[#6B46C1] font-gabriola">
+        <h1 className="-mt-15 lg:mt-0 md:mt-0 sm:mt-0 text-[36px] sm:text-[44px] md:text-[64px] text-center mb-16 text-[#6B46C1] font-gabriola">
           Modern Style Toward Sarees
         </h1>
 
-        {/* MOBILE FLAT SLIDER */}
         {isMobile ? (
           <div className="flex justify-center">
             <div className="w-[260px] h-[360px] rounded-[24px] overflow-hidden shadow-xl">
@@ -962,7 +966,7 @@ const angleStep = 360 / sarees.length;
             </div>
           </div>
         ) : (
-          /* DESKTOP + TABLET 3D */
+          
           <div className="relative h-[600px] flex items-center justify-center [perspective:1600px]">
             {sarees.map((saree, index) => {
               const relativeIndex =
@@ -1009,7 +1013,7 @@ const angleStep = 360 / sarees.length;
           </div>
         )}
 
-        {/* Controls */}
+       
         <div className="flex justify-center gap-6 mt-12">
           <button
             onClick={handlePrev}
@@ -1025,7 +1029,115 @@ const angleStep = 360 / sarees.length;
           </button>
         </div>
       </div>
-    </section>
+    </section> */}
+    <section className="bg-white py-10 sm:py-12 lg:py-16 px-4 overflow-hidden">
+  <div className="max-w-[1800px] mx-auto">
+    {/* Heading */}
+    <h1
+      className="
+        mt-0
+        text-[28px]
+        sm:text-[44px]
+        md:text-[64px]
+        text-center
+        mb-10 sm:mb-16
+        text-[#6B46C1]
+        font-gabriola
+      "
+    >
+      Modern Style Toward Sarees
+    </h1>
+
+    {/* MOBILE FLAT SLIDER */}
+    {isMobile ? (
+      <div className="flex justify-center px-4">
+        <div
+          className="
+            w-full
+            max-w-[280px]
+            h-[360px]
+            rounded-[20px]
+            overflow-hidden
+            shadow-xl
+          "
+        >
+          <img
+            src={sarees[currentIndex].image}
+            alt=""
+            className="w-full h-full object-cover"
+          />
+        </div>
+      </div>
+    ) : (
+      /* DESKTOP + TABLET 3D CAROUSEL */
+      <div className="relative h-[600px] flex items-center justify-center [perspective:1600px]">
+        {sarees.map((saree, index) => {
+          const relativeIndex =
+            (index - currentIndex + sarees.length) % sarees.length;
+          const isCenter = relativeIndex === 0;
+
+          return (
+            <div
+              key={saree.id}
+              className={`
+                absolute
+                transition-all
+                duration-700
+                ease-[cubic-bezier(.4,0,.2,1)]
+                ${isCenter ? "z-30 opacity-100" : "z-10 opacity-60"}
+              `}
+              style={{
+                transform: isCenter
+                  ? "translateZ(0px) scale(1)"
+                  : `
+                      rotateY(${relativeIndex * angleStep}deg)
+                      translateZ(${radius}px)
+                      scale(0.85)
+                    `,
+              }}
+            >
+              <div
+                className="
+                  w-[220px] h-[300px]
+                  sm:w-[300px] sm:h-[420px]
+                  md:w-[360px] md:h-[500px]
+                  lg:w-[420px] lg:h-[560px]
+                  rounded-[24px]
+                  overflow-hidden
+                  bg-white
+                  shadow-2xl
+                "
+              >
+                <img
+                  src={saree.image}
+                  alt=""
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    )}
+
+    {/* Controls */}
+    <div className="flex justify-center gap-4 sm:gap-6 mt-8 sm:mt-12">
+      <button
+        onClick={handlePrev}
+        className="w-16 sm:w-20 h-10 sm:h-12 rounded-xl bg-[#6B46C1] text-white text-xl sm:text-2xl"
+      >
+        ‹
+      </button>
+      <button
+        onClick={handleNext}
+        className="w-16 sm:w-20 h-10 sm:h-12 rounded-xl bg-[#6B46C1] text-white text-xl sm:text-2xl"
+      >
+        ›
+      </button>
+    </div>
+  </div>
+</section>
+
 
         <section className="min-h-screen bg-gradient-to-br from-purple-50 to-pink-50 py-16 md:py-20 px-4 hidden lg:block">
           <div className="max-w-7xl mx-auto">
@@ -1122,7 +1234,7 @@ const angleStep = 360 / sarees.length;
         <section className="min-h-screen bg-gradient-to-b from-purple-50 to-white py-20 px-3">
           <div className="max-w-7xl mx-auto">
             {/* Header */}
-            <h2 className="text-[38px] md:text-[50px] lg:text-[68px] font-gabriola text-center tracking-[0.5px] text-[#6B46C1] mb-2 lg:mb-20">
+            <h2 className="-mt-25 lg:mt-0 md:mt-0 sm:mt-0 text-[38px] md:text-[50px] lg:text-[68px] font-gabriola text-center tracking-[0.5px] text-[#6B46C1] mb-2 lg:mb-20">
               See Our Sarees Come Alive
             </h2>
 

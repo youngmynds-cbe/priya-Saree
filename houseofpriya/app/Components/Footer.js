@@ -187,16 +187,24 @@ const Footer = () => {
             </h4>
 
             <ul className="space-y-4 font-readex text-[16px]">
-              <li className="flex gap-3">
-                <img src="/images/map.png" className="w-5 h-5 mt-1" />
-                <span>
-                  1st Floor, 356, Diwan Bahadur Rd,
-                  <br />
-                  Opposite Kennedy Theatre, R.S. Puram,
-                  <br />
-                  Coimbatore, Tamil Nadu 641002
-                </span>
-              </li>
+          <li className="flex gap-3">
+  <img src="/images/map.png" className="w-5 h-5 mt-1" />
+  <span>
+    <a
+      href="https://maps.app.goo.gl/FfJAE7u8PAacKddm6"
+      target="_blank"
+      rel="noopener noreferrer"
+      
+    >
+      1st Floor, 356, Diwan Bahadur Rd,
+      <br />
+      Opposite Kennedy Theatre, R.S. Puram,
+      <br />
+      Coimbatore, Tamil Nadu 641002
+    </a>
+  </span>
+</li>
+
 
               <li className="flex gap-3 items-center">
                 <img src="/images/Vector (2).png" className="w-5 h-5" />
@@ -222,7 +230,7 @@ const Footer = () => {
           {/* CENTER — LOGO + QUICK LINKS */}
           <div className="flex flex-col items-center text-center">
             <img
-              src="/images/logoimage.png"
+              src="/images/logos.svg"
               alt="House of Priya"
               className="w-32 mb-6"
             />
@@ -265,7 +273,7 @@ const Footer = () => {
         <div className="bg-[#8B6220] py-4 text-center text-sm">
           Developed by{" "}
           <a
-            href="https://wa.me/919363167299"
+            href="https://wa.me/919363167299?text=Hi%20young%20mynds.%20I%20am%20interested%20in%20your%20service."
             target="_blank"
             className="underline"
           >
@@ -284,7 +292,7 @@ const Footer = () => {
 
         <div className="relative z-10 px-5 py-10 text-center">
           <img
-            src="/images/logoimage.png"
+            src="/images/logos.svg"
             alt="House of Priya"
             className="w-28 mx-auto mb-6"
           />
@@ -315,13 +323,18 @@ const Footer = () => {
             <li className="flex justify-center gap-3">
               <img src="/images/map.png" className="w-4 h-4 mt-1" />
               <span className="leading-relaxed">
-                1st Floor, 356, Diwan Bahadur Rd,
-                <br />
-                Opposite Kennedy Theatre,
-                <br />
-                R.S. Puram, Coimbatore,
-                <br />
-                Tamil Nadu 641002
+                <a
+      href="https://maps.app.goo.gl/FfJAE7u8PAacKddm6"
+      target="_blank"
+      rel="noopener noreferrer"
+      
+    >
+      1st Floor, 356, Diwan Bahadur Rd,
+      <br />
+      Opposite Kennedy Theatre, R.S. Puram,
+      <br />
+      Coimbatore, Tamil Nadu 641002
+    </a>
               </span>
             </li>
 
@@ -360,9 +373,9 @@ const Footer = () => {
         <div className="bg-[#8B6220] py-4 text-center text-sm">
           Developed by{" "}
           <a
-            href="https://wa.me/919363167299"
+             href="https://wa.me/919363167299?text=Hi%20young%20mynds.%20I%20am%20interested%20in%20your%20service."
             target="_blank"
-            className="underline"
+         
           >
             Young Mynds Infotech
           </a>

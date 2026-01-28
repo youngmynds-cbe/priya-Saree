@@ -128,9 +128,9 @@ const Landing = () => {
                 <div className="w-28 h-28 sm:w-32 sm:h-32 lg:w-40 lg:h-40 rounded-xl flex items-center justify-center lg:ml-10 relative">
                   {/* <div className="w-full h-full absolute bg-[url('/images/bg.png')] rounded-xl hidden lg:block"></div> */}
                   <img
-                    src="/images/logoimage.png"
+                    src="/images/logos.svg"
                     alt="House of Priya Logo"
-                    className="w-20 sm:w-24 lg:w-34 object-contain z-10 lg:-mt-9 block lg:hidden"
+                    className="mt-5 w-20 sm:w-24 lg:w-34 object-contain z-10 lg:-mt-9 block lg:hidden"
                   />
                 </div>
 
