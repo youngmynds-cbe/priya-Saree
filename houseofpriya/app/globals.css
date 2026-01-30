@@ -53,7 +53,7 @@ body {
 @media (min-width: 1536px) {
   .hero-background {
     background-image: url('/images/k bg (5).png');
-    background-size: contain;
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     /* margin-top: -50px; */
