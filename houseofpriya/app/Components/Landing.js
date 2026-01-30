@@ -245,14 +245,7 @@ const angleStep = 360 / sarees.length;
     <>
       <main>
         <section>
-        <div className="
-  h-[840px]
-  md:h-[1150px]
-  lg:h-auto
-  2xl:h-[1300px]
-  relative overflow-hidden
-">
-
+          <div className="h-[840px] md:h-[1150px] lg:h-auto relative overflow-hidden">
             <div
               className="absolute inset-0 bg-cover bg-center bg-no-repeat z-0"
               style={{ backgroundImage: `url('/images/k bg (5).png')` }}
@@ -309,7 +302,7 @@ const angleStep = 360 / sarees.length;
                 </div>
 
                 {/* Desktop Menu */}
-                <div className="hidden lg:flex gap-15 font-readex font-bold text-[20px] 2xl:-mt-20 lg:-mt-30">
+                <div className="hidden lg:flex gap-15 font-readex font-bold text-[20px] -mt-30">
                   <a
                     href="/"
                     className={
@@ -354,7 +347,7 @@ const angleStep = 360 / sarees.length;
                 <a
                   href="https://wa.me/919363167299"
                   target="_blank"
-                  className="hidden lg:block bg-[#6B46C1] hover:bg-purple-800 text-white px-6 py-2 rounded-md font-medium shadow-lg 2xl:-mt-20 lg:-mt-30"
+                  className="hidden lg:block bg-[#6B46C1] hover:bg-purple-800 text-white px-6 py-2 rounded-md font-medium shadow-lg -mt-30"
                 >
                   Enquire on WhatsApp
                 </a>
@@ -426,11 +419,11 @@ const angleStep = 360 / sarees.length;
               <div className="space-y-6 text-center lg:text-left -mt-13 sm:mt-0">
                 <h1
                   className="
-          font-['Cormorant_Garamond'] font-semibold 2xl:text-[80px]
+          font-['Cormorant_Garamond'] font-semibold
           text-[36px] sm:text-[48px] md:text-[56px] lg:text-[74px]
-          leading-tight sm:leading-[60px] lg:leading-[90px] 2xl:leading-[100px]
+          leading-tight sm:leading-[60px] lg:leading-[90px]
           tracking-[-0.5px]
-          text-[#6B46C1] lg:text-white mt-0 sm:-mt-3 2xl:mt-140
+          text-[#6B46C1] lg:text-white mt-0 sm:-mt-3
         "
                 >
                   Grace Woven in Every Thread
@@ -461,7 +454,7 @@ const angleStep = 360 / sarees.length;
                 </a>
               </div>
 
-              <div className="relative flex justify-center">
+              <div className="relative flex justify-end">
                 <div
                   className="
           px-10 sm:px-6 lg:px-15
@@ -471,7 +464,7 @@ const angleStep = 360 / sarees.length;
                 >
                   <img
                     src="../images/DSC02740 1 (2).png"
-                    className="w-full h-[450px] md:h-[750px] lg:h-auto   object-contain  2xl:mt-90"
+                    className="w-full h-[450px] md:h-[750px] lg:h-auto  object-contain"
                     alt="Saree Model"
                   />
                 </div>
