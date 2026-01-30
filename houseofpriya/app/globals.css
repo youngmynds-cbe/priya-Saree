@@ -37,6 +37,7 @@ body {
 
 
 
+
 .font-readex {
   font-family: var(--font-readex);
 }
@@ -45,3 +46,17 @@ body {
   font-family: "Gabriola", cursive;
 }
 
+.hero-background {
+  background-image: url('/images/k bg (5).png');
+}
+
+@media (min-width: 1536px) {
+  .hero-background {
+    background-image: url('/images/k bg (5).png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    /* margin-top: -50px; */
+    background-position: center top;
+  }
+}

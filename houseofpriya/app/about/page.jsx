@@ -74,13 +74,12 @@ const Landing = () => {
         <section>
           <div className="h-[940px] md:h-[1100px]  lg:h-auto relative overflow-hidden">
             {/* Background */}
-            <div
-              className="absolute inset-0 bg-cover bg-center bg-no-repeat z-0"
-              style={{ backgroundImage: `url('/images/k bg (5).png')` }}
+             <div
+              className="absolute inset-0 bg-cover bg-center bg-no-repeat z-0 hero-background  lg:-mt-5 2xl:-mt-8"
             >
               <div
                 className="absolute inset-0 bg-cover bg-center bg-no-repeat z-0 block lg:hidden"
-                style={{ backgroundImage: "url('/images/bg.png')" }}
+                style={{ backgroundImage: "url('/images/bgmobile1.png')" }}
               />
               <div className="absolute inset-0"></div>
             </div>

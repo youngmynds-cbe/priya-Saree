@@ -247,8 +247,7 @@ const angleStep = 360 / sarees.length;
         <section>
           <div className="h-[840px] md:h-[1150px] lg:h-auto relative overflow-hidden">
             <div
-              className="absolute inset-0 bg-cover bg-center bg-no-repeat z-0"
-              style={{ backgroundImage: `url('/images/k bg (5).png')` }}
+              className="absolute inset-0 bg-cover bg-center bg-no-repeat z-0 hero-background  lg:-mt-5 2xl:-mt-8"
             >
               <div
                 className="absolute inset-0 bg-cover bg-center bg-no-repeat z-0 block lg:hidden"
@@ -464,7 +463,7 @@ const angleStep = 360 / sarees.length;
                 >
                   <img
                     src="../images/DSC02740 1 (2).png"
-                    className="w-full h-[450px] md:h-[750px] lg:h-auto  object-contain"
+                    className="w-full h-[450px] md:h-[750px] lg:h-auto  object-contain mt-0 2xl:mt-10"
                     alt="Saree Model"
                   />
                 </div>
@@ -1141,7 +1140,7 @@ const angleStep = 360 / sarees.length;
 </section>
 
 
-        <section className="min-h-screen bg-gradient-to-br from-purple-50 to-pink-50 py-16 md:py-20 px-4 hidden lg:block">
+        <section className="h-auto bg-gradient-to-br from-purple-50 to-pink-50 py-16 md:py-20 px-4 hidden lg:block">
           <div className="max-w-7xl mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-36 items-center">
               {/* LEFT SIDE IMAGES */}
@@ -1233,7 +1232,7 @@ const angleStep = 360 / sarees.length;
           </div>
         </section>
 
-        <section className="min-h-screen bg-gradient-to-b from-purple-50 to-white py-20 px-3">
+        <section className="h-auto bg-gradient-to-b from-purple-50 to-white py-20 px-3">
           <div className="max-w-7xl mx-auto">
             {/* Header */}
             <h2 className="-mt-25 lg:mt-0 md:mt-0 sm:mt-0 text-[38px] md:text-[50px] lg:text-[68px] font-gabriola text-center tracking-[0.5px] text-[#6B46C1] mb-2 lg:mb-20">
