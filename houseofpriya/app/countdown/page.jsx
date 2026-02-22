@@ -1,4 +1,4 @@
-// "use client";
+"use client";
 
 // import React, { useState, useEffect } from "react";
 // import Image from "next/image";
@@ -157,6 +157,65 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 
+
+
+  const TimeCard = ({ value, label }) => (
+    <div className="flex flex-col items-center">
+      <div
+        className="relative 
+          w-[120px] h-[120px] 
+          sm:w-[150px] sm:h-[150px] 
+          lg:w-54 lg:h-48 
+          mb-4"
+      >
+        <div className="absolute inset-0 bg-[#6B46C1] rounded-2xl shadow-2xl flex items-center justify-center overflow-hidden">
+          <Image
+            src="/images/Group 9.png"
+            alt="Decorative Frame"
+            fill
+            className="object-contain"
+          />
+
+          <div
+            className="absolute text-white font-bold z-10
+              text-[48px] sm:text-[72px] lg:text-[128px]"
+          >
+            {value}
+          </div>
+        </div>
+      </div>
+
+      <div className="text-gray-700 text-sm sm:text-base lg:text-xl font-semibold tracking-wider">
+        {label}
+      </div>
+    </div>
+  );
+
+
+  const Kolam = ({ className }) => (
+    <div className={`${className} opacity-10 hidden md:block`}>
+      <svg
+        width="80"
+        height="120"
+        viewBox="0 0 80 120"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <circle cx="20" cy="20" r="3" fill="currentColor" />
+        <circle cx="40" cy="20" r="3" fill="currentColor" />
+        <circle cx="60" cy="20" r="3" fill="currentColor" />
+        <circle cx="30" cy="40" r="3" fill="currentColor" />
+        <circle cx="50" cy="40" r="3" fill="currentColor" />
+        <circle cx="20" cy="60" r="3" fill="currentColor" />
+        <circle cx="40" cy="60" r="3" fill="currentColor" />
+        <circle cx="60" cy="60" r="3" fill="currentColor" />
+        <circle cx="30" cy="80" r="3" fill="currentColor" />
+        <circle cx="50" cy="80" r="3" fill="currentColor" />
+        <circle cx="40" cy="100" r="3" fill="currentColor" />
+      </svg>
+    </div>
+  );
+
 export default function CountdownTimer() {
   const [timeLeft, setTimeLeft] = useState({
     days: 1,
@@ -194,62 +253,6 @@ export default function CountdownTimer() {
   }, []);
 
   const formatNumber = (num) => num.toString().padStart(2, "0");
-
-  const TimeCard = ({ value, label }) => (
-    <div className="flex flex-col items-center">
-      <div
-        className="relative 
-          w-[120px] h-[120px] 
-          sm:w-[150px] sm:h-[150px] 
-          lg:w-54 lg:h-48 
-          mb-4"
-      >
-        <div className="absolute inset-0 bg-[#6B46C1] rounded-2xl shadow-2xl flex items-center justify-center overflow-hidden">
-          <Image
-            src="/images/Group 9.png"
-            alt="Decorative Frame"
-            fill
-            className="object-contain"
-          />
-
-          <div
-            className="absolute text-white font-bold z-10
-              text-[48px] sm:text-[72px] lg:text-[128px]"
-          >
-            {value}
-          </div>
-        </div>
-      </div>
-
-      <div className="text-gray-700 text-sm sm:text-base lg:text-xl font-semibold tracking-wider">
-        {label}
-      </div>
-    </div>
-  );
-
-  const Kolam = ({ className }) => (
-    <div className={`${className} opacity-10 hidden md:block`}>
-      <svg
-        width="80"
-        height="120"
-        viewBox="0 0 80 120"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <circle cx="20" cy="20" r="3" fill="currentColor" />
-        <circle cx="40" cy="20" r="3" fill="currentColor" />
-        <circle cx="60" cy="20" r="3" fill="currentColor" />
-        <circle cx="30" cy="40" r="3" fill="currentColor" />
-        <circle cx="50" cy="40" r="3" fill="currentColor" />
-        <circle cx="20" cy="60" r="3" fill="currentColor" />
-        <circle cx="40" cy="60" r="3" fill="currentColor" />
-        <circle cx="60" cy="60" r="3" fill="currentColor" />
-        <circle cx="30" cy="80" r="3" fill="currentColor" />
-        <circle cx="50" cy="80" r="3" fill="currentColor" />
-        <circle cx="40" cy="100" r="3" fill="currentColor" />
-      </svg>
-    </div>
-  );
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 flex items-center justify-center p-6 sm:p-8 relative overflow-hidden">

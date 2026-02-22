@@ -4,6 +4,7 @@ import { CiFacebook } from "react-icons/ci";
 import { FaInstagram } from "react-icons/fa";
 import { FaLinkedinIn } from "react-icons/fa";
 import { FaYoutube } from "react-icons/fa";
+import Link from "next/link";
 
 const Footer = () => {
   return (
@@ -190,7 +191,7 @@ const Footer = () => {
               <li className="flex gap-3">
                 <img src="/images/Vector (8).png" className="w-5 h-5 mt-1" />
                 <span>
-                  <a
+                  <Link
                     href="https://maps.app.goo.gl/FfJAE7u8PAacKddm6"
                     target="_blank"
                     rel="noopener noreferrer"
@@ -200,20 +201,20 @@ const Footer = () => {
                     Opposite Kennedy Theatre, R.S. Puram,
                     <br />
                     Coimbatore, Tamil Nadu 641002
-                  </a>
+                  </Link>
                 </span>
               </li>
 
               <li className="flex gap-3 items-center">
                 <img src="/images/Vector (7).png" className="w-5 h-5" />
-                <a href="mailto:houseofpriya@gmail.com">
+                <Link href="mailto:houseofpriya@gmail.com">
                   houseofpriya@gmail.com
-                </a>
+                </Link>
               </li>
 
               <li className="flex gap-3 items-center">
                 <img src="/images/Vector (9).png" className="w-5 h-5" />
-                <a href="tel:+919876543210">+91 9876543210</a>
+                <Link href="tel:+919876543210">+91 9876543210</Link>
               </li>
             </ul>
 
@@ -239,13 +240,13 @@ const Footer = () => {
 
             <ul className="flex gap-6 font-readex text-[16px]">
               <li className="flex items-center gap-1">
-                ↗ <a href="/">Home</a>
+                ↗ <Link href="/">Home</Link>
               </li>
               <li className="flex items-center gap-1">
-                ↗ <a href="/about">About us</a>
+                ↗ <Link href="/about">About us</Link>
               </li>
               <li className="flex items-center gap-1">
-                ↗ <a href="/blog">Blog</a>
+                ↗ <Link href="/blog">Blog</Link>
               </li>
             </ul>
           </div>
@@ -270,14 +271,14 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="relative z-10 bg-[#8B6220] py-4 text-center text-sm">
           Developed by{" "}
-          <a
+          <Link
             href="https://wa.me/919363167299?text=Hi%20Young%20Mynds.%20I%20am%20interested%20in%20your%20service."
             target="_blank"
             rel="noopener noreferrer"
             className="underline cursor-pointer text-white hover:text-gray-200"
           >
             Young Mynds Infotech
-          </a>
+          </Link>
         </div>
       </footer>
       <div className="block sm:hidden relative bg-[#E2B05E] text-white overflow-hidden ">
@@ -303,13 +304,13 @@ const Footer = () => {
 
           <ul className="flex justify-center gap-5 font-readex text-[15px] mb-8">
             <li className="flex items-center gap-1">
-              ↗ <a href="/">Home</a>
+              ↗ <Link href="/">Home</Link>
             </li>
             <li className="flex items-center gap-1">
-              ↗ <a href="/about">About us</a>
+              ↗ <Link href="/about">About us</Link>
             </li>
             <li className="flex items-center gap-1">
-              ↗ <a href="/blog">Blog</a>
+              ↗ <Link href="/blog">Blog</Link>
             </li>
           </ul>
 
@@ -322,7 +323,7 @@ const Footer = () => {
             <li className="flex justify-center gap-3">
               <img src="/images/Vector (8).png" className="w-3 h-4 mt-1" />
               <span className="leading-relaxed">
-                <a
+                <Link
                   href="https://maps.app.goo.gl/FfJAE7u8PAacKddm6"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -332,18 +333,18 @@ const Footer = () => {
                   Opposite Kennedy Theatre, R.S. Puram,
                   <br />
                   Coimbatore, Tamil Nadu 641002
-                </a>
+                </Link>
               </span>
             </li>
 
             <li className="flex justify-center gap-3 items-center">
               <img src="/images/Vector (7).png" className="w-4 h-4" />
-              <a href="mailto:houseofpriya@gmail.com">houseofpriya@gmail.com</a>
+              <Link href="mailto:houseofpriya@gmail.com">houseofpriya@gmail.com</Link>
             </li>
 
             <li className="flex justify-center gap-3 items-center">
               <img src="/images/Vector (9).png" className="w-4 h-4" />
-              <a href="tel:+919876543210">+91 9876543210</a>
+              <Link href="tel:+919876543210">+91 9876543210</Link>
             </li>
           </ul>
 
@@ -370,14 +371,14 @@ const Footer = () => {
         </div>
         <div className="relative z-10 bg-[#8B6220] py-4 text-center text-sm">
           Developed by{" "}
-          <a
+          <Link
             href="https://wa.me/919363167299?text=Hi%20Young%20Mynds.%20I%20am%20interested%20in%20your%20service."
             target="_blank"
             rel="noopener noreferrer"
             className="underline cursor-pointer text-white hover:text-gray-200"
           >
             Young Mynds Infotech
-          </a>
+          </Link>
         </div>
       </div>
       {/* MOBILE FOOTER */}

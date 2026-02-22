@@ -1,12 +1,13 @@
 "use client";
 
 import React from "react";
-import { useState, useEffect,useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import { usePathname } from "next/navigation";
 import { FaWhatsapp } from "react-icons/fa";
 import Footer from "../Components/Footer";
 import { ChevronLeft, ChevronRight, Play } from "lucide-react";
 import { MoveUpRight } from "lucide-react";
+import Link from "next/link";
 
 const Landing = () => {
   const pathname = usePathname();
@@ -16,10 +17,10 @@ const Landing = () => {
   const [showModal, setShowModal] = useState(false);
   const [loading, setLoading] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-    const [isMobile, setIsMobile] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
   const [isTablet, setIsTablet] = useState(false);
 
-   useEffect(() => {
+  useEffect(() => {
     const checkView = () => {
       setIsMobile(window.innerWidth < 640);
       setIsTablet(window.innerWidth >= 640 && window.innerWidth < 1024);
@@ -53,38 +54,36 @@ const Landing = () => {
   };
 
   useEffect(() => {
-  const interval = setInterval(() => {
-    handleNext();
-  }, 3000); // 3 sec auto scroll
+    const interval = setInterval(() => {
+      handleNext();
+    }, 3000); // 3 sec auto scroll
 
-  return () => clearInterval(interval);
-}, [currentIndex]);
+    return () => clearInterval(interval);
+  }, [currentIndex]);
 
+  const scrollToIndex = (index) => {
+    if (!sliderRef.current) return;
 
-const scrollToIndex = (index) => {
-  if (!sliderRef.current) return;
+    const slideWidth = sliderRef.current.children[0].offsetWidth;
+    sliderRef.current.scrollTo({
+      left: slideWidth * index,
+      behavior: "smooth",
+    });
 
-  const slideWidth = sliderRef.current.children[0].offsetWidth;
-  sliderRef.current.scrollTo({
-    left: slideWidth * index,
-    behavior: "smooth",
-  });
+    setCurrentIndex(index);
+  };
 
-  setCurrentIndex(index);
-};
+  // const handlePrev = () => {
+  //   const newIndex =
+  //     currentIndex === 0 ? sarees.length - 1 : currentIndex - 1;
+  //   scrollToIndex(newIndex);
+  // };
 
-// const handlePrev = () => {
-//   const newIndex =
-//     currentIndex === 0 ? sarees.length - 1 : currentIndex - 1;
-//   scrollToIndex(newIndex);
-// };
-
-// const handleNext = () => {
-//   const newIndex =
-//     currentIndex === sarees.length - 1 ? 0 : currentIndex + 1;
-//   scrollToIndex(newIndex);
-// };
-
+  // const handleNext = () => {
+  //   const newIndex =
+  //     currentIndex === sarees.length - 1 ? 0 : currentIndex + 1;
+  //   scrollToIndex(newIndex);
+  // };
 
   const validateForm = () => {
     let newErrors = {};
@@ -189,7 +188,7 @@ const scrollToIndex = (index) => {
       bgColor: "bg-pink-100",
     },
   ];
-const angleStep = 360 / sarees.length;
+  const angleStep = 360 / sarees.length;
   const radius = isTablet ? 320 : 520;
 
   const handleNext = () => {
@@ -197,9 +196,7 @@ const angleStep = 360 / sarees.length;
   };
 
   const handlePrev = () => {
-    setCurrentIndex((prev) =>
-      prev === 0 ? sarees.length - 1 : prev - 1
-    );
+    setCurrentIndex((prev) => (prev === 0 ? sarees.length - 1 : prev - 1));
   };
   useEffect(() => {
     const interval = setInterval(() => {
@@ -246,9 +243,7 @@ const angleStep = 360 / sarees.length;
       <main>
         <section>
           <div className="h-[840px] md:h-[1150px] lg:h-auto relative overflow-hidden">
-            <div
-              className="absolute inset-0 bg-cover bg-center bg-no-repeat z-0 hero-background  lg:-mt-5 2xl:-mt-8"
-            >
+            <div className="absolute inset-0 bg-cover bg-center bg-no-repeat z-0 hero-background  lg:-mt-5 2xl:-mt-8">
               <div
                 className="absolute inset-0 bg-cover bg-center bg-no-repeat z-0 block lg:hidden"
                 style={{ backgroundImage: "url('/images/bgmobile1.png')" }}
@@ -257,24 +252,23 @@ const angleStep = 360 / sarees.length;
             </div>
 
             <div className="absolute inset-0 pointer-events-none block lg:hidden">
-  {/* Border */}
-  <div className="absolute top-6 sm:top-10 left-4 sm:left-6 right-4 sm:right-6 bottom-4 sm:bottom-6 border-2 border-white opacity-40 rounded-sm"></div>
+              {/* Border */}
+              <div className="absolute top-6 sm:top-10 left-4 sm:left-6 right-4 sm:right-6 bottom-4 sm:bottom-6 border-2 border-white opacity-40 rounded-sm"></div>
 
-  {/* Bottom Right Image on Border */}
-  <img
-    src="/images/Frame 52784.png" 
-    alt=""
-    aria-hidden
-    className="
+              {/* Bottom Right Image on Border */}
+              <img
+                src="/images/Frame 52784.png"
+                alt=""
+                aria-hidden
+                className="
       absolute
       bottom-3 sm:bottom-5
       right-7 sm:right-5
       w-10 sm:w-12
       z-20
-    " 
-  />
-</div>
-
+    "
+              />
+            </div>
 
             <nav className="relative z-20 px-4 sm:px-6 lg:px-8 py-6">
               {/* TOP ROW */}
@@ -302,16 +296,16 @@ const angleStep = 360 / sarees.length;
 
                 {/* Desktop Menu */}
                 <div className="hidden lg:flex gap-15 font-readex font-bold text-[20px] -mt-30">
-                  <a
+                  <Link
                     href="/"
-                    className={
+                    className={`${
                       pathname === "/"
                         ? "text-[#6B46C1]"
                         : "text-[#6C6C6C] hover:text-purple-700"
-                    }
+                    } transition-colors duration-200`}
                   >
                     Home
-                  </a>
+                  </Link>
                   <a
                     href="/about"
                     className={
@@ -362,7 +356,7 @@ const angleStep = 360 / sarees.length;
 
               {menuOpen && (
                 <div className="lg:hidden mt-4 bg-white rounded-xl shadow-lg p-6 flex flex-col gap-4 font-readex font-bold text-lg">
-                  <a
+                  <Link
                     href="/"
                     onClick={() => setMenuOpen(false)}
                     className={
@@ -370,7 +364,7 @@ const angleStep = 360 / sarees.length;
                     }
                   >
                     Home
-                  </a>
+                  </Link>
                   <a
                     href="/about"
                     onClick={() => setMenuOpen(false)}
@@ -510,7 +504,7 @@ const angleStep = 360 / sarees.length;
             text-[#6B46C1]
           "
                 >
-                  Our Signature Weave
+                  Our Timeless Drapes
                 </h2>
 
                 <p
@@ -527,9 +521,9 @@ const angleStep = 360 / sarees.length;
             text-justify
           "
                 >
-                  Hand-crafted with the finest materials, designed to make every
-                  woman feel extraordinary. This exquisite piece represents the
-                  pinnacle of our craftsmanship and attention to detail.
+                  {`Thoughtfully designed and made from the finest materials, our sarees are handcrafted to be
+a staple in every woman’s collection. Each thread is placed with an intention of creating a
+drape that feels like a second skin and created for your most memorable moments.`}
                 </p>
                 <ul
                   className="
@@ -549,7 +543,9 @@ const angleStep = 360 / sarees.length;
                       aria-hidden="true"
                       className="w-3 h-5 shrink"
                     />
-                    <span>Hand-selected natural silk fibers woven with care</span>
+                    <span>
+                      Curated natural silk fibers designed with care
+                    </span>
                   </li>
 
                   <li className="flex items-center gap-3 tracking-[0.3px]">
@@ -567,22 +563,22 @@ const angleStep = 360 / sarees.length;
                       alt="Check mark icon"
                       className="w-3 h-5 shrink-0"
                     />
-                    <span>Limited edition collection</span>
+                    <span>One-of-a-kind collection</span>
                   </li>
                 </ul>
 
                 <div>
                   <a
-                  className="bg-[#6B46C1] hover:bg-purple-800 text-white px-8 py-3 rounded-md 
+                    className="bg-[#6B46C1] hover:bg-purple-800 text-white px-8 py-3 rounded-md 
              font-medium transition shadow-lg inline-flex items-center gap-2 
              mt-4 font-readex"
-                  href="https://wa.me/919363167299?text=Hi%20young%20mynds.%20I%20am%20interested%20in%20your%20service."
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <FaWhatsapp className="text-xl" />
-                  <span>Enquire on WhatsApp</span>
-                </a>
+                    href="https://wa.me/919363167299?text=Hi%20young%20mynds.%20I%20am%20interested%20in%20your%20service."
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <FaWhatsapp className="text-xl" />
+                    <span>Enquire on WhatsApp</span>
+                  </a>
                 </div>
 
                 {/* SMALL IMAGE */}
@@ -793,7 +789,7 @@ const angleStep = 360 / sarees.length;
           </div>
         </section> */}
 
-        <section className="bg-white relative">
+        {/* <section className="bg-white relative">
           <img
             src="../images/Group (8).png"
             alt=""
@@ -830,7 +826,7 @@ const angleStep = 360 / sarees.length;
               </div>
 
               {/* Right - Image */}
-              <div
+        {/* <div
                 className="
     w-full
     max-w-[461px]
@@ -840,7 +836,7 @@ const angleStep = 360 / sarees.length;
   "
               >
                 {/* bgline – backside */}
-                <img
+        {/* <img
                   src="/images/bgline.png"
                   alt="bg line"
                   className="
@@ -860,21 +856,21 @@ const angleStep = 360 / sarees.length;
                 />
 
                 {/* main image – TOP layer */}
-                <img
+        {/* <img
                   src="/images/Rectangle 21 (1).png"
                   alt="Colorful Joy Saree"
                   className="
     relative z-20
-    w-[260px] h-[320px]        /* 📱 mobile size */
-    sm:w-[320px] sm:h-[400px] /* 📱 tablet */
-    lg:w-full lg:h-full       /* 🖥 desktop */
+    w-[260px] h-[320px]        
+    sm:w-[320px] sm:h-[400px] 
+    lg:w-full lg:h-full       
     object-cover
     mx-auto lg:mx-0
   "
                 />
               </div>
             </div>
-          </div>
+          </div> 
 
           <div className="w-full bg-[#E2AC52] mt-0 lg:-mt-20 relative z-100">
             <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[500px] lg:min-h-[600px]">
@@ -948,9 +944,9 @@ const angleStep = 360 / sarees.length;
               alt="Decorative paisley design"
             />
           </div>
-        </section>
+        </section> */}
 
-  {/* <section className="bg-white py-16 px-4">
+        {/* <section className="bg-white py-16 px-4">
       <div className="max-w-[1800px] mx-auto">
         <h1 className="-mt-15 lg:mt-0 md:mt-0 sm:mt-0 text-[36px] sm:text-[44px] md:text-[64px] text-center mb-16 text-[#6B46C1] font-gabriola">
           Modern Style Toward Sarees
@@ -1031,11 +1027,11 @@ const angleStep = 360 / sarees.length;
         </div>
       </div>
     </section> */}
-    <section className="bg-white py-10 sm:py-12 lg:py-16 px-4 overflow-hidden">
-  <div className="max-w-[1800px] mx-auto">
-    {/* Heading */}
-    <h1
-      className="
+        <section className="bg-white py-10 sm:py-12 lg:py-16 px-4 overflow-hidden">
+          <div className="max-w-[1800px] mx-auto">
+            {/* Heading */}
+            <h1
+              className="
         mt-0
         text-[28px]
         sm:text-[44px]
@@ -1045,15 +1041,15 @@ const angleStep = 360 / sarees.length;
         text-[#6B46C1]
         font-gabriola
       "
-    >
-      Modern Style Toward Sarees
-    </h1>
+            >
+              Modern Style Toward Sarees
+            </h1>
 
-    {/* MOBILE FLAT SLIDER */}
-    {isMobile ? (
-      <div className="flex justify-center px-4">
-        <div
-          className="
+            {/* MOBILE FLAT SLIDER */}
+            {isMobile ? (
+              <div className="flex justify-center px-4">
+                <div
+                  className="
             w-full
             max-w-[280px]
             h-[360px]
@@ -1061,44 +1057,44 @@ const angleStep = 360 / sarees.length;
             overflow-hidden
             shadow-xl
           "
-        >
-          <img
-            src={sarees[currentIndex].image}
-            alt=""
-            className="w-full h-full object-cover"
-          />
-        </div>
-      </div>
-    ) : (
-      /* DESKTOP + TABLET 3D CAROUSEL */
-      <div className="relative h-[600px] flex items-center justify-center [perspective:1600px]">
-        {sarees.map((saree, index) => {
-          const relativeIndex =
-            (index - currentIndex + sarees.length) % sarees.length;
-          const isCenter = relativeIndex === 0;
+                >
+                  <img
+                    src={sarees[currentIndex].image}
+                    alt=""
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              </div>
+            ) : (
+              /* DESKTOP + TABLET 3D CAROUSEL */
+              <div className="relative h-[600px] flex items-center justify-center [perspective:1600px]">
+                {sarees.map((saree, index) => {
+                  const relativeIndex =
+                    (index - currentIndex + sarees.length) % sarees.length;
+                  const isCenter = relativeIndex === 0;
 
-          return (
-            <div
-              key={saree.id}
-              className={`
+                  return (
+                    <div
+                      key={saree.id}
+                      className={`
                 absolute
                 transition-all
                 duration-700
                 ease-[cubic-bezier(.4,0,.2,1)]
                 ${isCenter ? "z-30 opacity-100" : "z-10 opacity-60"}
               `}
-              style={{
-                transform: isCenter
-                  ? "translateZ(0px) scale(1)"
-                  : `
+                      style={{
+                        transform: isCenter
+                          ? "translateZ(0px) scale(1)"
+                          : `
                       rotateY(${relativeIndex * angleStep}deg)
                       translateZ(${radius}px)
                       scale(0.85)
                     `,
-              }}
-            >
-              <div
-                className="
+                      }}
+                    >
+                      <div
+                        className="
                   w-[220px] h-[300px]
                   sm:w-[300px] sm:h-[420px]
                   md:w-[360px] md:h-[500px]
@@ -1108,37 +1104,36 @@ const angleStep = 360 / sarees.length;
                   bg-white
                   shadow-2xl
                 "
-              >
-                <img
-                  src={saree.image}
-                  alt=""
-                  className="w-full h-full object-cover"
-                />
+                      >
+                        <img
+                          src={saree.image}
+                          alt=""
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                    </div>
+                  );
+                })}
               </div>
+            )}
+
+            {/* Controls */}
+            <div className="flex justify-center gap-4 sm:gap-6 mt-8 sm:mt-12">
+              <button
+                onClick={handlePrev}
+                className="w-16 sm:w-20 h-10 sm:h-12 rounded-xl bg-[#6B46C1] text-white text-xl sm:text-2xl"
+              >
+                ‹
+              </button>
+              <button
+                onClick={handleNext}
+                className="w-16 sm:w-20 h-10 sm:h-12 rounded-xl bg-[#6B46C1] text-white text-xl sm:text-2xl"
+              >
+                ›
+              </button>
             </div>
-          );
-        })}
-      </div>
-    )}
-
-    {/* Controls */}
-    <div className="flex justify-center gap-4 sm:gap-6 mt-8 sm:mt-12">
-      <button
-        onClick={handlePrev}
-        className="w-16 sm:w-20 h-10 sm:h-12 rounded-xl bg-[#6B46C1] text-white text-xl sm:text-2xl"
-      >
-        ‹
-      </button>
-      <button
-        onClick={handleNext}
-        className="w-16 sm:w-20 h-10 sm:h-12 rounded-xl bg-[#6B46C1] text-white text-xl sm:text-2xl"
-      >
-        ›
-      </button>
-    </div>
-  </div>
-</section>
-
+          </div>
+        </section>
 
         <section className="h-auto bg-gradient-to-br from-purple-50 to-pink-50 py-16 md:py-20 px-4 hidden lg:block">
           <div className="max-w-7xl mx-auto">
@@ -1198,23 +1193,24 @@ const angleStep = 360 / sarees.length;
                 </h2>
 
                 <p className="text-gray-700 text-[14px] font-readex leading-relaxed max-w-xl mx-auto lg:mx-0">
-                  At House of Priya, every saree is thoughtfully curated to
-                  reflect modern elegance while staying rooted in timeless
-                  Indian tradition.
+                  At House of Priya, every saree is thoughtfully curated to reflect modern elegance while
+staying rooted in timeless Indian tradition.
                 </p>
 
                 <p className="text-gray-700 text-[14px] font-readex leading-relaxed max-w-xl mx-auto lg:mx-0">
-                  Our trending collection brings together rich fabrics, refined
-                  color palettes, and graceful designs that suit both everyday
-                  sophistication and special occasions.
+                 With the largest collection of Mysore silk sarees in the city, we have paired the softest,
+richest fabrics with a palette that ranges from hushed pastels to deep, soulful hues that fits
+all occasions.
                 </p>
 
                 <p className="text-gray-700 text-[14px] font-readex leading-relaxed max-w-xl mx-auto lg:mx-0">
-                  From subtle pastels to bold statement drapes, each piece is
-                  crafted to make you feel confident, comfortable, and
-                  effortlessly beautiful. Designed for women who appreciate
-                  quality, detail, and authenticity, our sarees are perfect for
-                  celebrations, workwear, and elegant evenings alike
+                 We also host a wide range of authentic styles under one roof, from traditional
+Kanchipurams and Paithanis to classic Chettinads and Pochampallys, and much more.
+                </p>
+
+                <p className="text-gray-700 text-[14px] font-readex leading-relaxed max-w-xl mx-auto lg:mx-0">
+                 {`As a woman, you shouldn't have to choose between looking extraordinary and feeling like
+yourself and our sarees are a testament to that.`}
                 </p>
 
                 <div className="pt-6">
@@ -1276,24 +1272,24 @@ const angleStep = 360 / sarees.length;
             </div>
           </div>
         </section>
-        <section className="-mt-17 lg:mt-0 md:mt-0 sm:mt-0  relative overflow-hidden ">
-          {/* Background Image */}
-          <div
+        {/* <section className="-mt-17 lg:mt-0 md:mt-0 sm:mt-0  relative overflow-hidden "> */}
+        {/* Background Image */}
+        {/* <div
             className="
     absolute inset-0
     bg-center bg-cover bg-no-repeat
-    h-[60vh]        /* mobile */
-    sm:h-[70vh]     /* large mobile */
-    md:h-[1000px]     /* tablet FIX */
+    h-[60vh]      
+    sm:h-[70vh]     
+    md:h-[1000px]     
     lg:h-screen    
   "
             style={{
               backgroundImage: "url('/images/Rectangle 115.png')",
             }}
-          />
+          /> */}
 
-          {/* Content Wrapper */}
-          <div
+        {/* Content Wrapper */}
+        {/* <div
             className="
       relative z-10
       flex items-center justify-center lg:justify-start
@@ -1320,13 +1316,13 @@ const angleStep = 360 / sarees.length;
               {isSubmitted ? (
                 <div className="bg-green-50 border-2 border-green-500 rounded-xl p-5 text-center">
                   <p className="text-green-700 font-semibold text-base sm:text-lg">
-                    Thank you! We'll notify you soon! 🎉
+                    {`Thank you! We'll notify you soon! 🎉`}
                   </p>
                 </div>
               ) : (
-                <div className="space-y-4">
-                  {/* Name */}
-                  <div>
+                <div className="space-y-4"> */}
+        {/* Name */}
+        {/* <div>
                     <input
                       type="text"
                       name="name"
@@ -1342,10 +1338,10 @@ const angleStep = 360 / sarees.length;
                     {errors.name && (
                       <p className="text-red-500 text-sm mt-1">{errors.name}</p>
                     )}
-                  </div>
+                  </div> */}
 
-                  {/* Email */}
-                  <div>
+        {/* Email */}
+        {/* <div>
                     <input
                       type="email"
                       name="email"
@@ -1363,10 +1359,10 @@ const angleStep = 360 / sarees.length;
                         {errors.email}
                       </p>
                     )}
-                  </div>
+                  </div> */}
 
-                  {/* Button */}
-                  <button
+        {/* Button */}
+        {/* <button
                     onClick={handleSubmit}
                     className="w-full sm:w-auto bg-[#6B46C1] hover:bg-purple-700 text-white font-semibold px-8 py-3 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl"
                   >
@@ -1385,9 +1381,9 @@ const angleStep = 360 / sarees.length;
               className="w-12 h-12 border-4 border-white border-t-transparent rounded-full animate-spin"
             />
           </div>
-        )}
+        )} */}
 
-        {showModal && (
+        {/* {showModal && (
           <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50">
             <div className="relative w-[90%] max-w-lg bg-white rounded-2xl p-8 text-center">
               <button
@@ -1416,7 +1412,7 @@ const angleStep = 360 / sarees.length;
               </button>
             </div>
           </div>
-        )}
+        )} */}
       </main>
       <Footer />
     </>

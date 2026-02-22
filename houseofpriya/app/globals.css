@@ -28,7 +28,7 @@ body {
 
 @font-face {
   font-family: "Gabriola";
-  src: url("/fonts/Gabriola.ttf") format("truetype");
+  src: url("/fonts/Gabriola.woff2") format("truetype");
   font-weight: 400;
   font-display: swap;
 }

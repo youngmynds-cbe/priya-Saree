@@ -7,6 +7,8 @@ import { FaWhatsapp } from "react-icons/fa";
 import { ArrowRight } from "lucide-react";
 import { usePathname } from "next/navigation";
 import { MoveUpRight } from "lucide-react";
+import Link from "next/link";
+
 const Landing = () => {
   const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
@@ -136,7 +138,7 @@ const Landing = () => {
 
                 {/* Desktop Menu */}
                 <div className="hidden lg:flex gap-15 font-readex font-bold text-[20px] -mt-30">
-                  <a
+                  <Link
                     href="/"
                     className={
                       pathname === "/"
@@ -145,8 +147,8 @@ const Landing = () => {
                     }
                   >
                     Home
-                  </a>
-                  <a
+                  </Link>
+                  <Link
                     href="/about"
                     className={
                       pathname === "/about"
@@ -155,8 +157,8 @@ const Landing = () => {
                     }
                   >
                     About
-                  </a>
-                  <a
+                  </Link>
+                  <Link
                     href="/blog"
                     className={
                       pathname === "/blog"
@@ -165,8 +167,8 @@ const Landing = () => {
                     }
                   >
                     Blog
-                  </a>
-                  <a
+                  </Link>
+                  <Link
                     href="https://maps.app.goo.gl/FfJAE7u8PAacKddm6"
                     target="_blank"
                     rel="noopener noreferrer"
@@ -174,7 +176,7 @@ const Landing = () => {
                   >
                     <span>Location</span>
                     <MoveUpRight className="w-5 h-5" strokeWidth={2.5} />
-                  </a>
+                  </Link>
                 </div>
 
                 {/* Desktop Button */}
@@ -199,7 +201,7 @@ const Landing = () => {
               {/* MOBILE DROPDOWN */}
               {menuOpen && (
                 <div className="lg:hidden mt-4 bg-white rounded-xl shadow-lg p-6 flex flex-col gap-4 font-readex font-bold text-lg">
-                  <a
+                  <Link
                     href="/"
                     onClick={() => setMenuOpen(false)}
                     className={
@@ -207,7 +209,7 @@ const Landing = () => {
                     }
                   >
                     Home
-                  </a>
+                  </Link>
                   <a
                     href="/about"
                     onClick={() => setMenuOpen(false)}
@@ -416,7 +418,7 @@ const Landing = () => {
               </h2>
 
               <p className="text-gray-600 text-lg md:text-xl mb-10 font-light">
-                Discover handcrafted elegance designed for today's woman.
+                {`Discover handcrafted elegance designed for today's woman.`}
               </p>
 
               <button

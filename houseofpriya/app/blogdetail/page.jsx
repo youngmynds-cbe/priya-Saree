@@ -6,6 +6,7 @@ import { ArrowRight } from "lucide-react";
 import { usePathname } from "next/navigation";
 
 import { ArrowLeft } from "lucide-react";
+import Link from "next/link";
 
 const Landing = () => {
   const pathname = usePathname();
@@ -221,10 +222,10 @@ const Landing = () => {
       </section> */}
       <section>
         <div className="bg-white">
-          <a href="/blog" className="p-5 text-gray-500 flex items-center gap-2">
+          <Link href="/blog" className="p-5 text-gray-500 flex items-center gap-2">
             <ArrowLeft size={18} />
             Back to blog
-          </a>
+          </Link>
 
           <article
             itemScope
@@ -293,7 +294,7 @@ const Landing = () => {
               {/* Introduction */}
               <div className="mb-8">
                 <p className="text-gray-700 text-[16px] font-readex leading-relaxed mb-4">
-                  Your wedding day is one of life's most memorable occasions,
+                  {`Your wedding day is one of life's most memorable occasions,
                   and choosing the perfect saree is a deeply personal journey.
                   As one of the most versatile and timeless garments in the
                   world of bridal fashion, the wedding saree stands as a symbol
@@ -301,10 +302,10 @@ const Landing = () => {
                   weaving techniques and modern design sensibilities coming
                   together, each wedding saree becomes more than just a piece of
                   clothing—it becomes a cherished heirloom that tells your
-                  unique story.
+                  unique story.`}
                 </p>
                 <p className="text-gray-700 text-[16px]  font-readex leading-relaxed">
-                  The world of bridal sarees is rich with options—from the
+                  {`The world of bridal sarees is rich with options—from the
                   opulent silk weaves of Kanchipuram and Banarasi to the
                   delicate artistry of Bandhani and Leheriya. Each region of
                   India brings its own distinctive style and technique to
@@ -313,16 +314,16 @@ const Landing = () => {
                   steeped in symbolism or contemporary designs that reflect your
                   personal aesthetic, understanding the nuances of different
                   saree styles can help you make an informed choice that
-                  perfectly captures your vision.
+                  perfectly captures your vision.`}
                 </p>
               </div>
 
               {/* Pull Quote */}
               <div className="my-12 py-8 px-8 bg-gradient-to-r from-purple-50 to-pink-50 border-l-4 border-[#F34100] rounded-r-lg">
                 <blockquote className="text-[24px] text-[#666666]  font-readex leading-relaxed">
-                  "Friends worry that computers will get too smart and take over
+                  {`"Friends worry that computers will get too smart and take over
                   the world, but the real problem is that they're too stupid and
-                  they've already taken over the world."
+                  they've already taken over the world."`}
                 </blockquote>
                 <cite className="block mt-4 text-[#333333] font-[readexPro]  text-[16px]">
                   — Pedro Domingos
