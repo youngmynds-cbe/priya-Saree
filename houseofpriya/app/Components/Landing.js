@@ -5,6 +5,7 @@ import { useState, useEffect, useRef } from "react";
 import { usePathname } from "next/navigation";
 import { FaWhatsapp } from "react-icons/fa";
 import Footer from "../Components/Footer";
+import VideoPlaybackSection from "./VideoPlaybackSection";
 import { ChevronLeft, ChevronRight, Play } from "lucide-react";
 import { MoveUpRight } from "lucide-react";
 import Link from "next/link";
@@ -468,6 +469,7 @@ const Landing = () => {
           </div>
         </section>
 
+
         <section className="bg-amber-50 py-16">
           <div className="max-w-7xl mx-auto px-4">
             <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-12">
@@ -543,9 +545,7 @@ drape that feels like a second skin and created for your most memorable moments.
                       aria-hidden="true"
                       className="w-3 h-5 shrink"
                     />
-                    <span>
-                      Curated natural silk fibers designed with care
-                    </span>
+                    <span>Curated natural silk fibers designed with care</span>
                   </li>
 
                   <li className="flex items-center gap-3 tracking-[0.3px]">
@@ -1193,23 +1193,26 @@ drape that feels like a second skin and created for your most memorable moments.
                 </h2>
 
                 <p className="text-gray-700 text-[14px] font-readex leading-relaxed max-w-xl mx-auto lg:mx-0">
-                  At House of Priya, every saree is thoughtfully curated to reflect modern elegance while
-staying rooted in timeless Indian tradition.
+                  At House of Priya, every saree is thoughtfully curated to
+                  reflect modern elegance while staying rooted in timeless
+                  Indian tradition.
                 </p>
 
                 <p className="text-gray-700 text-[14px] font-readex leading-relaxed max-w-xl mx-auto lg:mx-0">
-                 With the largest collection of Mysore silk sarees in the city, we have paired the softest,
-richest fabrics with a palette that ranges from hushed pastels to deep, soulful hues that fits
-all occasions.
+                  With the largest collection of Mysore silk sarees in the city,
+                  we have paired the softest, richest fabrics with a palette
+                  that ranges from hushed pastels to deep, soulful hues that
+                  fits all occasions.
                 </p>
 
                 <p className="text-gray-700 text-[14px] font-readex leading-relaxed max-w-xl mx-auto lg:mx-0">
-                 We also host a wide range of authentic styles under one roof, from traditional
-Kanchipurams and Paithanis to classic Chettinads and Pochampallys, and much more.
+                  We also host a wide range of authentic styles under one roof,
+                  from traditional Kanchipurams and Paithanis to classic
+                  Chettinads and Pochampallys, and much more.
                 </p>
 
                 <p className="text-gray-700 text-[14px] font-readex leading-relaxed max-w-xl mx-auto lg:mx-0">
-                 {`As a woman, you shouldn't have to choose between looking extraordinary and feeling like
+                  {`As a woman, you shouldn't have to choose between looking extraordinary and feeling like
 yourself and our sarees are a testament to that.`}
                 </p>
 
@@ -1228,48 +1231,22 @@ yourself and our sarees are a testament to that.`}
           </div>
         </section>
 
-        <section className="h-auto bg-gradient-to-b from-purple-50 to-white py-20 px-3">
+        <section className="h-auto bg-gradient-to-b from-amber-50 to-white py-20 px-3">
           <div className="max-w-7xl mx-auto">
             {/* Header */}
-            <h2 className="-mt-25 lg:mt-0 md:mt-0 sm:mt-0 text-[38px] md:text-[50px] lg:text-[68px] font-gabriola text-center tracking-[0.5px] text-[#6B46C1] mb-2 lg:mb-20">
-              See Our Sarees Come Alive
+            <h2 className=" lg:mt-0 md:mt-0 sm:mt-0 text-[38px] md:text-[50px] lg:text-[68px] font-gabriola text-center tracking-[0.5px] text-[#6B46C1] mb-4">
+              Watch Our Story
             </h2>
-
-            {/* Video Cards Grid */}
-            <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {sareeCollections.map((collection) => (
-                <div
-                  key={collection.id}
-                  className="group relative overflow-hidden rounded-3xl  cursor-pointer  "
-                  onMouseEnter={() => setHoveredCard(collection.id)}
-                  onMouseLeave={() => setHoveredCard(null)}
-                >
-                  {/* Background Image */}
-                  <div className="relative h-[250px] md:h-[500px] lg:h-[500px] overflow-hidden">
-                    <img
-                      src={collection.image}
-                      alt={collection.title}
-                      className="w-full h-full "
-                    />
-
-                    {/* Gradient Overlay */}
-                    {/* <div
-                      className={`absolute inset-0 bg-gradient-to-t ${collection.gradient} transition-opacity duration-500`}
-                    /> */}
-                  </div>
-
-                  {/* Play Button */}
-                  <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20">
-                    <div
-                      className={` rounded-full p-6 shadow-2xl transition-all duration-500 
-                    }`}
-                    ></div>
-                  </div>
-
-                  <div className="absolute inset-0 border-4 border-transparent group-hover:border-purple-400 rounded-3xl transition-all duration-500 pointer-events-none" />
+              <VideoPlaybackSection
+              videoId="LAJPgWAFEkY"
+              thumbnail="/images/video_thumbnail.jpeg"
+              playIcon={
+                <div className="w-24 h-24 bg-white rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition">
+                  <Play size={40} className="text-[#6B46C1]" />
                 </div>
-              ))}
-            </div>
+              }
+              maxWidth="max-w-3xl"
+            />
           </div>
         </section>
         {/* <section className="-mt-17 lg:mt-0 md:mt-0 sm:mt-0  relative overflow-hidden "> */}
