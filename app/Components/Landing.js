@@ -1237,16 +1237,40 @@ yourself and our sarees are a testament to that.`}
             <h2 className=" lg:mt-0 md:mt-0 sm:mt-0 text-[38px] md:text-[50px] lg:text-[68px] font-gabriola text-center tracking-[0.5px] text-[#6B46C1] mb-4">
               Watch Our Story
             </h2>
+            <div className="flex flex-col md:flex-row gap-10">
               <VideoPlaybackSection
               videoId="LAJPgWAFEkY"
-              thumbnail="/images/video_thumbnail.jpeg"
+              thumbnail="/thumbnails/reel_thumbnail_1.jpeg"
               playIcon={
                 <div className="w-24 h-24 bg-white rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition">
                   <Play size={40} className="text-[#6B46C1]" />
                 </div>
               }
-              maxWidth="max-w-3xl"
+              maxWidth="max-w-sm"
             />
+
+            <VideoPlaybackSection
+              videoId="Pg23NABUSL8"
+              thumbnail="/thumbnails/reel_thumbnail_2.jpeg"
+              playIcon={
+                <div className="w-24 h-24 bg-white rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition">
+                  <Play size={40} className="text-[#6B46C1]" />
+                </div>
+              }
+              maxWidth="max-w-sm"
+            />
+
+            <VideoPlaybackSection
+              videoId="5tGfbhLNEEM"
+              thumbnail="/thumbnails/reel_thumbnail_3.jpeg"
+              playIcon={
+                <div className="w-24 h-24 bg-white rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition">
+                  <Play size={40} className="text-[#6B46C1]" />
+                </div>
+              }
+              maxWidth="max-w-sm"
+            />
+            </div>
           </div>
         </section>
         {/* <section className="-mt-17 lg:mt-0 md:mt-0 sm:mt-0  relative overflow-hidden "> */}

@@ -10,13 +10,13 @@ export default function VideoPlaybackSection({
   playIcon,
   className = "",
   rounded = "rounded-2xl",
-  maxWidth = "max-w-4xl",
+  maxWidth = "max-w-sm",
 }) {
   const [isPlaying, setIsPlaying] = useState(false);
 
   return (
    <div className={`w-full flex justify-center ${className}`}>
-      <div className={`relative w-full ${maxWidth} aspect-video rounded-2xl overflow-hidden shadow-2xl`}>
+      <div className={`relative w-full ${maxWidth} aspect-[9/16] rounded-2xl overflow-hidden shadow-2xl`}>
         
       {!isPlaying ? (
         <div
