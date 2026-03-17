@@ -166,7 +166,7 @@ import {
   Nanum_Myeongjo,
    Cormorant_Garamond,
 } from "next/font/google";
-import "./globals.css";
+import "./globals.css"
 
 /* Fonts */
 const geistSans = Geist({
