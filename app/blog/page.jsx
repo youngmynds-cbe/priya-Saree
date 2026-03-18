@@ -331,14 +331,13 @@ const Landing = () => {
             <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-3 lg:gap-25">
               {blogPosts.map((post) => (
                 <article key={post.id} className="group cursor-pointer">
+                  <a href="/blogdetail">
                   <div className="relative rounded-2xl overflow-hidden mb-4">
-                    <a href="/blogdetail">
                       <img
                         src={post.image}
                         alt={post.title}
                         className="w-full h-72 object-cover transition-transform duration-500 group-hover:scale-110"
                       />
-                    </a>
                   </div>
                   <div className="mb-3">
                     <span
@@ -378,6 +377,7 @@ const Landing = () => {
                       <ArrowRight className="w-4 h-4" />
                     </button> */}
                   </div>
+                </a>
                 </article>
               ))}
             </div>

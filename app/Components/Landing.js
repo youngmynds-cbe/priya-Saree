@@ -1189,7 +1189,7 @@ drape that feels like a second skin and created for your most memorable moments.
 
               <div className="space-y-6 text-center lg:text-left">
                 <h2 className="text-[36px] sm:text-[44px] md:text-[54px] font-gabriola text-[#6B46C1] mb-6">
-                  Trending Fashion
+                  The Spotlight Collection
                 </h2>
 
                 <p className="text-gray-700 text-[14px] font-readex leading-relaxed max-w-xl mx-auto lg:mx-0">
