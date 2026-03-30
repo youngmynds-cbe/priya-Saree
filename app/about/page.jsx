@@ -114,7 +114,7 @@ const Landing = () => {
                 <div className="w-28 h-28 sm:w-32 sm:h-32 lg:w-40 lg:h-40 rounded-xl flex items-center justify-center lg:ml-10 relative">
                   {/* <div className="w-full h-full absolute bg-[url('/images/bg.png')] rounded-xl hidden lg:block"></div> */}
                   <img
-                    src="/images/logos.svg"
+                    src="/images/new_logo.png"
                     alt="House of Priya Logo"
                     className="mt-5 md:mt-20 w-20 sm:w-24 lg:w-34 object-contain z-10 lg:-mt-9 block lg:hidden"
                   />
@@ -381,10 +381,10 @@ const Landing = () => {
                   Thoughtfully Curated Designs
                 </h3>
 
-                <p className="mt-3 text-[14px] leading-[22px] font-readex text-gray-600 hidden lg:block">
+                {/* <p className="mt-3 text-[14px] leading-[22px] font-readex text-gray-600 hidden lg:block">
                   Sarees designed with attention to drape, comfort, and
                   elegance.
-                </p>
+                </p> */}
               </div>
 
               {/* Card 2 */}
@@ -397,9 +397,9 @@ const Landing = () => {
                   Premium Fabrics & Finishes
                 </h3>
 
-                <p className="mt-3 text-[14px] leading-[22px] font-readex text-gray-600 hidden lg:block">
+                {/* <p className="mt-3 text-[14px] leading-[22px] font-readex text-gray-600 hidden lg:block">
                   Carefully selected materials with refined craftsmanship.
-                </p>
+                </p> */}
               </div>
 
               {/* Card 3 */}
@@ -412,9 +412,9 @@ const Landing = () => {
                   Modern Elegance for Woman
                 </h3>
 
-                <p className="mt-3 text-[14px] leading-[22px] font-readex text-gray-600 hidden lg:block">
+                {/* <p className="mt-3 text-[14px] leading-[22px] font-readex text-gray-600 hidden lg:block">
                   Styles that move effortlessly from day to evening.
-                </p>
+                </p> */}
               </div>
 
               {/* Card 4 */}
@@ -427,9 +427,9 @@ const Landing = () => {
                   Rooted in Indian Craft
                 </h3>
 
-                <p className="mt-3 text-[14px] leading-[22px] font-readex text-gray-600 hidden lg:block">
+                {/* <p className="mt-3 text-[14px] leading-[22px] font-readex text-gray-600 hidden lg:block">
                   Inspired by heritage, reimagined for today.
-                </p>
+                </p> */}
               </div>
             </div>
           </div>

@@ -285,7 +285,7 @@ const Landing = () => {
                     className="w-20 sm:w-24 lg:w-68 object-contain z-10 lg:-mt-2"
                   />   */}
                   <img
-                    src="/images/logos.svg"
+                    src="/images/new_logo.png"
                     alt="House of Priya Logo"
                     className="
     object-contain z-10 mt-5 md:mt-20
@@ -448,17 +448,18 @@ const Landing = () => {
                 </a>
               </div>
 
-              <div className="relative flex justify-end">
+              {/* Right Image */}
+              <div className="relative flex justify-center">
                 <div
                   className="
-          px-10 sm:px-6 lg:px-15
-          w-full sm:w-[380px] md:w-[450px] lg:w-[549px] 
-          h-auto lg:h-150
+          px-0 sm:px-6 lg:px-1
+          w-full sm:w-[380px] md:w-[450px] lg:w-[549px]
+          h-auto lg:h-[600px]
         "
                 >
                   <img
-                    src="../images/DSC02740 1 (2).png"
-                    className="w-full h-[450px] md:h-[750px] lg:h-auto  object-contain mt-0 2xl:mt-10"
+                    src="../images/DSC02599 1 (1).png"
+                    className="w-full h-[470px] md:h-[550px] sm:h-auto lg:h-162.5 object-contain"
                     alt="Saree Model"
                   />
                 </div>
@@ -468,7 +469,6 @@ const Landing = () => {
             <div className="absolute bottom-0 left-0 w-72 sm:w-80 lg:w-96 h-72 sm:h-80 lg:h-96 bg-gradient-to-tr  rounded-full blur-3xl opacity-40 -translate-x-1/2 translate-y-1/2"></div>
           </div>
         </section>
-
 
         <section className="bg-amber-50 py-16">
           <div className="max-w-7xl mx-auto px-4">
@@ -1199,10 +1199,10 @@ drape that feels like a second skin and created for your most memorable moments.
                 </p>
 
                 <p className="text-gray-700 text-[14px] font-readex leading-relaxed max-w-xl mx-auto lg:mx-0">
-                  With the largest collection of Mysore silk sarees in the city,
-                  we have paired the softest, richest fabrics with a palette
-                  that ranges from hushed pastels to deep, soulful hues that
-                  fits all occasions.
+                  With the largest collection of Mysore silk sarees in
+                  Coimbatore, we have paired the softest, richest fabrics with a
+                  palette that ranges from hushed pastels to deep, soulful hues
+                  that fits all occasions.
                 </p>
 
                 <p className="text-gray-700 text-[14px] font-readex leading-relaxed max-w-xl mx-auto lg:mx-0">
@@ -1239,37 +1239,37 @@ yourself and our sarees are a testament to that.`}
             </h2>
             <div className="flex flex-col md:flex-row gap-10">
               <VideoPlaybackSection
-              videoId="LAJPgWAFEkY"
-              thumbnail="/thumbnails/reel_thumbnail_1.jpeg"
-              playIcon={
-                <div className="w-24 h-24 bg-white rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition">
-                  <Play size={40} className="text-[#6B46C1]" />
-                </div>
-              }
-              maxWidth="max-w-sm"
-            />
+                videoId="LAJPgWAFEkY"
+                thumbnail="/thumbnails/reel_thumbnail_1.jpeg"
+                playIcon={
+                  <div className="w-24 h-24 bg-white rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition">
+                    <Play size={40} className="text-[#6B46C1]" />
+                  </div>
+                }
+                maxWidth="max-w-sm"
+              />
 
-            <VideoPlaybackSection
-              videoId="Pg23NABUSL8"
-              thumbnail="/thumbnails/reel_thumbnail_2.jpeg"
-              playIcon={
-                <div className="w-24 h-24 bg-white rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition">
-                  <Play size={40} className="text-[#6B46C1]" />
-                </div>
-              }
-              maxWidth="max-w-sm"
-            />
+              <VideoPlaybackSection
+                videoId="Pg23NABUSL8"
+                thumbnail="/thumbnails/reel_thumbnail_2.jpeg"
+                playIcon={
+                  <div className="w-24 h-24 bg-white rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition">
+                    <Play size={40} className="text-[#6B46C1]" />
+                  </div>
+                }
+                maxWidth="max-w-sm"
+              />
 
-            <VideoPlaybackSection
-              videoId="5tGfbhLNEEM"
-              thumbnail="/thumbnails/reel_thumbnail_3.jpeg"
-              playIcon={
-                <div className="w-24 h-24 bg-white rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition">
-                  <Play size={40} className="text-[#6B46C1]" />
-                </div>
-              }
-              maxWidth="max-w-sm"
-            />
+              <VideoPlaybackSection
+                videoId="5tGfbhLNEEM"
+                thumbnail="/thumbnails/reel_thumbnail_3.jpeg"
+                playIcon={
+                  <div className="w-24 h-24 bg-white rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition">
+                    <Play size={40} className="text-[#6B46C1]" />
+                  </div>
+                }
+                maxWidth="max-w-sm"
+              />
             </div>
           </div>
         </section>

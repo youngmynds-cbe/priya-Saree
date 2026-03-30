@@ -130,7 +130,7 @@ const Landing = () => {
                 <div className="w-28 h-28 sm:w-32 sm:h-32 lg:w-40 lg:h-40 rounded-xl flex items-center justify-center lg:ml-10 relative">
                   {/* <div className="w-full h-full absolute bg-[url('/images/bg.png')] rounded-xl hidden lg:block"></div> */}
                   <img
-                    src="/images/logos.svg"
+                    src="/images/new_logo.png"
                     alt="House of Priya Logo"
                     className="mt-5 md:mt-20 w-20 sm:w-24 lg:w-34 object-contain z-10 lg:-mt-9 block lg:hidden"
                   />
@@ -295,7 +295,7 @@ const Landing = () => {
               </div>
 
               {/* Right Image */}
-              <div className="relative flex justify-center">
+              {/* <div className="relative flex justify-center">
                 <div
                   className="
           px-0 sm:px-6 lg:px-1
@@ -304,8 +304,25 @@ const Landing = () => {
         "
                 >
                   <img
-                    src="../images/DSC02599 1 (1).png"
+                    src="../images/DSC02740 1 (2).png"
                     className="w-full h-[470px] md:h-[550px] sm:h-auto lg:h-162.5 object-contain"
+                    alt="Saree Model"
+                  />
+                </div>
+              </div>
+            </div> */}
+
+            <div className="relative flex justify-end">
+                <div
+                  className="
+          px-10 sm:px-6 lg:px-15
+          w-full sm:w-[380px] md:w-[450px] lg:w-[549px] 
+          h-auto lg:h-150
+        "
+                >
+                  <img
+                    src="../images/DSC02740 1 (2).png"
+                    className="w-full h-[450px] md:h-[750px] lg:h-auto  object-contain mt-0 2xl:mt-10"
                     alt="Saree Model"
                   />
                 </div>

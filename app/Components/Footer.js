@@ -229,7 +229,7 @@ const Footer = () => {
           {/* CENTER — LOGO + QUICK LINKS */}
           <div className="flex flex-col items-center text-center">
             <img
-              src="/images/logos.svg"
+              src="/images/new_logo.png"
               alt="House of Priya"
               className="w-32 mb-6"
             />
@@ -292,7 +292,7 @@ const Footer = () => {
 
         <div className="relative z-10 px-5 py-10 text-center">
           <img
-            src="/images/logos.svg"
+            src="/images/new_logo.png"
             alt="House of Priya"
             className="w-28 mx-auto mb-6"
           />
