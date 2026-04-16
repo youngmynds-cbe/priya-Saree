@@ -245,9 +245,9 @@ const Footer = () => {
               <li className="flex items-center gap-1">
                 ↗ <Link href="/about">About us</Link>
               </li>
-              <li className="flex items-center gap-1">
+              {/* <li className="flex items-center gap-1">
                 ↗ <Link href="/blog">Blog</Link>
-              </li>
+              </li> */}
             </ul>
           </div>
 
@@ -309,9 +309,9 @@ const Footer = () => {
             <li className="flex items-center gap-1">
               ↗ <Link href="/about">About us</Link>
             </li>
-            <li className="flex items-center gap-1">
+            {/* <li className="flex items-center gap-1">
               ↗ <Link href="/blog">Blog</Link>
-            </li>
+            </li> */}
           </ul>
 
           {/* CONTACT */}

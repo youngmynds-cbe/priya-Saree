@@ -219,7 +219,7 @@ const Landing = () => {
                   >
                     About
                   </a>
-                  <a
+                  {/* <a
                     href="/blog"
                     onClick={() => setMenuOpen(false)}
                     className={
@@ -227,7 +227,7 @@ const Landing = () => {
                     }
                   >
                     Blog
-                  </a>
+                  </a> */}
                   <a
                     href="https://maps.app.goo.gl/FfJAE7u8PAacKddm6"
                     target="_blank"
