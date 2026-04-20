@@ -220,9 +220,24 @@ const Footer = () => {
 
             {/* Social */}
             <div className="flex gap-4 mt-6">
-              <FaInstagram className="w-7 h-7" />
-              <CiFacebook className="w-7 h-7" />
-              <FaYoutube className="w-7 h-7" />
+              <Link
+                href="https://www.instagram.com/houseofpriya.in/"
+                target="_blank"
+              >
+                <FaInstagram className="w-7 h-7 hover:text-[#5B2D8B]" />
+              </Link>
+              <Link
+                href="https://www.facebook.com/people/Priya-Sivaram/61587946869448/"
+                target="_blank"
+              >
+                <CiFacebook className="w-7 h-7 hover:text-[#5B2D8B]" />
+              </Link>
+              <Link
+                href="https://www.youtube.com/@House-of-Priya"
+                target="_blank"
+              >
+                <FaYoutube className="w-7 h-7 hover:text-[#5B2D8B]" />
+              </Link>
             </div>
           </div>
 
@@ -339,7 +354,9 @@ const Footer = () => {
 
             <li className="flex justify-center gap-3 items-center">
               <img src="/images/Vector (7).png" className="w-4 h-4" />
-              <Link href="mailto:houseofpriya@gmail.com">houseofpriya@gmail.com</Link>
+              <Link href="mailto:houseofpriya@gmail.com">
+                houseofpriya@gmail.com
+              </Link>
             </li>
 
             <li className="flex justify-center gap-3 items-center">
@@ -350,9 +367,24 @@ const Footer = () => {
 
           {/* SOCIAL ICONS */}
           <div className="flex justify-center gap-8 mt-6">
-            <FaInstagram className="w-7 h-7" />
-            <CiFacebook className="w-7 h-7" />
-            <FaYoutube className="w-7 h-7" />
+            <Link
+              href="https://www.instagram.com/houseofpriya.in/"
+              target="_blank"
+            >
+              <FaInstagram className="w-7 h-7 hover:text-[#5B2D8B]" />
+            </Link>
+            <Link
+              href="https://www.facebook.com/people/Priya-Sivaram/61587946869448/"
+              target="_blank"
+            >
+              <CiFacebook className="w-7 h-7 hover:text-[#5B2D8B]" />
+            </Link>
+            <Link
+              href="https://www.youtube.com/@House-of-Priya"
+              target="_blank"
+            >
+              <FaYoutube className="w-7 h-7 hover:text-[#5B2D8B]" />
+            </Link>
           </div>
 
           {/* LOCATION */}
